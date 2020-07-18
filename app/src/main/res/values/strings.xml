@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Marvel</string>
+    <string name="search_hint">Search superhero e.g. Iron Man</string>
+</resources>
