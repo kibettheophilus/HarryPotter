@@ -16,32 +16,31 @@
         android:background="@drawable/marvellogo"
         app:layout_constraintDimensionRatio="2:1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/marvel_logo" />
 
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:iconifiedByDefault="true"
+        android:layout_marginVertical="@dimen/margin_horizontal"
         android:queryHint="@string/search_hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/marvelLogo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marvelLogo" />
 
-    <!--    <androidx.viewpager.widget.ViewPager-->
-    <!--        android:id="@+id/viewPager"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent" />-->
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <!--    <com.google.android.material.tabs.TabLayout-->
-    <!--        android:id="@+id/tab_layout"-->
-    <!--        android:layout_width="40sp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginStart="40sp"-->
-    <!--        android:layout_marginBottom="26sp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:tabGravity="center"-->
-    <!--        app:tabIndicatorHeight="0dp" />-->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="40sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchView"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
