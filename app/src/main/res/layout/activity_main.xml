@@ -37,8 +37,11 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
-            android:layout_width="40sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:tabTextColor="#000000"
+            app:tabPadding="5dp"
+            app:tabBackground="@drawable/tab_selector"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/searchView"/>
 

@@ -1,13 +1,14 @@
 package com.example.marvel.UI
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.marvel.R
 import com.google.android.material.tabs.TabLayout
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,29 +23,23 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewPager)
 
         val adapter = MyFragmentPagerAdapter(supportFragmentManager)
-        adapter.addFragment(FragmentPopular())
-        adapter.addFragment(FragmentAtoZ())
-        adapter.addFragment(FragmentLastViewed())
+        adapter.addFragment(FragmentPopular(),"Popular")
+        adapter.addFragment(FragmentAtoZ(),"A-Z")
+        adapter.addFragment(FragmentLastViewed(),"Last Viewed")
 
         viewPager.adapter = adapter
+        viewPager.beginFakeDrag()
         tabs.setupWithViewPager(viewPager)
+        tabs.setSelectedTabIndicator(R.drawable.selected_tab)
     }
 
-//    fun selectIndex(newIndex: Int) {
-//        viewPager.currentItem = newIndex
-//    }
-//
-//    fun goToNextScreen(view: View) {
-//        when(view.id) {
-//            R.id.screen_one_cardview -> selectIndex(1)
-//            R.id.screen_two_cardview -> selectIndex(2)
-//        }
-//    }
-//
+
     private inner class MyFragmentPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
         private val mFragmentList: ArrayList<Fragment> = ArrayList()
+        private val mFragmentTitleList: ArrayList<String> = ArrayList()
 
         override fun getItem(position: Int): Fragment {
+
             return mFragmentList.get(position)
         }
 
@@ -52,18 +47,13 @@ class MainActivity : AppCompatActivity() {
             return mFragmentList.size
         }
 
-    override fun getPageTitle(position: Int): CharSequence? {
-        title = when (position) {
-            0 -> getString(R.string.popular)
-            1 -> getString(R.string.atoz)
-            2 -> getString(R.string.last_viewed)
-            else -> null
+        override fun getPageTitle(position: Int): CharSequence? {
+            return mFragmentTitleList.get(position)
         }
-        return title
-    }
 
-        fun addFragment(fragment: Fragment) {
+        fun addFragment(fragment: Fragment,title : String) {
             mFragmentList.add(fragment)
+            mFragmentTitleList.add(title)
         }
     }
 
