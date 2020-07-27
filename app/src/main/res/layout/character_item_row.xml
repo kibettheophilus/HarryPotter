@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inner_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/superhero_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/blackpanther"
+                app:layout_constraintCircleRadius="7dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.48" />
+
+            <TextView
+                android:id="@+id/superhero_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Superhero Name"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@id/superhero_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/superhero_character_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Character Name"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:margin="10dp"
+                app:layout_constraintStart_toEndOf="@id/superhero_image"
+                app:layout_constraintTop_toBottomOf="@id/superhero_name" />
+
+            <TextView
+                android:id="@+id/superhero_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loren_ipsum"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:maxLength="200"
+                app:layout_constraintStart_toEndOf="@id/superhero_image"
+                app:layout_constraintTop_toBottomOf="@id/superhero_character_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
