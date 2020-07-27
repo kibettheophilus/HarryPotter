@@ -2,7 +2,7 @@ package com.example.marvel.Data
 import com.google.gson.annotations.SerializedName
 
 
-data class MarvelSuperhroDataClass(
+data class MarvelSuperheroDataClass(
     @SerializedName("attributionHTML")
     val attributionHTML: String,
     @SerializedName("attributionText")
