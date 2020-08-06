@@ -1,4 +1,4 @@
-package com.example.marvel.data
+package com.anniekobia.marvel.data
 
 
 data class MarvelSuperheroDataClassDummy(

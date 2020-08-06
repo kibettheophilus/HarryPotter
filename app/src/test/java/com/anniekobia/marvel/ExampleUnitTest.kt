@@ -1,4 +1,4 @@
-package com.example.marvel
+package com.anniekobia.marvel
 
 import org.junit.Test
 

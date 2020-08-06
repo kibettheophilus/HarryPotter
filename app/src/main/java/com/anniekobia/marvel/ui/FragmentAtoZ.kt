@@ -1,4 +1,4 @@
-package com.example.marvel.ui
+package com.anniekobia.marvel.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.marvel.utils.MarvelSupeheroDummyData
-import com.example.marvel.adapters.MarvelSuperheroDataAdapter
+import com.anniekobia.marvel.utils.MarvelSupeheroDummyData
+import com.anniekobia.marvel.adapters.MarvelSuperheroDataAdapter
 
-import com.example.marvel.R
-import com.example.marvel.data.MarvelSuperheroDataClassDummy
+import com.anniekobia.marvel.R
+import com.anniekobia.marvel.data.MarvelSuperheroDataClassDummy
 
 /**
  * A simple [Fragment] subclass.

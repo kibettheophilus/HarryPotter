@@ -1,4 +1,4 @@
-package com.example.marvel.ui
+package com.anniekobia.marvel.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.example.marvel.R
+import com.anniekobia.marvel.R
 import com.google.android.material.tabs.TabLayout
 
 
