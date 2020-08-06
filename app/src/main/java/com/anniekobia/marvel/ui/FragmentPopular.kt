@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,12 +30,12 @@ class FragmentPopular : Fragment(){
         val view = inflater.inflate(R.layout.fragment_popular, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerViewAdapter = MarvelSuperheroDataAdapter(context,marvelSuperheroesList)
+        recyclerViewAdapter= MarvelSuperheroDataAdapter(marvelSuperheroesList) {
+                item -> Toast.makeText(context, "Open activity with details", Toast.LENGTH_LONG).show()
+        }
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = recyclerViewAdapter
 
-
         return view
     }
-
 }
