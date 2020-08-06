@@ -1,4 +1,4 @@
-package com.example.marvel.UI
+package com.example.marvel.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         adapter.addFragment(FragmentLastViewed(),"Last Viewed")
 
         viewPager.adapter = adapter
-        viewPager.beginFakeDrag()
         tabs.setupWithViewPager(viewPager)
         tabs.setSelectedTabIndicator(R.drawable.selected_tab)
     }

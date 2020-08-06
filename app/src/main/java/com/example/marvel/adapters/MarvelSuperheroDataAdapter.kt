@@ -1,4 +1,4 @@
-package com.example.marvel.Adapters
+package com.example.marvel.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.marvel.Data.MarvelSuperheroDataClassDummy
+import com.example.marvel.data.MarvelSuperheroDataClassDummy
 import com.example.marvel.R
 
 
