@@ -17,7 +17,7 @@ import com.anniekobia.marvel.utils.MarvelSuperheroDummyData
 /**
  * A simple [Fragment] subclass.
  */
-class FragmentLastViewed : Fragment() {
+class LastViewedFragment : Fragment() {
 
     var marvelSuperheroesListDataClass: ArrayList<MarvelSuperheroDummyDataClass> =
         MarvelSuperheroDummyData.MARVEL_SUPERHEROES_LIST_DATA_CLASS

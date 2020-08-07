@@ -1,23 +1,23 @@
 package com.anniekobia.marvel.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.anniekobia.marvel.utils.MarvelSuperheroDummyData
-import com.anniekobia.marvel.adapters.MarvelSuperheroDataAdapter
-
 import com.anniekobia.marvel.R
+import com.anniekobia.marvel.adapters.MarvelSuperheroDataAdapter
+import com.anniekobia.marvel.utils.MarvelSuperheroDummyData
 import com.anniekobia.marvel.utils.MarvelSuperheroDummyDataClass
+
 
 /**
  * A simple [Fragment] subclass.
  */
-class FragmentAtoZ : Fragment() {
+class AtoZFragment : Fragment() {
 
     var marvelSuperheroesListDataClass: ArrayList<MarvelSuperheroDummyDataClass> =
         MarvelSuperheroDummyData.MARVEL_SUPERHEROES_LIST_DATA_CLASS
@@ -35,6 +35,7 @@ class FragmentAtoZ : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerViewAdapter = MarvelSuperheroDataAdapter(marvelSuperheroesListDataClass) {
             Toast.makeText(context, "Open activity with details", Toast.LENGTH_LONG).show()
+
         }
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = recyclerViewAdapter

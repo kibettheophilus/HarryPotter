@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewPager)
 
         val adapter = MyFragmentPagerAdapter(supportFragmentManager)
-        adapter.addFragment(FragmentAtoZ(),"A-Z")
-        adapter.addFragment(FragmentLastViewed(),"Last Viewed")
+        adapter.addFragment(AtoZFragment(),"A-Z")
+        adapter.addFragment(LastViewedFragment(),"Last Viewed")
 
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
