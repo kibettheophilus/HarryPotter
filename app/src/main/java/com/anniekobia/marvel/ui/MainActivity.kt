@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         viewPager = findViewById(R.id.viewPager)
 
         val adapter = MyFragmentPagerAdapter(supportFragmentManager)
-        adapter.addFragment(FragmentPopular(),"Popular")
         adapter.addFragment(FragmentAtoZ(),"A-Z")
         adapter.addFragment(FragmentLastViewed(),"Last Viewed")
 
@@ -33,13 +32,13 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private inner class MyFragmentPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
+    private inner class MyFragmentPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
         private val mFragmentList: ArrayList<Fragment> = ArrayList()
         private val mFragmentTitleList: ArrayList<String> = ArrayList()
 
         override fun getItem(position: Int): Fragment {
 
-            return mFragmentList.get(position)
+            return mFragmentList[position]
         }
 
         override fun getCount(): Int {
@@ -47,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
-            return mFragmentTitleList.get(position)
+            return mFragmentTitleList[position]
         }
 
         fun addFragment(fragment: Fragment,title : String) {

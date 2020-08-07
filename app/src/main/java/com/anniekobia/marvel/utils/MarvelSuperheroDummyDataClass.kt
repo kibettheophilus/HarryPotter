@@ -1,7 +1,7 @@
-package com.anniekobia.marvel.data
+package com.anniekobia.marvel.utils
 
 
-data class MarvelSuperheroDataClassDummy(
+data class MarvelSuperheroDummyDataClass(
     val superheroDescription: String,
     val superheroCharacterName: String,
     val superheroName: String

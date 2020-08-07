@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.anniekobia.marvel.data.MarvelSuperheroDataClassDummy
+import com.anniekobia.marvel.utils.MarvelSuperheroDummyDataClass
 import com.anniekobia.marvel.R
 
 
 class MarvelSuperheroDataAdapter(
-    private val characterList: ArrayList<MarvelSuperheroDataClassDummy>,
-    private val listener: (MarvelSuperheroDataClassDummy) -> Unit
+    private val characterList: ArrayList<MarvelSuperheroDummyDataClass>,
+    private val listener: (MarvelSuperheroDummyDataClass) -> Unit
 ) : RecyclerView.Adapter<MarvelSuperheroDataAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -39,7 +39,7 @@ class MarvelSuperheroDataAdapter(
         val moreInfo: TextView = itemView.findViewById(R.id.more_info)
         val moreInfoArrow: ImageView = itemView.findViewById(R.id.more_info_arrow)
 
-        fun bind(item: MarvelSuperheroDataClassDummy) {
+        fun bind(item: MarvelSuperheroDummyDataClass) {
             superheroName.text = item.superheroName
             superheroCharacterName.text = item.superheroCharacterName
             superheroDescription.text = item.superheroDescription

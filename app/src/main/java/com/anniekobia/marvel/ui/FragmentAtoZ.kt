@@ -8,19 +8,19 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.anniekobia.marvel.utils.MarvelSupeheroDummyData
+import com.anniekobia.marvel.utils.MarvelSuperheroDummyData
 import com.anniekobia.marvel.adapters.MarvelSuperheroDataAdapter
 
 import com.anniekobia.marvel.R
-import com.anniekobia.marvel.data.MarvelSuperheroDataClassDummy
+import com.anniekobia.marvel.utils.MarvelSuperheroDummyDataClass
 
 /**
  * A simple [Fragment] subclass.
  */
 class FragmentAtoZ : Fragment() {
 
-    var marvelSuperheroesList: ArrayList<MarvelSuperheroDataClassDummy> =
-        MarvelSupeheroDummyData.marvelSuperheroesList
+    var marvelSuperheroesListDataClass: ArrayList<MarvelSuperheroDummyDataClass> =
+        MarvelSuperheroDummyData.MARVEL_SUPERHEROES_LIST_DATA_CLASS
 
     lateinit var recyclerView: RecyclerView
     lateinit var recyclerViewAdapter: MarvelSuperheroDataAdapter
@@ -33,8 +33,8 @@ class FragmentAtoZ : Fragment() {
         val view = inflater.inflate(R.layout.fragment_atoz, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
-        recyclerViewAdapter = MarvelSuperheroDataAdapter(marvelSuperheroesList) {
-                item -> Toast.makeText(context, "Open activity with details", Toast.LENGTH_LONG).show()
+        recyclerViewAdapter = MarvelSuperheroDataAdapter(marvelSuperheroesListDataClass) {
+            Toast.makeText(context, "Open activity with details", Toast.LENGTH_LONG).show()
         }
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = recyclerViewAdapter
