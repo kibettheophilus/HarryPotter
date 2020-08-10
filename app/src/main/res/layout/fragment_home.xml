@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/screen_padding"
+    tools:context=".ui.MainActivity">
+
+    <ImageView
+        android:id="@+id/marvelLogo"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/imageview_height_40dp"
+        android:layout_marginVertical="@dimen/imageview_vertical_margin"
+        android:background="@drawable/marvellogo"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/marvel_logo" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextColor="@android:color/black"
+        app:tabPadding="@dimen/tab_padding"
+        app:tabIndicatorColor="@android:color/transparent"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        android:layout_marginTop="@dimen/margin_10dp"
+        app:tabBackground="@drawable/tab_selector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/marvelLogo"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,12 @@
 package com.anniekobia.marvel.ui
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 
 import com.anniekobia.marvel.R
 
@@ -20,6 +22,7 @@ class DetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_details, container, false)
+
 
         return view
     }

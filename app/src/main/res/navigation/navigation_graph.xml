@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.anniekobia.marvel.ui.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/homeFragment_to_atozFragment"
+            app:destination="@id/atoZFragment" />
+        <action
+            android:id="@+id/homeFragment_to_lastviewedFragment"
+            app:destination="@id/lastViewedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/atoZFragment"
+        android:name="com.anniekobia.marvel.ui.AtoZFragment"
+        android:label="fragment_atoz"
+        tools:layout="@layout/fragment_atoz" />
+    <fragment
+        android:id="@+id/lastViewedFragment"
+        android:name="com.anniekobia.marvel.ui.LastViewedFragment"
+        android:label="fragment_last_viewed"
+        tools:layout="@layout/fragment_last_viewed" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.anniekobia.marvel.ui.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
+    <action
+        android:id="@+id/global_detailsFragment"
+        app:destination="@id/detailsFragment" />
+</navigation>

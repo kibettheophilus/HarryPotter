@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.anniekobia.marvel.adapters.MarvelSuperheroDataAdapter
@@ -33,7 +34,7 @@ class LastViewedFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerViewAdapter = MarvelSuperheroDataAdapter(marvelSuperheroesListDataClass) {
-            Toast.makeText(context, "Open activity with details", Toast.LENGTH_LONG).show()
+            view.findNavController().navigate(R.id.global_detailsFragment)
         }
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = recyclerViewAdapter

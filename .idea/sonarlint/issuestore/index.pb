@@ -25,3 +25,10 @@ m
 =app/src/main/java/com/anniekobia/marvel/ui/DetailsFragment.kt,d\c\dccad9b5bb02604ec43b73b1a2e4276556fd42cf
 j
 :app/src/main/java/com/anniekobia/marvel/ui/AtoZFragment.kt,1\b\1b1098a37a826c2dcc2ff1c6bb22bef98c7898a4
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+j
+:app/src/main/java/com/anniekobia/marvel/ui/HomeFragment.kt,b\2\b2a5965f91bd2395a15c9c1f33e2e6edb3c17c80
+:
+
+Marvel.iml,d\b\db28a5a212d73722bfb089923198a05054233b6e
