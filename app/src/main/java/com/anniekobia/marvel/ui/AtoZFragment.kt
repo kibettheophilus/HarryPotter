@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,11 +35,13 @@ class AtoZFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerViewAdapter = MarvelSuperheroDataAdapter(marvelSuperheroesListDataClass) {
-            view.findNavController().navigate(R.id.global_detailsFragment)
+            val bundle = bundleOf("Superhero" to it)
+            view.findNavController().navigate(R.id.global_detailsFragment, bundle)
         }
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = recyclerViewAdapter
 
         return view
     }
+
 }

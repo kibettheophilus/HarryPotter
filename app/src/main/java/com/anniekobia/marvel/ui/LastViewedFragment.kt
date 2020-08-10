@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -34,11 +34,14 @@ class LastViewedFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerViewAdapter = MarvelSuperheroDataAdapter(marvelSuperheroesListDataClass) {
-            view.findNavController().navigate(R.id.global_detailsFragment)
+            val bundle = bundleOf("Superhero" to it)
+            view.findNavController().navigate(R.id.global_detailsFragment, bundle)
         }
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = recyclerViewAdapter
 
         return view
     }
+
+
 }
