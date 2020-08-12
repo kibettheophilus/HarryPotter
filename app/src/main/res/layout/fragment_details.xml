@@ -65,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_5dp"
                 android:textSize="@dimen/textsize_18sp"
+                android:text="@string/appearance"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"

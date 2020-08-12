@@ -32,3 +32,7 @@ j
 :
 
 Marvel.iml,d\b\db28a5a212d73722bfb089923198a05054233b6e
+p
+@app/src/main/java/com/anniekobia/marvel/data/marvelapi/Comics.kt,2\0\209bcc6266115e0bda9b2c2e3d67dab758ab6e5d
+n
+>app/src/main/java/com/anniekobia/marvel/data/marvelapi/Item.kt,2\b\2bbb373d413167eeb7477a1cdeab04d38d6caf2b
