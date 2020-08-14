@@ -1,6 +1,5 @@
 package com.anniekobia.marvel.adapters
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,9 +27,7 @@ class MarvelSuperheroDataAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val marvelSuperhero = characterList[position]
         holder.bind(marvelSuperhero)
-
-        holder.moreInfo.setOnClickListener{listener(marvelSuperhero)}
-        holder.moreInfoArrow.setOnClickListener{listener(marvelSuperhero)}
+        holder.itemView.setOnClickListener{listener(marvelSuperhero)}
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,8 +35,6 @@ class MarvelSuperheroDataAdapter(
         private val superheroName: TextView = itemView.findViewById(R.id.superhero_name)
         private val superheroCharacterName: TextView = itemView.findViewById(R.id.superhero_character_name)
         private val superheroDescription: TextView = itemView.findViewById(R.id.superhero_description)
-        val moreInfo: TextView = itemView.findViewById(R.id.more_info)
-        val moreInfoArrow: ImageView = itemView.findViewById(R.id.more_info_arrow)
 
         fun bind(item: MarvelSuperheroDummyDataClass) {
             superheroName.text = item.superheroName
