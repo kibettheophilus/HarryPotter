@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.anniekobia.marvel.ui.HomeFragment"
+        android:name="com.anniekobia.marvel.ui.view.HomeFragment"
         android:label="HomeFragment">
         <action
             android:id="@+id/homeFragment_to_atozFragment"
@@ -17,17 +17,17 @@
     </fragment>
     <fragment
         android:id="@+id/atoZFragment"
-        android:name="com.anniekobia.marvel.ui.AtoZFragment"
+        android:name="com.anniekobia.marvel.ui.view.AtoZFragment"
         android:label="fragment_atoz"
         tools:layout="@layout/fragment_atoz" />
     <fragment
         android:id="@+id/lastViewedFragment"
-        android:name="com.anniekobia.marvel.ui.LastViewedFragment"
+        android:name="com.anniekobia.marvel.ui.view.LastViewedFragment"
         android:label="fragment_last_viewed"
         tools:layout="@layout/fragment_last_viewed" />
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.anniekobia.marvel.ui.DetailsFragment"
+        android:name="com.anniekobia.marvel.ui.view.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
     </fragment>

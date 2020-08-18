@@ -1,38 +1,14 @@
 
-~
-Napp/src/main/java/com/anniekobia/marvel/adapters/MarvelSuperheroDataAdapter.kt,9\c\9cd1b36adc7751f465efea5adbc92e5ebf7c9a32
-j
-:app/src/main/java/com/anniekobia/marvel/ui/MainActivity.kt,e\1\e1b4c176a957ee4d90a3f9d9a124f583d2c51183
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-t
-Dapp/src/main/java/com/anniekobia/marvel/data/marvelapi/marvelhero.kt,5\6\5673f771f74f733bb98601ed39c24eef676de237
-n
->app/src/main/java/com/anniekobia/marvel/data/marvelapi/Data.kt,7\8\78834a240709616eaa05691420a3fdb47b3eb12a
-p
-@app/src/main/java/com/anniekobia/marvel/data/marvelapi/Result.kt,6\5\65b87fd165e274a62c7a8326f3f3a40a437c202d
-s
-Capp/src/main/java/com/anniekobia/marvel/data/superheroapi/Result.kt,7\c\7c4db4f0c9f4831948b25efcc3bb9b83149865af
 y
 Iapp/src/main/java/com/anniekobia/marvel/utils/MarvelSuperheroDummyData.kt,d\d\dd53294a916bb4d7ae15bd6cbef29a6694db7d39
 ~
 Napp/src/main/java/com/anniekobia/marvel/utils/MarvelSuperheroDummyDataClass.kt,c\4\c43bda0297fc61397811f17983694090c3cef414
-p
-@app/src/main/java/com/anniekobia/marvel/ui/LastViewedFragment.kt,1\b\1be6a460df4c39dd45a1b8e5bd15d59b28c846e5
-m
-=app/src/main/java/com/anniekobia/marvel/ui/DetailsFragment.kt,d\c\dccad9b5bb02604ec43b73b1a2e4276556fd42cf
-j
-:app/src/main/java/com/anniekobia/marvel/ui/AtoZFragment.kt,1\b\1b1098a37a826c2dcc2ff1c6bb22bef98c7898a4
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-j
-:app/src/main/java/com/anniekobia/marvel/ui/HomeFragment.kt,b\2\b2a5965f91bd2395a15c9c1f33e2e6edb3c17c80
 :
 
 Marvel.iml,d\b\db28a5a212d73722bfb089923198a05054233b6e
-p
-@app/src/main/java/com/anniekobia/marvel/data/marvelapi/Comics.kt,2\0\209bcc6266115e0bda9b2c2e3d67dab758ab6e5d
-n
->app/src/main/java/com/anniekobia/marvel/data/marvelapi/Item.kt,2\b\2bbb373d413167eeb7477a1cdeab04d38d6caf2b
