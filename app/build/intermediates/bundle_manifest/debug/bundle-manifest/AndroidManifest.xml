@@ -30,6 +30,10 @@
         </activity>
 
         <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.anniekobia.marvel.com.squareup.picasso"
+            android:exported="false" />
+        <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
             android:authorities="com.anniekobia.marvel.lifecycle-process"
             android:exported="false"

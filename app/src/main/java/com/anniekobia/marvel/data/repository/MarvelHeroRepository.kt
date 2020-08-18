@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.anniekobia.marvel.BuildConfig
 import com.anniekobia.marvel.data.api.ApiService
-import com.anniekobia.marvel.data.api.marvelapi.Marvelhero
+import com.anniekobia.marvel.data.api.model.marvelapi.Marvelhero
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
@@ -17,10 +17,10 @@ import java.security.MessageDigest
 
 class MarvelHeroRepository {
 
-    private val BASE_URL = "https://gateway.marvel.com:443/v1/public/"
-    private val API_KEY: String = BuildConfig.PUBLIC_KEY
-    private val TIMESTAMP: String = "12345"
-    lateinit var HASH: String
+    private val BASE_URL_MARVELAPI = "https://gateway.marvel.com:443/v1/public/"
+    private val API_KEY_MARVELAPI: String = BuildConfig.PUBLIC_KEY
+    private val TIMESTAMP_MARVELAPI: String = "12345"
+    lateinit var HASH_MARVELAPI: String
 
     private var marvelService: ApiService? = null
     private var marvelHeroLiveData: MutableLiveData<Marvelhero>? = null
@@ -31,7 +31,7 @@ class MarvelHeroRepository {
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
         marvelService = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BASE_URL_MARVELAPI)
             .client(client)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -40,7 +40,7 @@ class MarvelHeroRepository {
 
     fun generateMD5Hash(){
         //ts+privateKey+publicKey String combination
-        val combination: String = TIMESTAMP+BuildConfig.PRIVATE_KEY+BuildConfig.PUBLIC_KEY
+        val combination: String = TIMESTAMP_MARVELAPI+BuildConfig.PRIVATE_KEY+BuildConfig.PUBLIC_KEY
         //Get HASH
         val digest = MessageDigest.getInstance("MD5")
         digest.update(combination.toByteArray())
@@ -52,14 +52,14 @@ class MarvelHeroRepository {
             )
         )
 
-        HASH = hexString.toString()
+        HASH_MARVELAPI = hexString.toString()
     }
 
     fun searchMarvelHero(
         orderBy: String?,
         limit: Int?) {
         generateMD5Hash()
-        marvelService?.getMarvelheroes(orderBy, limit,TIMESTAMP,API_KEY,HASH)
+        marvelService?.getMarvelheroes(orderBy, limit,TIMESTAMP_MARVELAPI,API_KEY_MARVELAPI,HASH_MARVELAPI)
             ?.enqueue(object : Callback<Marvelhero?> {
                 override fun onResponse(
                     call: Call<Marvelhero?>?,

@@ -3,7 +3,7 @@ package com.anniekobia.marvel.ui.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.anniekobia.marvel.data.api.marvelapi.Marvelhero
+import com.anniekobia.marvel.data.api.model.marvelapi.Marvelhero
 import com.anniekobia.marvel.data.repository.MarvelHeroRepository
 
 
@@ -18,7 +18,7 @@ class MarvelHeroViewModel(application: Application) : AndroidViewModel(applicati
     }
 
     fun searchMarvelHero(orderBy: String?, limit: Int?) {
-        marvelHeroRepository?.searchMarvelHero(orderBy,limit)
+        marvelHeroRepository?.searchMarvelHero(orderBy, limit)
     }
 
     fun getMarvelHeroLiveData(): LiveData<Marvelhero>? {

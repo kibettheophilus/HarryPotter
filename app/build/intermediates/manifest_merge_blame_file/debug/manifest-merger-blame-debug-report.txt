@@ -49,15 +49,23 @@
 30        </activity>
 31
 32        <provider
-32-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-33            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-33-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-34            android:authorities="com.anniekobia.marvel.lifecycle-process"
-34-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-35            android:exported="false"
-35-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-36            android:multiprocess="true" />
-36-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-37    </application>
-38
-39</manifest>
+32-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\bda7110aff0b2167e25484fd57f1370d\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+33            android:name="com.squareup.picasso.PicassoProvider"
+33-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\bda7110aff0b2167e25484fd57f1370d\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+34            android:authorities="com.anniekobia.marvel.com.squareup.picasso"
+34-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\bda7110aff0b2167e25484fd57f1370d\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+35            android:exported="false" />
+35-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\bda7110aff0b2167e25484fd57f1370d\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+36        <provider
+36-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+37            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+37-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+38            android:authorities="com.anniekobia.marvel.lifecycle-process"
+38-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+39            android:exported="false"
+39-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+40            android:multiprocess="true" />
+40-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c8ed7d4ce106891099945a2cb19cf6d3\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+41    </application>
+42
+43</manifest>
