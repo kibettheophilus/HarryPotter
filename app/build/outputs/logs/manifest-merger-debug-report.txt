@@ -4,6 +4,7 @@ ADDED from C:\Users\User\Desktop\She Code Africa\Marvel\app\src\main\AndroidMani
 INJECTED from C:\Users\User\Desktop\She Code Africa\Marvel\app\src\main\AndroidManifest.xml:2:1-25:12
 INJECTED from C:\Users\User\Desktop\She Code Africa\Marvel\app\src\main\AndroidManifest.xml:2:1-25:12
 INJECTED from C:\Users\User\Desktop\She Code Africa\Marvel\app\src\main\AndroidManifest.xml:2:1-25:12
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\daf550ecff3e577ca89a7fb9ba9fcd7a\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-ui-ktx:2.3.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\25dc3e6eadb3fe8fe14ebe31d4583d60\navigation-ui-ktx-2.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui:2.3.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\1a6c7df87e959a77fa44493d3d3d4b36\navigation-ui-2.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\d7d852919392585cee113fce915ab25a\material-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -127,6 +128,8 @@ uses-sdk
 INJECTED from C:\Users\User\Desktop\She Code Africa\Marvel\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\User\Desktop\She Code Africa\Marvel\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\User\Desktop\She Code Africa\Marvel\app\src\main\AndroidManifest.xml
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\daf550ecff3e577ca89a7fb9ba9fcd7a\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\daf550ecff3e577ca89a7fb9ba9fcd7a\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [androidx.navigation:navigation-ui-ktx:2.3.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\25dc3e6eadb3fe8fe14ebe31d4583d60\navigation-ui-ktx-2.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-ui-ktx:2.3.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\25dc3e6eadb3fe8fe14ebe31d4583d60\navigation-ui-ktx-2.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-ui:2.3.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\1a6c7df87e959a77fa44493d3d3d4b36\navigation-ui-2.3.0\AndroidManifest.xml:20:5-22:41

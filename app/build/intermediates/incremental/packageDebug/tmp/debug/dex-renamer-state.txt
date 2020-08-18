@@ -1,4 +1,10 @@
-#Tue Aug 18 13:41:57 EAT 2020
-base.0=C\:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
+#Wed Aug 19 01:35:55 EAT 2020
+path.2=classes2.dex
+path.1=classes.dex
 path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+base.2=C\:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes2.dex
+base.1=C\:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.0=C\:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex

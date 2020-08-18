@@ -22,7 +22,10 @@ n
 >app/src/main/java/com/anniekobia/marvel/data/api/ApiService.kt,1\3\13bac06872e068ecb2ae78454cfc044829108d26
 
 Oapp/src/main/java/com/anniekobia/marvel/data/repository/MarvelHeroRepository.kt,5\1\51e7033fddbd6e24b79bfa71bb4c41f9ed0bab91
-;
-app/apikeys,d\3\d3b2a3573a0ff5f2723462ddf58fac18305aedfa
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+@
+local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca

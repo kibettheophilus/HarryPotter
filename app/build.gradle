@@ -2,6 +2,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+//API_KEY values file
+def apikeyPropertiesFile = rootProject.file("local.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -12,8 +17,13 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //APIKEY values (Key/Value pair)
+        buildConfigField("String", "PUBLIC_KEY", apikeyProperties['PUBLIC_KEY'])
+        buildConfigField("String", "PRIVATE_KEY", apikeyProperties['PRIVATE_KEY'])
     }
 
     buildTypes {
@@ -52,4 +62,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.7.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+//    DataTypeConverter
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+    implementation group: 'xerces', name: 'xercesImpl', version: '2.12.0'
 }
