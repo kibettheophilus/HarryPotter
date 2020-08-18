@@ -1,1 +1,3 @@
+/build
+#Ignore file with marvel apikeys
 .apikey.properties
