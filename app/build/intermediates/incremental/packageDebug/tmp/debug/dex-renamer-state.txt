@@ -1,0 +1,4 @@
+#Tue Aug 18 13:41:57 EAT 2020
+base.0=C\:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
