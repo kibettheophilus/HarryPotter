@@ -11,14 +11,16 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.security.MessageDigest
+import javax.xml.bind.DatatypeConverter
 
 
 class MarvelHeroRepository {
 
     private val BASE_URL = "https://gateway.marvel.com:443/v1/public/"
-    private  val API_KEY = "98045fa11906a1afd4de0216cbfc033f"
-    private  val TIMESTAMP = "12345"
-    private  val HASH = "271B87F6539D8FAD5DEC94EDBF954741"
+    lateinit var API_KEY: String
+    lateinit var TIMESTAMP: String
+    lateinit var HASH: String
 
     private var marvelService: ApiService? = null
     private var marvelHeroLiveData: MutableLiveData<Marvelhero>? = null
@@ -37,10 +39,26 @@ class MarvelHeroRepository {
             .create(ApiService::class.java)
     }
 
-    fun getMD5Hash(){
-        val tsLong = System.currentTimeMillis() / 1000
-        val ts = tsLong.toString()
-    }
+//    fun generateMD5Hash(){
+//        //get timestamp string
+//        val tsLong = System.currentTimeMillis() / 1000
+//        TIMESTAMP = tsLong.toString()
+//
+//
+//
+//        val hash = "35454B055CC325EA1AF2126E27707052"
+//        val password = "ILoveJava"
+//
+//        val md: MessageDigest = MessageDigest.getInstance("MD5")
+//        md.update(password.toByteArray())
+//        val digest: ByteArray = md.digest()
+//        val myHash: String = DatatypeConverter
+//            .printHexBinary(digest).toUpperCase()
+//
+//        assertThat(myHash == hash).isTrue()
+//    }
+
+
 
     fun searchMarvelHero(
         orderBy: String?,
