@@ -1,6 +1,7 @@
 package com.anniekobia.marvel.ui.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +36,13 @@ class AtoZFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_atoz, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
+        setRecyclerView(view)
+
+        return view
+    }
+
+    private fun setRecyclerView(view: View) {
+        recyclerView.layoutManager = LinearLayoutManager(context)
         marvelHeroViewModel =
             ViewModelProvider(this).get<MarvelHeroViewModel>(MarvelHeroViewModel::class.java)
         marvelHeroViewModel.init()
@@ -42,15 +50,27 @@ class AtoZFragment : Fragment() {
         marvelHeroViewModel.getMarvelHeroLiveData()?.observe(viewLifecycleOwner,
             Observer<Marvelhero?> { marvelHero ->
                 if (marvelHero != null) {
+                    val heros = filterResults(marvelHero)
                     recyclerViewAdapter =
-                        MarvelSuperheroDataAdapter(marvelHero.data.results as ArrayList<Result>) {
+                        MarvelSuperheroDataAdapter(heros.data.results as ArrayList<Result>) {
                             val bundle = bundleOf("Superhero" to it)
                             view.findNavController().navigate(R.id.global_detailsFragment, bundle)
                         }
-                    recyclerView.layoutManager = LinearLayoutManager(context)
                     recyclerView.adapter = recyclerViewAdapter
                 }
             })
-        return view
+    }
+
+    private fun filterResults(marvelhero: Marvelhero): Marvelhero{
+        var incompleteProfiles: ArrayList<Result>? = null
+        for (hero in (marvelhero.data.results)){
+            val imageUnavailable = "image_not_available"
+            if (imageUnavailable in hero.thumbnail.path){
+                Log.e("Herenow2",hero.name)
+                incompleteProfiles?.add(hero)
+            }
+        }
+        (marvelhero.data.results as ArrayList).removeAll(incompleteProfiles as ArrayList)
+        return marvelhero
     }
 }

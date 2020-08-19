@@ -33,15 +33,15 @@ class MarvelSuperheroDataAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val marvelSuperhero = characterList[position]
 
-        holder.superheroName.text = marvelSuperhero.name
-        holder.superheroCharacterName.text = marvelSuperhero.name
-        holder.superheroDescription.text = marvelSuperhero.description
+            holder.superheroName.text = marvelSuperhero.name
+            holder.superheroCharacterName.text = marvelSuperhero.name
+            holder.superheroDescription.text = marvelSuperhero.description
 
-        val imageUrl = marvelSuperhero.thumbnail.path + "." + marvelSuperhero.thumbnail.extension
-        //Loading image using Picasso
-        Picasso.get().load(imageUrl).into(holder.superheroImage)
+            val imageUrl = marvelSuperhero.thumbnail.path + "." + marvelSuperhero.thumbnail.extension
+            //Loading image using Picasso
+            Picasso.get().load(imageUrl).into(holder.superheroImage)
 
-        holder.itemView.setOnClickListener { listener(marvelSuperhero) }
+            holder.itemView.setOnClickListener { listener(marvelSuperhero) }
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
