@@ -50,9 +50,9 @@ class AtoZFragment : Fragment() {
         marvelHeroViewModel.getMarvelHeroLiveData()?.observe(viewLifecycleOwner,
             Observer<Marvelhero?> { marvelHero ->
                 if (marvelHero != null) {
-                    val heros = filterResults(marvelHero)
+//                    val heros = filterResults(marvelHero)
                     recyclerViewAdapter =
-                        MarvelSuperheroDataAdapter(heros.data.results as ArrayList<Result>) {
+                        MarvelSuperheroDataAdapter(marvelHero.data.results as ArrayList<Result>) {
                             val bundle = bundleOf("Superhero" to it)
                             view.findNavController().navigate(R.id.global_detailsFragment, bundle)
                         }
