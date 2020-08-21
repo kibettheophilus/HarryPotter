@@ -9,7 +9,6 @@ import com.anniekobia.marvel.data.repository.MarvelHeroRepository
 
 class MarvelHeroViewModel(application: Application) : AndroidViewModel(application) {
     private var marvelHeroRepository: MarvelHeroRepository? = null
-//    private var marvelHeroLiveData: LiveData<Marvelhero>? = null
     private var marvelSuperheroLiveData: LiveData<ArrayList<MarvelSuperhero>>? = null
 
 

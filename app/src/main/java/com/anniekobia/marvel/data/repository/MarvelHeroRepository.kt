@@ -28,7 +28,6 @@ class MarvelHeroRepository {
     private val TIMESTAMP_MARVELAPI: String = "12345"
     lateinit var HASH_MARVELAPI: String
     private var marvelServiceMarvel: MarvelApiService? = null
-//    private var marvelHeroLiveData: MutableLiveData<Marvelhero>? = null
 
     //SuperheroAPI
     private val BASE_URL_SUPERHEROAPI = "https://superheroapi.com/api/"
@@ -36,17 +35,16 @@ class MarvelHeroRepository {
     private var superheroServiceMarvel: SuperheroApiService? = null
 
     //Both APIs combined
-    private var marvelSuperheroList: ArrayList<MarvelSuperhero>? = null
+    private var marvelSuperheroList = arrayListOf<MarvelSuperhero>()
     private var marvelSuperheroLiveData: MutableLiveData<ArrayList<MarvelSuperhero>>? = null
 
 
     init {
-//        marvelHeroLiveData = MutableLiveData<Marvelhero>()
         marvelSuperheroLiveData = MutableLiveData<ArrayList<MarvelSuperhero>>()
-
         val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
+
         //MarvelAPI
         marvelServiceMarvel = Retrofit.Builder()
             .baseUrl(BASE_URL_MARVELAPI)
@@ -64,10 +62,10 @@ class MarvelHeroRepository {
             .create(SuperheroApiService::class.java)
     }
 
+
     fun searchMarvelHero(
         orderBy: String?,
-        limit: Int?
-    ) {
+        limit: Int?) {
         generateMD5Hash()
         marvelServiceMarvel?.getMarvelheroes(
             orderBy,
@@ -79,48 +77,40 @@ class MarvelHeroRepository {
             ?.enqueue(object : Callback<Marvelhero?> {
                 override fun onResponse(
                     call: Call<Marvelhero?>?,
-                    response: Response<Marvelhero?>
-                ) {
+                    response: Response<Marvelhero?>) {
                     if (response.body() != null) {
                         val results = (response.body())?.data?.results
                         getSuperHeroDetails(results)
-                        Log.e("Finished","Wait for Posts?")
-                        marvelSuperheroLiveData?.postValue(marvelSuperheroList)
-//                        marvelHeroLiveData!!.postValue(response.body())
                     }
                 }
 
                 override fun onFailure(
                     call: Call<Marvelhero?>?,
-                    t: Throwable?
-                ) {
-                    Log.e("Finished","Failed?")
+                    t: Throwable?) {
+                    Log.e("Finished","Overall Failure on Marvel API call")
                     marvelSuperheroLiveData?.postValue(null)
-//                    marvelHeroLiveData!!.postValue(null)
                 }
             })
     }
 
     fun getSuperHeroDetails(results: List<Result>?) {
         if (results != null) {
-            var nameList: ArrayList<String>? = null
+            val nameList = arrayListOf<String>()
             for (result in results) {
                 var characterName = result.name
                 characterName = characterName.substringBefore("(")
-                if (nameList != null) {
-                    if (!nameList.contains(characterName)) {
-                        searchSuperHero(result, ACCESS_TOKEN_SUPERHEROAPI, characterName)
-                        nameList?.add(characterName)
-                    }
-                } else {
-                    searchSuperHero(result, ACCESS_TOKEN_SUPERHEROAPI, characterName)
-                    nameList?.add(characterName)
+                Log.e("Charactername:", characterName)
+                if (!(nameList.contains(characterName))) {
+                    Log.e("Charactername2:", characterName)
+                    searchSuperhero(results,result, ACCESS_TOKEN_SUPERHEROAPI, characterName)
+                    nameList.add(characterName)
                 }
             }
         }
     }
 
-    fun searchSuperHero(
+    fun searchSuperhero(
+        marvelApiResultsList: List<Result>,
         marvelApiResult: Result,
         access_token: Long,
         name: String
@@ -135,16 +125,11 @@ class MarvelHeroRepository {
                         val superheroApiResult = response.body()
                         if (superheroApiResult != null) {
                             if (superheroApiResult.response == "error") {
-                                Log.e(
-                                    "SUPERHEROAPIHERE",
-                                    name + ": " + "Something happened/not found error"
-                                )
+                                if (marvelApiResult==marvelApiResultsList.last()){
+                                    postLiveData()
+                                }
                             } else {
-                                Log.e(
-                                    "SUPERHEROAPIHERE",
-                                    name + ": " + superheroApiResult.results[0].name + "," + superheroApiResult.results[0].biography.fullName
-                                )
-                                setMarvelSuperheroDetails(marvelApiResult, superheroApiResult)
+                                setMarvelSuperheroDetails(marvelApiResultsList,marvelApiResult, superheroApiResult)
                             }
                         }
                     }
@@ -154,12 +139,15 @@ class MarvelHeroRepository {
                     call: Call<Superhero?>?,
                     t: Throwable?
                 ) {
-                    Log.e("SUPERHEROAPIHERE", name + ": " + "Something happened")
+                    if (marvelApiResult==marvelApiResultsList.last()){
+                        postLiveData()
+                    }
                 }
             })
     }
 
     fun setMarvelSuperheroDetails(
+        marvelApiResultsList: List<Result>,
         marvelApiResult: Result,
         superheroApiResult: Superhero
     ) {
@@ -167,8 +155,11 @@ class MarvelHeroRepository {
         for (comic in marvelApiResult.comics.items) {
             comicslist.add(comic.name)
         }
+        var superheroName = marvelApiResult.name
+        superheroName = superheroName.substringBefore("(")
         val superheroImage =
             marvelApiResult.thumbnail.path + "." + marvelApiResult.thumbnail.extension
+
         val marvelsuperhero = MarvelSuperhero(
             superheroApiResult.results[0].appearance.gender,
             superheroApiResult.results[0].appearance.race,
@@ -176,14 +167,20 @@ class MarvelHeroRepository {
             comicslist as List<String>,
             marvelApiResult.description,
             superheroApiResult.results[0].biography.fullName,
-            marvelApiResult.name,
+            superheroName,
             superheroImage
         )
-        marvelSuperheroList?.add(marvelsuperhero)
+        marvelSuperheroList.add(marvelsuperhero)
+        if (marvelApiResult==marvelApiResultsList.last()){
+            postLiveData()
+        }
+    }
+
+    fun postLiveData(){
+        marvelSuperheroLiveData?.postValue(marvelSuperheroList)
     }
 
     fun getMarvelHeroLiveData(): LiveData<ArrayList<MarvelSuperhero>>? {
-        marvelSuperheroLiveData?.postValue(marvelSuperheroList)
         return marvelSuperheroLiveData
     }
 

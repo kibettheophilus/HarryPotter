@@ -16,8 +16,6 @@ o
 ?app/src/main/java/com/anniekobia/marvel/ui/view/AtoZFragment.kt,b\6\b6c134f9d7e1f30679fd20a9dd278bb2a53fc21c
 €
 Papp/src/main/java/com/anniekobia/marvel/ui/adapter/MarvelSuperheroDataAdapter.kt,3\e\3e46278611d5a80dc4b0a56493e75df6ba073af8
-n
->app/src/main/java/com/anniekobia/marvel/data/api/ApiService.kt,1\3\13bac06872e068ecb2ae78454cfc044829108d26
 
 Oapp/src/main/java/com/anniekobia/marvel/data/repository/MarvelHeroRepository.kt,5\1\51e7033fddbd6e24b79bfa71bb4c41f9ed0bab91
 >
@@ -39,3 +37,15 @@ z
 Japp/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Result.kt,1\0\10dfef026950cc2a118d6497e108208499f943ff
 x
 Happ/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Data.kt,e\8\e81d4a65ed14cb30eb5b506cb6a7469b91635fee
+w
+Gapp/src/main/java/com/anniekobia/marvel/data/api/SuperheroApiService.kt,2\2\22180db5e5b40726ef603c751ac5914b5e3a7c59
+t
+Dapp/src/main/java/com/anniekobia/marvel/data/api/MarvelApiService.kt,8\0\800d5f9d2f86e9046acc1e09cee09c638811bc06
+}
+Mapp/src/main/java/com/anniekobia/marvel/data/api/model/superheroapi/Result.kt,4\a\4a82c25d082445a85526883c1a5ecdd2731d1c2c
+€
+Papp/src/main/java/com/anniekobia/marvel/data/api/model/superheroapi/Superhero.kt,f\7\f7a2332a9adf58f29a1b4eb6298c0b654fa87896
+x
+Happ/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Item.kt,8\f\8f8b792bfcd494c0aa707ddd218d17342c6be3aa
+z
+Japp/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Comics.kt,7\2\723039784773ef1787a3d470656951c1d04173a3
