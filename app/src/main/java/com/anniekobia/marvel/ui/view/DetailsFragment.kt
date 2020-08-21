@@ -8,7 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.anniekobia.marvel.R
-import com.anniekobia.marvel.utils.MarvelSuperheroDummyDataClass
+import com.anniekobia.marvel.data.api.model.MarvelSuperhero
+import com.squareup.picasso.Picasso
 
 
 /**
@@ -41,14 +42,15 @@ class DetailsFragment : Fragment() {
         superheroAliases = view.findViewById(R.id.superhero_aliases_list)
         superheroComics = view.findViewById(R.id.superhero_comics_list)
 
-        val superhero : MarvelSuperheroDummyDataClass = arguments?.getSerializable("Superhero") as MarvelSuperheroDummyDataClass
+        val superhero  = arguments?.getSerializable("Superhero") as MarvelSuperhero
         bindDetails(superhero)
 
         return view
     }
 
-    private fun bindDetails(superhero: MarvelSuperheroDummyDataClass) {
-        superheroImage.setImageResource(superhero.superheroImage)
+    private fun bindDetails(superhero: MarvelSuperhero) {
+        //Loading image using Picasso
+        Picasso.get().load(superhero.superheroImage).into(superheroImage)
         superheroName.text = superhero.superheroName
         superheroCharacterName.text = superhero.superheroCharacterName
         superheroBio.text = superhero.superheroDescription

@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
 
         val adapter = MyFragmentPagerAdapter(childFragmentManager)
         adapter.addFragment(AtoZFragment(),"A-Z")
-//        adapter.addFragment(LastViewedFragment(),"Last Viewed")
+        adapter.addFragment(LastViewedFragment(),"Last Viewed")
 
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
