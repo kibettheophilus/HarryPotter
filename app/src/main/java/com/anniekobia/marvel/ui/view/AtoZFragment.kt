@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.anniekobia.marvel.R
+import com.anniekobia.marvel.data.api.model.MarvelSuperhero
 import com.anniekobia.marvel.data.api.model.marvelapi.Marvelhero
 import com.anniekobia.marvel.data.api.model.marvelapi.Result
 import com.anniekobia.marvel.ui.adapter.MarvelSuperheroDataAdapter
@@ -27,6 +28,7 @@ class AtoZFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var recyclerViewAdapter: MarvelSuperheroDataAdapter
     lateinit var marvelHeroViewModel: MarvelHeroViewModel
+    lateinit var completeProfiles: ArrayList<MarvelSuperhero>
 
 
     override fun onCreateView(
@@ -46,13 +48,13 @@ class AtoZFragment : Fragment() {
         marvelHeroViewModel =
             ViewModelProvider(this).get<MarvelHeroViewModel>(MarvelHeroViewModel::class.java)
         marvelHeroViewModel.init()
-        marvelHeroViewModel.searchMarvelHero("name", 50)
+        marvelHeroViewModel.searchMarvelHero("name", 100)
         marvelHeroViewModel.getMarvelHeroLiveData()?.observe(viewLifecycleOwner,
-            Observer<Marvelhero?> { marvelHero ->
-                if (marvelHero != null) {
-//                    val heros = filterResults(marvelHero)
+            Observer<ArrayList<MarvelSuperhero>?> { marvelSuperheros ->
+                if (marvelSuperheros != null) {
+                    val heros = filterResults(marvelSuperheros)
                     recyclerViewAdapter =
-                        MarvelSuperheroDataAdapter(marvelHero.data.results as ArrayList<Result>) {
+                        MarvelSuperheroDataAdapter(heros) {
                             val bundle = bundleOf("Superhero" to it)
                             view.findNavController().navigate(R.id.global_detailsFragment, bundle)
                         }
@@ -61,16 +63,16 @@ class AtoZFragment : Fragment() {
             })
     }
 
-    private fun filterResults(marvelhero: Marvelhero): Marvelhero{
-        var incompleteProfiles: ArrayList<Result>? = null
-        for (hero in (marvelhero.data.results)){
+    private fun filterResults(marvelheros: ArrayList<MarvelSuperhero>): ArrayList<MarvelSuperhero> {
+        completeProfiles = arrayListOf()
+        for (hero in marvelheros){
             val imageUnavailable = "image_not_available"
-            if (imageUnavailable in hero.thumbnail.path){
-                Log.e("Herenow2",hero.name)
-                incompleteProfiles?.add(hero)
+            if (imageUnavailable in hero.superheroImage){
+                Log.e("No image for: ",hero.superheroCharacterName)
+            }else{
+                completeProfiles.add(hero)
             }
         }
-        (marvelhero.data.results as ArrayList).removeAll(incompleteProfiles as ArrayList)
-        return marvelhero
+        return completeProfiles
     }
 }

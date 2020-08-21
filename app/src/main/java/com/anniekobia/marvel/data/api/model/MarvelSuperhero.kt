@@ -10,5 +10,5 @@ data class MarvelSuperhero(
     val superheroDescription: String,
     val superheroCharacterName: String,
     val superheroName: String,
-    val superheroImage: Int
+    val superheroImage: String
 ) : Serializable

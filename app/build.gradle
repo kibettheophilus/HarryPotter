@@ -24,6 +24,7 @@ android {
         //APIKEY values (Key/Value pair)
         buildConfigField("String", "PUBLIC_KEY", apikeyProperties['PUBLIC_KEY'])
         buildConfigField("String", "PRIVATE_KEY", apikeyProperties['PRIVATE_KEY'])
+        buildConfigField("Long", "ACCESS_TOKEN", apikeyProperties['ACCESS_TOKEN_SUPERHEROAPI'])
     }
 
     buildTypes {
