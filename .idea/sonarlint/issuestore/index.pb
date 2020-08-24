@@ -49,3 +49,11 @@ x
 Happ/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Item.kt,8\f\8f8b792bfcd494c0aa707ddd218d17342c6be3aa
 z
 Japp/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Comics.kt,7\2\723039784773ef1787a3d470656951c1d04173a3
+o
+?app/src/main/java/com/anniekobia/marvel/ui/view/MainActivity.kt,2\a\2acbbfad1281659f635791f7fe73d282d1828a5a
+o
+?app/src/main/java/com/anniekobia/marvel/ui/view/HomeFragment.kt,c\7\c74b26e2a0843628ca0fe0d27dadf49a0f3b87d6
+u
+Eapp/src/main/java/com/anniekobia/marvel/ui/view/LastViewedFragment.kt,4\5\45fa9edf6e6ff64f13ade82b7ca1bc8dda2c6f9a
+r
+Bapp/src/main/java/com/anniekobia/marvel/ui/view/DetailsFragment.kt,0\1\01e0c8e9e47f5235ca9f091af104564a551b3c0f

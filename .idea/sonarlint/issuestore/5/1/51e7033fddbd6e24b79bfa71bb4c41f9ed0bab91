@@ -1,5 +1,3 @@
 
->kotlin:S125¿"Remove this commented out code.(‚Ï¿ô8÷„˜‡Á.
-=kotlin:S125"Remove this commented out code.(ÜäŒ8İÃïôÀ.
-vkotlin:S3776w"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¬„ºİøÿÿÿÿ8ÊÚä‰Á.
-kkotlin:S117z"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(ÑĞºû8¦®ËóÀ.
+vkotlin:S3776p"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ÕÙÖ—şÿÿÿÿ8ÊÚä‰Á.
+kkotlin:S117s"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(ÑĞºû8¦®ËóÀ.
