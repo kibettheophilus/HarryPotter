@@ -1,7 +1,6 @@
 package com.anniekobia.marvel.ui.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
@@ -10,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,8 +28,7 @@ class AtoZFragment : Fragment() {
     lateinit var recyclerView: RecyclerView
     lateinit var progressBar: ProgressBar
     lateinit var recyclerViewAdapter: MarvelSuperheroDataAdapter
-    lateinit var marvelHeroViewModel: MarvelHeroViewModel
-    lateinit var completeProfiles: ArrayList<MarvelSuperhero>
+    private val marvelHeroViewModel: MarvelHeroViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -50,17 +48,13 @@ class AtoZFragment : Fragment() {
 
     private fun setRecyclerView(view: View) {
         recyclerView.layoutManager = LinearLayoutManager(context)
-        marvelHeroViewModel =
-            ViewModelProvider(this).get<MarvelHeroViewModel>(MarvelHeroViewModel::class.java)
-        marvelHeroViewModel.init()
         marvelHeroViewModel.searchMarvelHero("name", 100)
         progressBar.visibility = VISIBLE
-        marvelHeroViewModel.getMarvelHeroLiveData()?.observe(viewLifecycleOwner,
-            Observer<ArrayList<MarvelSuperhero>?> { marvelSuperheros ->
+        marvelHeroViewModel.getMarvelHeroLiveData().observe(viewLifecycleOwner,
+            Observer<ArrayList<MarvelSuperhero>> { marvelSuperheros ->
                 if (marvelSuperheros != null) {
-                    val heros = filterResults(marvelSuperheros).distinct() as ArrayList
                     recyclerViewAdapter =
-                        MarvelSuperheroDataAdapter(heros) {
+                        MarvelSuperheroDataAdapter(marvelSuperheros) {
                             val bundle = bundleOf("Superhero" to it)
                             view.findNavController().navigate(R.id.global_detailsFragment, bundle)
                         }
@@ -68,18 +62,5 @@ class AtoZFragment : Fragment() {
                     progressBar.visibility = GONE
                 }
             })
-    }
-
-    private fun filterResults(marvelheros: ArrayList<MarvelSuperhero>): ArrayList<MarvelSuperhero> {
-        completeProfiles = arrayListOf()
-        for (hero in marvelheros){
-            val imageUnavailable = "image_not_available"
-            if (imageUnavailable in hero.superheroImage){
-                Log.e("No image for: ",hero.superheroCharacterName)
-            }else{
-                completeProfiles.add(hero)
-            }
-        }
-        return completeProfiles
     }
 }

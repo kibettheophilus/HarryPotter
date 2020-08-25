@@ -13,6 +13,6 @@ interface MarvelApiService {
         @Query("ts") timestamp: String?,
         @Query("apikey") apiKey: String?,
         @Query("hash") hash: String?
-    ): retrofit2.Call<Marvelhero?>?
+    ): retrofit2.Call<Marvelhero>
 
 }

@@ -1,59 +1,85 @@
 
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-y
-Iapp/src/main/java/com/anniekobia/marvel/utils/MarvelSuperheroDummyData.kt,d\d\dd53294a916bb4d7ae15bd6cbef29a6694db7d39
-~
-Napp/src/main/java/com/anniekobia/marvel/utils/MarvelSuperheroDummyDataClass.kt,c\4\c43bda0297fc61397811f17983694090c3cef414
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-:
-
-Marvel.iml,d\b\db28a5a212d73722bfb089923198a05054233b6e
-o
-?app/src/main/java/com/anniekobia/marvel/ui/view/AtoZFragment.kt,b\6\b6c134f9d7e1f30679fd20a9dd278bb2a53fc21c
-€
-Papp/src/main/java/com/anniekobia/marvel/ui/adapter/MarvelSuperheroDataAdapter.kt,3\e\3e46278611d5a80dc4b0a56493e75df6ba073af8
-
-Oapp/src/main/java/com/anniekobia/marvel/data/repository/MarvelHeroRepository.kt,5\1\51e7033fddbd6e24b79bfa71bb4c41f9ed0bab91
->
-app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-@
-local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
-y
-Iapp/src/main/java/com/anniekobia/marvel/data/api/model/MarvelSuperhero.kt,d\4\d496941d26c487e04a1490365874f7e3033124da
-{
-Kapp/src/main/java/com/anniekobia/marvel/ui/viewmodel/MarvelHeroViewModel.kt,7\8\784142107140417cffdbc3c5d6826ad10347fe4a
-~
-Napp/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Marvelhero.kt,c\6\c6e3c5b4084d16846ca9c08f215ca33f9b46f8f1
-}
-Mapp/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Thumbnail.kt,e\1\e1d3296fd67891ccb9b20310508376a72844d2a7
-z
-Japp/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Result.kt,1\0\10dfef026950cc2a118d6497e108208499f943ff
-x
-Happ/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Data.kt,e\8\e81d4a65ed14cb30eb5b506cb6a7469b91635fee
-w
-Gapp/src/main/java/com/anniekobia/marvel/data/api/SuperheroApiService.kt,2\2\22180db5e5b40726ef603c751ac5914b5e3a7c59
-t
-Dapp/src/main/java/com/anniekobia/marvel/data/api/MarvelApiService.kt,8\0\800d5f9d2f86e9046acc1e09cee09c638811bc06
-}
-Mapp/src/main/java/com/anniekobia/marvel/data/api/model/superheroapi/Result.kt,4\a\4a82c25d082445a85526883c1a5ecdd2731d1c2c
-€
-Papp/src/main/java/com/anniekobia/marvel/data/api/model/superheroapi/Superhero.kt,f\7\f7a2332a9adf58f29a1b4eb6298c0b654fa87896
-x
-Happ/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Item.kt,8\f\8f8b792bfcd494c0aa707ddd218d17342c6be3aa
-z
-Japp/src/main/java/com/anniekobia/marvel/data/api/model/marvelapi/Comics.kt,7\2\723039784773ef1787a3d470656951c1d04173a3
-o
-?app/src/main/java/com/anniekobia/marvel/ui/view/MainActivity.kt,2\a\2acbbfad1281659f635791f7fe73d282d1828a5a
-o
-?app/src/main/java/com/anniekobia/marvel/ui/view/HomeFragment.kt,c\7\c74b26e2a0843628ca0fe0d27dadf49a0f3b87d6
-u
-Eapp/src/main/java/com/anniekobia/marvel/ui/view/LastViewedFragment.kt,4\5\45fa9edf6e6ff64f13ade82b7ca1bc8dda2c6f9a
-r
-Bapp/src/main/java/com/anniekobia/marvel/ui/view/DetailsFragment.kt,0\1\01e0c8e9e47f5235ca9f091af104564a551b3c0f
+      "expiry": 1613391790.821425,
+      "mode": "force-https",
+      "sts_include_subdomains": true,
+      "sts_observed": 1597839790.821431
+   },
+   "rOD9UwS+hr+M3Gx1aqdMFmI4FyAzAwObDG5vkTR8kNI=": {
+      "expiry": 1629501398.461789,
+      "mode": "force-https",
+      "sts_include_subdomains": false,
+      "sts_observed": 1597965398.461792
+   },
+   "rag6zUxZyYKeWUBk9yUAORQzHrK9nwXhLpLSWKaZaG4=": {
+      "expiry": 1613304108.503579,
+      "mode": "force-https",
+      "sts_include_subdomains": true,
+      "sts_observed": 1597752108.503585
+   },
+   "rg+fqTLaEIBghfsAKHZ8Eeb+zYqzLXtlIMXRjpUm2K8=": {
+      "expect_ct": {
+         "expect_ct_enforce": false,
+         "expect_ct_expiry": 1598386768.265965,
+         "expect_ct_observed": 1597781968.265965,
+         "expect_ct_report_uri": "https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      },
+      "expiry": 0.0,
+      "mode": "default",
+      "sts_include_subdomains": false,
+      "sts_observed": 0.0
+   },
+   "rpZkW0O/nU0iRS81FX0Uc9lYLTCikQ6KGfCwbQ/00qg=": {
+      "expect_ct": {
+         "expect_ct_enforce": false,
+         "expect_ct_expiry": 1598267212.799207,
+         "expect_ct_observed": 1597662412.799207,
+         "expect_ct_report_uri": "https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      },
+      "expiry": 0.0,
+      "mode": "default",
+      "sts_include_subdomains": false,
+      "sts_observed": 0.0
+   },
+   "ruspX6BYm6dO9irdkypIyxkjRWS6EdBcIM+yicsjbrw=": {
+      "expect_ct": {
+         "expect_ct_enforce": false,
+         "expect_ct_expiry": 1599659202.319729,
+         "expect_ct_observed": 1597067202.319729,
+         "expect_ct_report_uri": "http://csp.yahoo.com/beacon/csp?src=yahoocom-expect-ct-report-only"
+      },
+      "expiry": 1628603202.319711,
+      "mode": "force-https",
+      "sts_include_subdomains": false,
+      "sts_observed": 1597067202.319715
+   },
+   "s/73ezgPkIC3TWbX1QHbCnxQHtuih0cYX9sor44C6r8=": {
+      "expiry": 1629371294.833019,
+      "mode": "force-https",
+      "sts_include_subdomains": true,
+      "sts_observed": 1597835294.833023
+   },
+   "sBs+s/9lUknFiX+EYcqJMvKKrKm8oCEsPmz139ll9CM=": {
+      "expiry": 1628964749.451722,
+      "mode": "force-https",
+      "sts_include_subdomains": true,
+      "sts_observed": 1597428749.451732
+   },
+   "sGsyUK/QBDrU1ha0srrPpQw/ReG75OyDoszO6HlSP68=": {
+      "expect_ct": {
+         "expect_ct_enforce": false,
+         "expect_ct_expiry": 1598267205.255749,
+         "expect_ct_observed": 1597662405.255749,
+         "expect_ct_report_uri": "https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      },
+      "expiry": 0.0,
+      "mode": "default",
+      "sts_include_subdomains": false,
+      "sts_observed": 0.0
+   },
+   "sIhO78kAVZsRQMDuw+NydV+F3pglENY99qXGqbcnLc4=": {
+      "expiry": 1628500469.815404,
+      "mode": "force-https",
+      "sts_include_subdomains": true,
+      "sts_observed": 1596964469.815408
+   },
+   "sMYY0HHHi9Yiu2+PR0ON3cNkNeRufxz+TcXTED
