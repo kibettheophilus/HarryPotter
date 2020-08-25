@@ -35,7 +35,7 @@ class MarvelHeroRepository {
     private var superheroServiceMarvel: SuperheroApiService
 
     //Both APIs combined
-    private var marvelSuperheroList = arrayListOf<MarvelSuperhero>()
+    private var marvelSuperheroList = ArrayList<MarvelSuperhero>()
     private var marvelSuperheroLiveData = MutableLiveData<ArrayList<MarvelSuperhero>>()
 
 
@@ -207,7 +207,11 @@ class MarvelHeroRepository {
                 completeProfiles.add(hero)
             }
         }
-        marvelSuperheroList = completeProfiles
+        //Organize SuperheroList in alphabetical order
+        var completeProfileList = completeProfiles as List<MarvelSuperhero>
+        completeProfileList = completeProfileList.sortedBy { it.superheroName }
+
+        marvelSuperheroList = ArrayList(completeProfileList)
         postLiveData()
     }
 }
