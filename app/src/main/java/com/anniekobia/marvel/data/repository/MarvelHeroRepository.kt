@@ -78,16 +78,16 @@ class MarvelHeroRepository {
             withContext(Dispatchers.Main) {
                 try {
                     if (response.isSuccessful) {
-                            val results = (response.body())!!.data.results
-                            getSuperHeroDetails(results)
+                        val results = (response.body())!!.data.results
+                        getSuperHeroDetails(results)
                     } else {
-                        Log.e("Error: " ,"${response.code()}")
+                        Log.e("Error: ", "${response.code()}")
                     }
                 } catch (e: HttpException) {
-                    Log.e("Exception: " ,"${e.message}")
+                    Log.e("Exception: ", "${e.message}")
                     marvelSuperheroLiveData.postValue(null)
                 } catch (e: Throwable) {
-                    Log.e("Finished", "Overall Failure on Marvel API call")
+                    Log.e("Failed", "Overall Failure on Marvel API call")
                     marvelSuperheroLiveData.postValue(null)
                 }
             }
@@ -114,35 +114,32 @@ class MarvelHeroRepository {
             accessToken: Long,
             name: String
     ) {
-        superheroServiceMarvel.getSuperheroDetails(accessToken, name)
-                .enqueue(object : Callback<Superhero> {
-                    override fun onResponse(
-                            call: Call<Superhero>,
-                            response: Response<Superhero>
-                    ) {
-                        if (response.body() != null) {
-                            val superheroApiResult = response.body()
-                            if (superheroApiResult != null) {
-                                if (superheroApiResult.response == "error") {
-                                    if (marvelApiResult == marvelApiResultsList.last()) {
-                                        filterResults(marvelSuperheroList)
-                                    }
-                                } else {
-                                    setMarvelSuperheroDetails(marvelApiResultsList, marvelApiResult, superheroApiResult)
-                                }
-                            }
-                        }
-                    }
 
-                    override fun onFailure(
-                            call: Call<Superhero>,
-                            t: Throwable?
-                    ) {
-                        if (marvelApiResult == marvelApiResultsList.last()) {
-                            filterResults(marvelSuperheroList)
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = superheroServiceMarvel.getSuperheroDetails(accessToken, name)
+            withContext(Dispatchers.Main) {
+                try {
+                    if (response.isSuccessful) {
+                        val superheroApiResult = response.body()!!
+                        if (superheroApiResult.response == "error") {
+                            if (marvelApiResult == marvelApiResultsList.last()) filterResults(marvelSuperheroList)
+
+                        } else {
+                            setMarvelSuperheroDetails(marvelApiResultsList, marvelApiResult, superheroApiResult)
                         }
+                    } else {
+                        Log.e("Error: ", "${response.code()}")
+                        if (marvelApiResult == marvelApiResultsList.last()) filterResults(marvelSuperheroList)
                     }
-                })
+                } catch (e: HttpException) {
+                    Log.e("Exception: ", "${e.message}")
+                    if (marvelApiResult == marvelApiResultsList.last()) filterResults(marvelSuperheroList)
+                } catch (e: Throwable) {
+                    Log.e("Failed: ", "${e.message}")
+                    if (marvelApiResult == marvelApiResultsList.last()) filterResults(marvelSuperheroList)
+                }
+            }
+        }
     }
 
     fun setMarvelSuperheroDetails(
