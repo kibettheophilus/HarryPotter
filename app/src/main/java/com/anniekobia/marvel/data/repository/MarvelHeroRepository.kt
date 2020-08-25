@@ -7,15 +7,15 @@ import com.anniekobia.marvel.BuildConfig
 import com.anniekobia.marvel.data.api.MarvelApiService
 import com.anniekobia.marvel.data.api.SuperheroApiService
 import com.anniekobia.marvel.data.api.model.MarvelSuperhero
-import com.anniekobia.marvel.data.api.model.marvelapi.Marvelhero
 import com.anniekobia.marvel.data.api.model.marvelapi.Result
 import com.anniekobia.marvel.data.api.model.superheroapi.Superhero
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
+import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 import java.security.MessageDigest
 
@@ -66,30 +66,32 @@ class MarvelHeroRepository {
             orderBy: String,
             limit: Int) {
         generateMD5Hash()
-        marvelApiService.getMarvelheroes(
-                orderBy,
-                limit,
-                TIMESTAMP_MARVELAPI,
-                API_KEY_MARVELAPI,
-                HASH_MARVELAPI
-        )
-                .enqueue(object : Callback<Marvelhero> {
-                    override fun onResponse(
-                            call: Call<Marvelhero>,
-                            response: Response<Marvelhero>) {
-                        if (response.body() != null) {
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val response = marvelApiService.getMarvelheroes(
+                    orderBy,
+                    limit,
+                    TIMESTAMP_MARVELAPI,
+                    API_KEY_MARVELAPI,
+                    HASH_MARVELAPI
+            )
+            withContext(Dispatchers.Main) {
+                try {
+                    if (response.isSuccessful) {
                             val results = (response.body())!!.data.results
                             getSuperHeroDetails(results)
-                        }
+                    } else {
+                        Log.e("Error: " ,"${response.code()}")
                     }
-
-                    override fun onFailure(
-                            call: Call<Marvelhero>,
-                            t: Throwable?) {
-                        Log.e("Finished", "Overall Failure on Marvel API call")
-                        marvelSuperheroLiveData.postValue(null)
-                    }
-                })
+                } catch (e: HttpException) {
+                    Log.e("Exception: " ,"${e.message}")
+                    marvelSuperheroLiveData.postValue(null)
+                } catch (e: Throwable) {
+                    Log.e("Finished", "Overall Failure on Marvel API call")
+                    marvelSuperheroLiveData.postValue(null)
+                }
+            }
+        }
     }
 
     fun getSuperHeroDetails(results: List<Result>) {
