@@ -36,16 +36,12 @@
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_student.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\layout\\fragment_student.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
-    },
-    {
-        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_marvellogo.PNG.flat",
-        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable\\marvellogo.PNG"
-    },
-    {
-        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blackpanther.jpg.flat",
-        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable\\blackpanther.jpg"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_character_item_row.xml.flat",
@@ -68,10 +64,6 @@
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_atoz.xml.flat",
-        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\layout\\fragment_atoz.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
@@ -86,6 +78,10 @@
     {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_staff.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\layout\\fragment_staff.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
@@ -112,6 +108,10 @@
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
     },
     {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_harrypotterlogo.jpg.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable\\harrypotterlogo.jpg"
+    },
+    {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
@@ -126,10 +126,6 @@
     {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_details.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\layout\\fragment_details.xml"
-    },
-    {
-        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_last_viewed.xml.flat",
-        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\layout\\fragment_last_viewed.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",

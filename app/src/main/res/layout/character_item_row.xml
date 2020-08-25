@@ -22,7 +22,6 @@
                 android:id="@+id/superhero_image"
                 android:layout_width="@dimen/zero_dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/blackpanther"
                 android:scaleType="fitXY"
                 android:contentDescription="@string/superhero_image_description"
                 app:layout_constraintStart_toStartOf="parent"

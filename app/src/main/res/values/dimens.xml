@@ -17,4 +17,5 @@
     <dimen name="textsize_24sp">24sp</dimen>
     <dimen name="margin_15dp">15dp</dimen>
     <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="logo_height_60dp">60dp</dimen>
 </resources>

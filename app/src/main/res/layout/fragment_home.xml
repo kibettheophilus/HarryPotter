@@ -10,11 +10,10 @@
 
     <ImageView
         android:id="@+id/marvelLogo"
-        android:layout_width="@dimen/zero_dp"
-        android:layout_height="@dimen/imageview_height_40dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/logo_height_60dp"
         android:layout_marginVertical="@dimen/imageview_vertical_margin"
-        android:background="@drawable/marvellogo"
-        app:layout_constraintDimensionRatio="2:1"
+        android:background="@drawable/harrypotterlogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/marvel_logo" />
@@ -23,10 +22,10 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabTextColor="@android:color/black"
+        app:tabTextColor="@color/colorPrimary"
         app:tabPadding="@dimen/tab_padding"
         app:tabIndicatorColor="@android:color/transparent"
-        app:tabSelectedTextColor="@android:color/white"
+        app:tabSelectedTextColor="@android:color/black"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         android:layout_marginTop="@dimen/margin_10dp"
         app:tabBackground="@drawable/tab_selector"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.anniekobia.marvel"
+    package="com.anniekobia.harrypotter"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme.NoActionBar" >
-        <activity android:name="com.anniekobia.marvel.ui.view.MainActivity" >
+        <activity android:name="com.anniekobia.harrypotter.ui.view.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,11 +31,11 @@
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
-            android:authorities="com.anniekobia.marvel.com.squareup.picasso"
+            android:authorities="com.anniekobia.harrypotter.com.squareup.picasso"
             android:exported="false" />
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-            android:authorities="com.anniekobia.marvel.lifecycle-process"
+            android:authorities="com.anniekobia.harrypotter.lifecycle-process"
             android:exported="false"
             android:multiprocess="true" />
     </application>
