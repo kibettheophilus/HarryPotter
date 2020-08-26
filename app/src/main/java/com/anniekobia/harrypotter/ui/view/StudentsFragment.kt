@@ -54,7 +54,7 @@ class StudentsFragment : Fragment() {
                 if (characters != null) {
                     recyclerViewAdapter =
                         CharacterDataAdapter(characters) {
-                            val bundle = bundleOf("Superhero" to it)
+                            val bundle = bundleOf("Character" to it)
                             view.findNavController().navigate(R.id.global_detailsFragment, bundle)
                         }
                     recyclerView.adapter = recyclerViewAdapter

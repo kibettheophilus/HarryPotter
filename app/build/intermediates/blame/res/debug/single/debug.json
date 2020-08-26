@@ -124,6 +124,10 @@
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\navigation\\navigation_graph.xml"
     },
     {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_all_characters.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\layout\\fragment_all_characters.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_details.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\layout\\fragment_details.xml"
     },

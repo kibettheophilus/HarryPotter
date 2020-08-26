@@ -7,6 +7,10 @@ import retrofit2.http.Query
 
 interface ApiService {
 
+    //Fetch all characters in the series
+    @GET(".")
+    suspend fun getAllCharacters(): Response<CharacterList>
+
     //Fetch characters who were students in the series
     @GET("students")
     suspend fun getStudentCharacters(): Response<CharacterList>

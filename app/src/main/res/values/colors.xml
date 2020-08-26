@@ -1,77 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--    <color name="colorPrimary">#F70D0C</color>-->
-<!--    <color name="colorPrimaryDark">#d31f26</color>-->
-<!--    <color name="colorAccent">#03DAC5</color>-->
-
     <color name="colorPrimary">#e1ad01</color>
     <color name="colorPrimaryDark">#f9bf2b</color>
     <color name="colorAccent">#03DAC5</color>
-
-    <!-- Lime -->
-    <color name="material_lime_500">#cddc37</color>
-    <color name="material_lime_50">#f8f9e7</color>
-    <color name="material_lime_100">#eff3c4</color>
-    <color name="material_lime_200">#e5eb9c</color>
-    <color name="material_lime_300">#dbe477</color>
-    <color name="material_lime_400">#d3e059</color>
-    <color name="material_lime_600">#bfc933</color>
-    <color name="material_lime_700">#aeb435</color>
-    <color name="material_lime_800">#9c9c36</color>
-    <color name="material_lime_900">#81772f</color>
-    <color name="material_lime_A100">#f0ed83</color>
-    <color name="material_lime_A200">#e8e63e</color>
-    <color name="material_lime_A400">#c4d82d</color>
-    <color name="material_lime_A700">#afd135</color>
-
-    <!-- Light Yellow -->
-    <color name="material_light_yellow_500">#feea39</color>
-    <color name="material_light_yellow_50">#fefce8</color>
-    <color name="material_light_yellow_100">#fef8c5</color>
-    <color name="material_light_yellow_200">#fdf59f</color>
-    <color name="material_light_yellow_300">#fef177</color>
-    <color name="material_light_yellow_400">#feed57</color>
-    <color name="material_light_yellow_600">#fcd736</color>
-    <color name="material_light_yellow_700">#f9bf2b</color>
-    <color name="material_light_yellow_800">#f8a822</color>
-    <color name="material_light_yellow_900">#f47f1f</color>
-    <color name="material_light_yellow_A100">#faf291</color>
-    <color name="material_light_yellow_A200">#f6eb13</color>
-    <color name="material_light_yellow_A400">#fde800</color>
-    <color name="material_light_yellow_A700">#fdd500</color>
-
-    <!-- Yellow -->
-    <color name="material_yellow_500">#f9ce1e</color>
-    <color name="material_yellow_50">#fdf7e2</color>
-    <color name="material_yellow_100">#fceeba</color>
-    <color name="material_yellow_200">#fbe58c</color>
-    <color name="material_yellow_300">#f9dd5f</color>
-    <color name="material_yellow_400">#f9d43d</color>
-    <color name="material_yellow_600">#f4bd1a</color>
-    <color name="material_yellow_700">#f4a81c</color>
-    <color name="material_yellow_800">#f19320</color>
-    <color name="material_yellow_900">#ec7023</color>
-    <color name="material_yellow_A100">#fedd7f</color>
-    <color name="material_yellow_A200">#ffcd40</color>
-    <color name="material_yellow_A400">#fdbb11</color>
-    <color name="material_yellow_A700">#f89d1b</color>
-
-    <!-- Orange -->
-    <color name="material_orange_500">#f8971c</color>
-    <color name="material_orange_50">#fff3e1</color>
-    <color name="material_orange_100">#ffdfb1</color>
-    <color name="material_orange_200">#fecc80</color>
-    <color name="material_orange_300">#fcb64d</color>
-    <color name="material_orange_400">#faa628</color>
-    <color name="material_orange_600">#f68c1e</color>
-    <color name="material_orange_700">#f37c20</color>
-    <color name="material_orange_800">#ed6d22</color>
-    <color name="material_orange_900">#e45325</color>
-    <color name="material_orange_A100">#ffd180</color>
-    <color name="material_orange_A200">#faa942</color>
-    <color name="material_orange_A400">#f7901d</color>
-    <color name="material_orange_A700">#f26d21</color>
-
-
 
 </resources>

@@ -28,8 +28,9 @@ class HomeFragment : Fragment() {
         viewPager = view.findViewById(R.id.viewPager)
 
         val adapter = MyFragmentPagerAdapter(childFragmentManager)
-        adapter.addFragment(StudentsFragment(),"Students")
-        adapter.addFragment(StaffFragment(),"Staff")
+        adapter.addFragment(AllCharactersFragment(),getString(R.string.all_fragment_tab_title))
+        adapter.addFragment(StudentsFragment(),getString(R.string.students_fragment_tab_title))
+        adapter.addFragment(StaffFragment(),getString(R.string.staff_fragment_tab_title))
 
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
