@@ -60,7 +60,7 @@ class DetailsFragment : Fragment() {
         characterActorName.text = character.actor
         characterAncestry.text = character.ancestry
         characterPatronus.text = character.patronus
-        characterWand.text = character.wand.wood+ " ,"+ character.wand.core+", "+character.wand.length
+        characterWand.text = character.wand.wood+ " ,"+ character.wand.core+", "+character.wand.length+"cm"
         characterSpecies.text = character.species
         characterGender.text = character.gender
         characterEyeColor.text = character.eyeColour

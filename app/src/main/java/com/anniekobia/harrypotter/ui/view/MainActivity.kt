@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(this, R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-//        toolbar.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.colorPrimary))
         toolbar.setupWithNavController(navController, appBarConfiguration)
     }
 
