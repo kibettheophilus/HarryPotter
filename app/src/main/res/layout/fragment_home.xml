@@ -9,14 +9,14 @@
     tools:context=".ui.view.MainActivity">
 
     <ImageView
-        android:id="@+id/marvelLogo"
+        android:id="@+id/appLogo"
         android:layout_width="match_parent"
         android:layout_height="@dimen/logo_height_60dp"
         android:layout_marginVertical="@dimen/imageview_vertical_margin"
         android:background="@drawable/harrypotterlogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/marvel_logo" />
+        android:contentDescription="@string/harry_potter_app_logo" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -30,7 +30,7 @@
         android:layout_marginTop="@dimen/margin_10dp"
         app:tabBackground="@drawable/tab_selector"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/marvelLogo"/>
+        app:layout_constraintTop_toBottomOf="@id/appLogo"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

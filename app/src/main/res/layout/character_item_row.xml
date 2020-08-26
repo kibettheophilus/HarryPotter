@@ -19,76 +19,53 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/superhero_image"
+                android:id="@+id/character_image"
                 android:layout_width="@dimen/zero_dp"
                 android:layout_height="@dimen/zero_dp"
-                app:layout_constraintDimensionRatio="1:1.5"
+                app:layout_constraintDimensionRatio="1:1.1"
                 android:scaleType="fitXY"
-                android:contentDescription="@string/superhero_image_description"
+                android:contentDescription="@string/character_image"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintWidth_percent="0.48" />
 
             <TextView
-                android:id="@+id/superhero_name"
+                android:id="@+id/character_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/textview_margin_vertical"
                 android:layout_marginTop="@dimen/margin_10dp"
-                android:text="@string/superhero_name"
+                android:text="@string/character_name"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_18sp"
-                app:layout_constraintStart_toEndOf="@id/superhero_image"
+                app:layout_constraintStart_toEndOf="@id/character_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/superhero_character_name"
+                android:id="@+id/character_actor_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/textview_margin_vertical"
                 android:layout_marginTop="@dimen/margin_5dp"
-                android:text="@string/character_name"
+                android:text="@string/actor_name"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
-                app:layout_constraintStart_toEndOf="@id/superhero_image"
-                app:layout_constraintTop_toBottomOf="@id/superhero_name" />
+                app:layout_constraintStart_toEndOf="@id/character_image"
+                app:layout_constraintTop_toBottomOf="@id/character_name" />
 
-            <TextView
-                android:id="@+id/superhero_description"
-                android:layout_width="168dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/textview_margin_vertical"
-                android:layout_marginTop="@dimen/margin_8dp"
-                android:maxLength="90"
-                android:text="@string/loren_ipsum"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toEndOf="@id/superhero_image"
-                app:layout_constraintTop_toBottomOf="@id/superhero_character_name" />
-
-            <TextView
-                android:id="@+id/more_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/more_info"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="@dimen/margin_5dp"
-                android:layout_marginHorizontal="@dimen/margin_horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/superhero_image"
-                app:layout_constraintTop_toBottomOf="@id/superhero_description" />
 
             <ImageView
                 android:id="@+id/more_info_arrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/next"
-                android:contentDescription="@string/more_info_arrow_description"
+                android:src="@drawable/ic_playbuttontwo"
+                android:layout_margin="@dimen/margin_5dp"
+                android:contentDescription="@string/play_button"
                 android:layout_marginBottom="@dimen/margin_5dp"
                 android:layout_marginEnd="@dimen/margin_horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_description"
                 app:layout_constraintEnd_toEndOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

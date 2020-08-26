@@ -2,6 +2,8 @@ package com.anniekobia.harrypotter.data.api.model
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
 
 data class Character(
     @SerializedName("actor")
@@ -36,4 +38,4 @@ data class Character(
     val wand: Wand,
     @SerializedName("yearOfBirth")
     val yearOfBirth: String
-)
+): Serializable

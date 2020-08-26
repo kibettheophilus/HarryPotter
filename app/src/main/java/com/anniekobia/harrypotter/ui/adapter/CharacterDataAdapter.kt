@@ -33,7 +33,6 @@ class CharacterDataAdapter(
 
         holder.superheroName.text = character.name
         holder.superheroCharacterName.text = character.actor
-        holder.superheroDescription.text = "No Description here"
         //Loading image using Picasso
         Picasso.get().load(character.image).into(holder.superheroImage)
 
@@ -41,9 +40,8 @@ class CharacterDataAdapter(
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val superheroImage: ImageView = itemView.findViewById(R.id.superhero_image)
-        val superheroName: TextView = itemView.findViewById(R.id.superhero_name)
-        val superheroCharacterName: TextView = itemView.findViewById(R.id.superhero_character_name)
-        val superheroDescription: TextView = itemView.findViewById(R.id.superhero_description)
+        val superheroImage: ImageView = itemView.findViewById(R.id.character_image)
+        val superheroName: TextView = itemView.findViewById(R.id.character_name)
+        val superheroCharacterName: TextView = itemView.findViewById(R.id.character_actor_name)
     }
 }
