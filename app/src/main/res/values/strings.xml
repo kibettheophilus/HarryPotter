@@ -8,9 +8,7 @@
 
     <!--RecycleView row strings-->
     <string name="character_image">Character Image</string>
-    <string name="character_name">Character Name</string>
-    <string name="actor_name">Actor Name</string>
-    <string name="play_button">More Info Arrow</string>
+    <string name="play_button">Play Button</string>
 
     <!--DetailsFragment strings-->
     <string name="ancestry">Ancestry: </string>
@@ -20,8 +18,8 @@
     <string name="gender">Gender: </string>
     <string name="eye_color">Eye color: </string>
     <string name="hair_color">Hair color: </string>
-    <string name="character_name_harry_potter">Harry Potter</string>
-    <string name="charactor_actor_daniel_radcliffe">Daniel Radcliffe</string>
+    <string name="character_name_harry_potter">Harry Potter</string>    <!--Recyclerview row string-->
+    <string name="charactor_actor_daniel_radcliffe">Daniel Radcliffe</string>   <!--Recyclerview row string-->
     <string name="ancestry_half_blood">Half-blood</string>
     <string name="patronus_stag">Stag</string>
     <string name="wand_holly_phoenix_feather_11cm">Holly, phoenix feather, 11cm</string>
@@ -30,6 +28,12 @@
     <string name="eye_color_green">Green</string>
     <string name="hair_color_black">Black</string>
     <string name="harry_potter_app_logo">Harry Potter Logo</string>
+    <string name="house">House: </string>
+    <string name="house_gryffindor">Gryffindor</string>
+    <string name="housemates">Housemates</string>
+
+    <!--Emoji-->
+    <string name="pointing_emoji">&#x1F447;&#x1F3FF;</string>
 
 
 </resources>

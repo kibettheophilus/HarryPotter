@@ -32,4 +32,5 @@ class CharacterViewModel: ViewModel() {
         characterLiveData = characterStaffRepository.getStaffCharactersLiveData()
         return characterLiveData
     }
+
 }

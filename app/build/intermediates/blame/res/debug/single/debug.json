@@ -12,6 +12,10 @@
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_slytherin.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable\\logo_slytherin.png"
+    },
+    {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
@@ -68,6 +72,10 @@
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\layout_housemate_item_row.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\layout\\housemate_item_row.xml"
+    },
+    {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
     },
@@ -100,8 +108,8 @@
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rounded_image.xml.flat",
-        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable\\rounded_image.xml"
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_round_corners.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable\\round_corners.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_unselected_tab.xml.flat",
@@ -110,6 +118,10 @@
     {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\anim_house_logo_animation.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\anim\\house_logo_animation.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -136,6 +148,10 @@
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_gryffindor.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable\\logo_gryffindor.png"
+    },
+    {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\navigation_navigation_graph.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\navigation\\navigation_graph.xml"
     },
@@ -158,5 +174,13 @@
     {
         "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_playbuttontwo.png.flat",
         "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_playbuttontwo.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_ravenclaw.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable\\logo_ravenclaw.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_hufflepuff.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\She Code Africa\\Marvel\\app\\src\\main\\res\\drawable\\logo_hufflepuff.png"
     }
 ]

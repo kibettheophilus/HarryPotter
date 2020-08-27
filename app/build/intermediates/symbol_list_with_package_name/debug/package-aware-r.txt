@@ -34,6 +34,7 @@ anim fragment_fade_exit
 anim fragment_fast_out_extra_slow_in
 anim fragment_open_enter
 anim fragment_open_exit
+anim house_logo_animation
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
@@ -1601,6 +1602,10 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_playbuttontwo
+drawable logo_gryffindor
+drawable logo_hufflepuff
+drawable logo_ravenclaw
+drawable logo_slytherin
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1630,7 +1635,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-drawable rounded_image
+drawable round_corners
 drawable selected_tab
 drawable tab_selector
 drawable test_custom_background
@@ -1729,7 +1734,6 @@ id beginOnFirstDraw
 id beginning
 id blocking
 id bottom
-id bottom_cl
 id bounce
 id buttonPanel
 id cancel_action
@@ -1741,6 +1745,7 @@ id chain
 id chains
 id character_actor_name
 id character_image
+id character_image_cl
 id character_image_cv
 id character_name
 id checkbox
@@ -1776,6 +1781,7 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id detailsFragment
+id details_cl
 id dialog_button
 id dimensions
 id direct
@@ -1832,6 +1838,9 @@ id homeFragment
 id homeFragment_to_atozFragment
 id homeFragment_to_lastviewedFragment
 id honorRequest
+id house
+id house_logo
+id house_txt
 id icon
 id icon_group
 id ifRoom
@@ -1867,7 +1876,6 @@ id month_navigation_fragment_toggle
 id month_navigation_next
 id month_navigation_previous
 id month_title
-id more_info_arrow
 id motion_base
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -1920,6 +1928,7 @@ id patronus_txt
 id peekHeight
 id percent
 id pin
+id play_button
 id position
 id postLayout
 id progressBar
@@ -2136,6 +2145,7 @@ layout fragment_details
 layout fragment_home
 layout fragment_staff
 layout fragment_student
+layout housemate_item_row
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -2228,7 +2238,6 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
-string actor_name
 string all_fragment_tab_title
 string ancestry
 string ancestry_half_blood
@@ -2239,7 +2248,6 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string character_image
-string character_name
 string character_name_harry_potter
 string charactor_actor_daniel_radcliffe
 string chip_text
@@ -2256,6 +2264,9 @@ string hair_color
 string hair_color_black
 string harry_potter_app_logo
 string hide_bottom_view_on_scroll_behavior
+string house
+string house_gryffindor
+string housemates
 string icon_content_description
 string item_view_role_description
 string material_slider_range_end
@@ -2305,6 +2316,7 @@ string path_password_strike_through
 string patronus_guardian
 string patronus_stag
 string play_button
+string pointing_emoji
 string search_menu_title
 string species
 string species_human

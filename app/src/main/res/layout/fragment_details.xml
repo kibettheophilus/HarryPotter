@@ -36,6 +36,7 @@
             android:id="@+id/character_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10dp"
             android:text="@string/character_name_harry_potter"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/textsize_24sp"
@@ -48,7 +49,6 @@
             android:id="@+id/character_actor_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_15dp"
             android:text="@string/charactor_actor_daniel_radcliffe"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/textsize_18sp"
@@ -57,11 +57,13 @@
             app:layout_constraintTop_toBottomOf="@id/character_name" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/bottom_cl"
+            android:id="@+id/details_cl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:padding="@dimen/screen_padding"
+            android:background="@drawable/round_corners"
+            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingVertical="@dimen/margin_5dp"
+            android:layout_marginTop="@dimen/margin_10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/character_actor_name">
@@ -218,6 +220,36 @@
                 android:textColor="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/hair_color_txt"
                 app:layout_constraintStart_toEndOf="@id/hair_color_txt" />
+
+            <TextView
+                android:id="@+id/house_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/house"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hair_color" />
+
+            <TextView
+                android:id="@+id/house"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:text="@string/house_gryffindor"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/house_txt"
+                app:layout_constraintStart_toEndOf="@id/house_txt" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/house_logo"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/margin_5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="1:1.3"
+            app:layout_constraintTop_toBottomOf="@id/details_cl"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

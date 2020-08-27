@@ -31,17 +31,17 @@ class CharacterDataAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val character = characterList[position]
 
-        holder.superheroName.text = character.name
-        holder.superheroCharacterName.text = character.actor
+        holder.characterName.text = character.name
+        holder.characterActorName.text = character.actor
         //Loading image using Picasso
-        Picasso.get().load(character.image).into(holder.superheroImage)
+        Picasso.get().load(character.image).into(holder.characterImage)
 
         holder.itemView.setOnClickListener { listener(character) }
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val superheroImage: ImageView = itemView.findViewById(R.id.character_image)
-        val superheroName: TextView = itemView.findViewById(R.id.character_name)
-        val superheroCharacterName: TextView = itemView.findViewById(R.id.character_actor_name)
+        val characterImage: ImageView = itemView.findViewById(R.id.character_image)
+        val characterName: TextView = itemView.findViewById(R.id.character_name)
+        val characterActorName: TextView = itemView.findViewById(R.id.character_actor_name)
     }
 }
