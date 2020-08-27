@@ -1714,6 +1714,7 @@ id add
 id alertTitle
 id aligned
 id all
+id allCharactersFragment
 id always
 id ancestry
 id ancestry_txt
@@ -1722,7 +1723,6 @@ id animateToStart
 id appLogo
 id asConfigured
 id async
-id atoZFragment
 id atoz_fragment_layout
 id auto
 id autoComplete
@@ -1835,8 +1835,9 @@ id hideable
 id home
 id homeAsUp
 id homeFragment
-id homeFragment_to_atozFragment
-id homeFragment_to_lastviewedFragment
+id homeFragment_to_allCharactersFragment
+id homeFragment_to_staffFragment
+id homeFragment_to_studentFragment
 id honorRequest
 id house
 id house_logo
@@ -1856,7 +1857,6 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id largeLabel
-id lastViewedFragment
 id layout
 id left
 id line1
@@ -1989,6 +1989,7 @@ id square
 id src_atop
 id src_in
 id src_over
+id staffFragment
 id standard
 id start
 id startHorizontal
@@ -1998,6 +1999,7 @@ id staticPostLayout
 id status_bar_latest_event_content
 id stop
 id stretch
+id studentFragment
 id submenuarrow
 id submit_area
 id tabMode

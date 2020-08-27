@@ -1,5 +1,7 @@
 package com.anniekobia.harrypotter.ui.adapter
 
+import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +15,7 @@ import com.squareup.picasso.Picasso
 
 class CharacterDataAdapter(
         private var characterList: ArrayList<Character>,
-        private val listener: (Character) -> Unit
+        private val listener: (Character, ImageView) -> Unit
 ) : RecyclerView.Adapter<CharacterDataAdapter.MyViewHolder>() {
 
 
@@ -33,10 +35,15 @@ class CharacterDataAdapter(
 
         holder.characterName.text = character.name
         holder.characterActorName.text = character.actor
-        //Loading image using Picasso
-        Picasso.get().load(character.image).into(holder.characterImage)
 
-        holder.itemView.setOnClickListener { listener(character) }
+        holder.characterImage.apply {
+            transitionName = character.image
+            Log.e("TransFirst: ", character.image)
+            //Loading image using Picasso
+            Picasso.get().load(character.image).into(holder.characterImage)
+        }
+
+        holder.itemView.setOnClickListener { listener(character,holder.characterImage) }
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

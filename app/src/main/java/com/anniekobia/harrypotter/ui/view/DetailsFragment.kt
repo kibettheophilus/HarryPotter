@@ -1,6 +1,9 @@
 package com.anniekobia.harrypotter.ui.view
 
+import android.os.Build
 import android.os.Bundle
+import android.transition.TransitionInflater
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +12,6 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.data.api.model.Character
 import com.squareup.picasso.Picasso
@@ -35,10 +37,12 @@ class DetailsFragment : Fragment() {
     lateinit var characterHouse: TextView
     lateinit var characterHouseLogo: ImageView
     lateinit var houseLogoAnimation: Animation
+    lateinit var characterImageUri: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View? {
         val view = inflater.inflate(R.layout.fragment_details, container, false)
 
         characterImage = view.findViewById(R.id.character_image)
@@ -57,20 +61,32 @@ class DetailsFragment : Fragment() {
         //Animation
         houseLogoAnimation = AnimationUtils.loadAnimation(context, R.anim.house_logo_animation)
 
-        val character  = arguments?.getSerializable("Character") as Character
+        //Share element transition for character image
+        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+
+
+        val character = arguments?.getSerializable("Character") as Character
+        characterImageUri = arguments?.getString("URI") as String
+
         bindDetails(character)
         setHouseLogo(character)
         return view
     }
 
+
     private fun bindDetails(character: Character) {
         //Loading image using Picasso
-        Picasso.get().load(character.image).into(characterImage)
+        characterImage.apply {
+            transitionName = characterImageUri
+            Log.e("TransSecond: ", characterImageUri)
+            Picasso.get().load(character.image).into(characterImage)
+        }
         characterName.text = character.name
         characterActorName.text = character.actor
         characterAncestry.text = (character.ancestry).capitalize()
         characterPatronus.text = (character.patronus).capitalize()
-        characterWand.text = (character.wand.wood+ " ,"+ character.wand.core+", "+character.wand.length+"cm").capitalize()
+        characterWand.text =
+            (character.wand.wood + " ," + character.wand.core + ", " + character.wand.length + "cm").capitalize()
         characterSpecies.text = (character.species).capitalize()
         characterGender.text = (character.gender).capitalize()
         characterEyeColor.text = (character.eyeColour).capitalize()
@@ -79,19 +95,19 @@ class DetailsFragment : Fragment() {
     }
 
     private fun setHouseLogo(character: Character) {
-        if(character.house == "Gryffindor"){
+        if (character.house == "Gryffindor") {
             characterHouseLogo.setImageResource(R.drawable.logo_gryffindor)
             characterHouseLogo.startAnimation(houseLogoAnimation)
-        } else if(character.house == "Slytherin"){
+        } else if (character.house == "Slytherin") {
             characterHouseLogo.setImageResource(R.drawable.logo_slytherin)
             characterHouseLogo.startAnimation(houseLogoAnimation)
-        }else if(character.house == "Ravenclaw"){
+        } else if (character.house == "Ravenclaw") {
             characterHouseLogo.setImageResource(R.drawable.logo_ravenclaw)
             characterHouseLogo.startAnimation(houseLogoAnimation)
-        }else if(character.house == "Hufflepuff"){
+        } else if (character.house == "Hufflepuff") {
             characterHouseLogo.setImageResource(R.drawable.logo_hufflepuff)
             characterHouseLogo.startAnimation(houseLogoAnimation)
-        }else{
+        } else {
 
         }
     }

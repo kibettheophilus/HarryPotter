@@ -38,28 +38,28 @@ class StaffFragment : Fragment() {
 
         recyclerView = view.findViewById(R.id.recyclerView)
         progressBar = view.findViewById(R.id.progressBar)
-        progressBar.visibility = View.GONE
-        setRecyclerView(view)
+//        progressBar.visibility = View.GONE
+//        setRecyclerView(view)
 
         return view
     }
 
-    private fun setRecyclerView(view: View) {
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        progressBar.visibility = View.VISIBLE
-        characterViewModel.getStaffCharacters().observe(viewLifecycleOwner,
-                Observer<ArrayList<Character>> { characters ->
-                    if (characters != null) {
-                        recyclerViewAdapter =
-                                CharacterDataAdapter(characters) {
-                                    val bundle = bundleOf("Character" to it)
-                                    view.findNavController().navigate(R.id.global_detailsFragment, bundle)
-                                }
-                        recyclerView.adapter = recyclerViewAdapter
-                        progressBar.visibility = View.GONE
-                    }
-                })
-    }
+//    private fun setRecyclerView(view: View) {
+//        recyclerView.layoutManager = LinearLayoutManager(context)
+//        progressBar.visibility = View.VISIBLE
+//        characterViewModel.getStaffCharacters().observe(viewLifecycleOwner,
+//                Observer<ArrayList<Character>> { characters ->
+//                    if (characters != null) {
+//                        recyclerViewAdapter =
+//                                CharacterDataAdapter(characters) {
+//                                    val bundle = bundleOf("Character" to it)
+//                                    view.findNavController().navigate(R.id.global_detailsFragment, bundle)
+//                                }
+//                        recyclerView.adapter = recyclerViewAdapter
+//                        progressBar.visibility = View.GONE
+//                    }
+//                })
+//    }
 
 
 }

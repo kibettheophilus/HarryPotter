@@ -8,18 +8,21 @@
         android:id="@+id/homeFragment"
         android:name="com.anniekobia.harrypotter.ui.view.HomeFragment">
         <action
-            android:id="@+id/homeFragment_to_atozFragment"
-            app:destination="@id/atoZFragment" />
+            android:id="@+id/homeFragment_to_studentFragment"
+            app:destination="@id/studentFragment" />
         <action
-            android:id="@+id/homeFragment_to_lastviewedFragment"
-            app:destination="@id/lastViewedFragment" />
+            android:id="@+id/homeFragment_to_staffFragment"
+            app:destination="@id/staffFragment" />
+        <action
+            android:id="@+id/homeFragment_to_allCharactersFragment"
+            app:destination="@id/allCharactersFragment" />
     </fragment>
     <fragment
-        android:id="@+id/atoZFragment"
+        android:id="@+id/studentFragment"
         android:name="com.anniekobia.harrypotter.ui.view.StudentsFragment"
         tools:layout="@layout/fragment_student" />
     <fragment
-        android:id="@+id/lastViewedFragment"
+        android:id="@+id/staffFragment"
         android:name="com.anniekobia.harrypotter.ui.view.StaffFragment"
         tools:layout="@layout/fragment_staff" />
     <fragment
@@ -30,4 +33,8 @@
     <action
         android:id="@+id/global_detailsFragment"
         app:destination="@id/detailsFragment" />
+    <fragment
+        android:id="@+id/allCharactersFragment"
+        android:name="com.anniekobia.harrypotter.ui.view.AllCharactersFragment"
+        android:label="AllCharactersFragment" />
 </navigation>

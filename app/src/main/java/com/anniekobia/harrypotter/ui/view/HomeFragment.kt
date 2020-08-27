@@ -27,8 +27,8 @@ class HomeFragment : Fragment() {
 
         val adapter = com.anniekobia.harrypotter.ui.adapter.FragmentPagerAdapter(childFragmentManager)
         adapter.addFragment(AllCharactersFragment(),getString(R.string.all_fragment_tab_title))
-        adapter.addFragment(StudentsFragment(),getString(R.string.students_fragment_tab_title))
-        adapter.addFragment(StaffFragment(),getString(R.string.staff_fragment_tab_title))
+//        adapter.addFragment(StudentsFragment(),getString(R.string.students_fragment_tab_title))
+//        adapter.addFragment(StaffFragment(),getString(R.string.staff_fragment_tab_title))
 
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
