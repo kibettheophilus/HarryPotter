@@ -68,14 +68,14 @@ class DetailsFragment : Fragment() {
         Picasso.get().load(character.image).into(characterImage)
         characterName.text = character.name
         characterActorName.text = character.actor
-        characterAncestry.text = character.ancestry
-        characterPatronus.text = character.patronus
-        characterWand.text = character.wand.wood+ " ,"+ character.wand.core+", "+character.wand.length+"cm"
-        characterSpecies.text = character.species
-        characterGender.text = character.gender
-        characterEyeColor.text = character.eyeColour
-        characterHairColor.text = character.hairColour
-        characterHouse.text = character.house + getString(R.string.pointing_emoji)
+        characterAncestry.text = (character.ancestry).capitalize()
+        characterPatronus.text = (character.patronus).capitalize()
+        characterWand.text = (character.wand.wood+ " ,"+ character.wand.core+", "+character.wand.length+"cm").capitalize()
+        characterSpecies.text = (character.species).capitalize()
+        characterGender.text = (character.gender).capitalize()
+        characterEyeColor.text = (character.eyeColour).capitalize()
+        characterHairColor.text = (character.hairColour).capitalize()
+        characterHouse.text = (character.house + getString(R.string.pointing_emoji)).capitalize()
     }
 
     private fun setHouseLogo(character: Character) {
