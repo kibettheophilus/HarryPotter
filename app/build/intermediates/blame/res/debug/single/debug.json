@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
-    },
-    {
         "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_playbuttontwo.png.flat",
@@ -50,6 +50,10 @@
     {
         "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_other_characters.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\src\\main\\res\\layout\\fragment_other_characters.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_gryffindor.png.flat",
@@ -106,10 +110,6 @@
     {
         "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_ravenclaw.png.flat",
         "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\src\\main\\res\\drawable\\logo_ravenclaw.png"
-    },
-    {
-        "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_all_characters.xml.flat",
-        "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\src\\main\\res\\layout\\fragment_all_characters.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\layout_housemate_item_row.xml.flat",

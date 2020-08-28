@@ -14,8 +14,8 @@
             android:id="@+id/homeFragment_to_staffFragment"
             app:destination="@id/staffFragment" />
         <action
-            android:id="@+id/homeFragment_to_allCharactersFragment"
-            app:destination="@id/allCharactersFragment" />
+            android:id="@+id/homeFragment_to_otherCharactersFragment"
+            app:destination="@id/otherCharactersFragment" />
     </fragment>
     <fragment
         android:id="@+id/studentFragment"
@@ -34,7 +34,7 @@
         android:id="@+id/global_detailsFragment"
         app:destination="@id/detailsFragment" />
     <fragment
-        android:id="@+id/allCharactersFragment"
-        android:name="com.anniekobia.harrypotter.ui.view.AllCharactersFragment"
-        android:label="AllCharactersFragment" />
+        android:id="@+id/otherCharactersFragment"
+        android:name="com.anniekobia.harrypotter.ui.view.OtherCharactersFragment"
+        android:label="otherCharactersFragment" />
 </navigation>

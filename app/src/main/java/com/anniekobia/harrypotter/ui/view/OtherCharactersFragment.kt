@@ -25,7 +25,7 @@ import com.anniekobia.harrypotter.ui.viewmodel.CharacterViewModel
 /**
  * A simple [Fragment] subclass.
  */
-class AllCharactersFragment : Fragment() {
+class OtherCharactersFragment : Fragment() {
 
     lateinit var recyclerView: RecyclerView
     lateinit var progressBar: ProgressBar
@@ -38,7 +38,7 @@ class AllCharactersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        val view = inflater.inflate(R.layout.fragment_all_characters, container, false)
+        val view = inflater.inflate(R.layout.fragment_other_characters, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
         progressBar = view.findViewById(R.id.progressBar)
@@ -51,7 +51,7 @@ class AllCharactersFragment : Fragment() {
     private fun setRecyclerView(view: View) {
         recyclerView.layoutManager = LinearLayoutManager(context)
         progressBar.visibility = VISIBLE
-        characterViewModel.getAllCharacters().observe(viewLifecycleOwner,
+        characterViewModel.getOtherCharacters().observe(viewLifecycleOwner,
             Observer<ArrayList<Character>> { characters ->
                 if (characters != null) {
                     recyclerViewAdapter =

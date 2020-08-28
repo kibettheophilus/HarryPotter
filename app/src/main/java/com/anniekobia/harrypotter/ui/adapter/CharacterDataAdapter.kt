@@ -38,7 +38,6 @@ class CharacterDataAdapter(
 
         holder.characterImage.apply {
             transitionName = character.image
-            Log.e("TransFirst: ", character.image)
             //Loading image using Picasso
             Picasso.get().load(character.image).into(holder.characterImage)
         }

@@ -12,34 +12,44 @@ import kotlinx.coroutines.withContext
 import retrofit2.*
 
 
-class AllCharactersRepository {
+class OtherCharactersRepository {
 
-    private var allCharactersLiveData = MutableLiveData<ArrayList<Character>>()
+    private var otherCharactersLiveData = MutableLiveData<ArrayList<Character>>()
 
-    fun getAllCharacters() {
+    //Get all characters and filter out students and staff
+    fun getOtherCharacters() {
         CoroutineScope(Dispatchers.IO).launch {
             val response = RetrofitClient.apiService.getAllCharacters()
             withContext(Dispatchers.Main) {
                 try {
                     if (response.isSuccessful) {
                         val characterList = (response.body())!!
-                        allCharactersLiveData.postValue(characterList)
+                        val otherCharactersList = filterOutStudentsAndStaff(characterList)
+                        otherCharactersLiveData.postValue(otherCharactersList)
                     } else {
                         Log.e("Error: ", "${response.code()}")
-                        allCharactersLiveData.postValue(null)
+                        otherCharactersLiveData.postValue(null)
                     }
                 } catch (e: HttpException) {
                     Log.e("HttpException: ", "${e.message}")
-                    allCharactersLiveData.postValue(null)
+                    otherCharactersLiveData.postValue(null)
                 } catch (e: Throwable) {
                     Log.e("Failed", "Overall Failure on Marvel API call")
-                    allCharactersLiveData.postValue(null)
+                    otherCharactersLiveData.postValue(null)
                 }
             }
         }
     }
 
-    fun getAllCharactersLiveData(): LiveData<ArrayList<Character>> {
-        return allCharactersLiveData
+    private fun filterOutStudentsAndStaff(characterList: ArrayList<Character>):  ArrayList<Character>{
+        val otherCharacters = ArrayList<Character>()
+        for (character in characterList){
+            if (!character.hogwartsStaff and !character.hogwartsStudent) otherCharacters.add(character)
+        }
+        return  otherCharacters
+    }
+
+    fun getOtherCharactersLiveData(): LiveData<ArrayList<Character>> {
+        return otherCharactersLiveData
     }
 }

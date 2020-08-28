@@ -2,7 +2,7 @@
     <string name="app_name">Harry Potter</string>
 
     <!--Fragment TabLayout strings -->
-    <string name="all_fragment_tab_title">All</string>
+    <string name="other_fragment_tab_title">Other</string>
     <string name="students_fragment_tab_title">Students</string>
     <string name="staff_fragment_tab_title">Staff</string>
 

@@ -61,7 +61,7 @@ class DetailsFragment : Fragment() {
         //Animation
         houseLogoAnimation = AnimationUtils.loadAnimation(context, R.anim.house_logo_animation)
 
-        //Share element transition for character image
+        //Shared element transition for character image
         sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
 
 
@@ -78,7 +78,6 @@ class DetailsFragment : Fragment() {
         //Loading image using Picasso
         characterImage.apply {
             transitionName = characterImageUri
-            Log.e("TransSecond: ", characterImageUri)
             Picasso.get().load(character.image).into(characterImage)
         }
         characterName.text = character.name
