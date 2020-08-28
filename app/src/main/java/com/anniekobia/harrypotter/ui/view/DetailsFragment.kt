@@ -6,6 +6,8 @@ import android.transition.TransitionInflater
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -15,6 +17,7 @@ import androidx.fragment.app.Fragment
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.data.api.model.Character
 import com.squareup.picasso.Picasso
+import java.util.*
 
 
 /**
@@ -39,6 +42,16 @@ class DetailsFragment : Fragment() {
     lateinit var houseLogoAnimation: Animation
     lateinit var characterImageUri: String
 
+    lateinit var characterAncestryTxt: TextView
+    lateinit var characterPatronusTxt: TextView
+    lateinit var characterWandTxt: TextView
+    lateinit var characterSpeciesTxt: TextView
+    lateinit var characterGenderTxt: TextView
+    lateinit var characterEyeColorTxt: TextView
+    lateinit var characterHairColorTxt: TextView
+    lateinit var characterHouseTxt: TextView
+
+    @ExperimentalStdlibApi
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,12 +71,23 @@ class DetailsFragment : Fragment() {
         characterHouse = view.findViewById(R.id.house)
         characterHouseLogo = view.findViewById(R.id.house_logo)
 
+        characterAncestryTxt = view.findViewById(R.id.ancestry_txt)
+        characterPatronusTxt = view.findViewById(R.id.patronus_txt)
+        characterWandTxt = view.findViewById(R.id.wand_txt)
+        characterSpeciesTxt = view.findViewById(R.id.species_txt)
+        characterGenderTxt = view.findViewById(R.id.gender_txt)
+        characterEyeColorTxt = view.findViewById(R.id.eye_color_txt)
+        characterHairColorTxt = view.findViewById(R.id.hair_color_txt)
+        characterHouseTxt = view.findViewById(R.id.house_txt)
+
         //Animation
         houseLogoAnimation = AnimationUtils.loadAnimation(context, R.anim.house_logo_animation)
 
         //Shared element transition for character image
-        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            sharedElementEnterTransition =
+                TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+        }
 
         val character = arguments?.getSerializable("Character") as Character
         characterImageUri = arguments?.getString("URI") as String
@@ -74,40 +98,102 @@ class DetailsFragment : Fragment() {
     }
 
 
+    @ExperimentalStdlibApi
     private fun bindDetails(character: Character) {
-        //Loading image using Picasso
+
         characterImage.apply {
-            transitionName = characterImageUri
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                transitionName = characterImageUri
+            }
+            //Loading image using Picasso
             Picasso.get().load(character.image).into(characterImage)
         }
         characterName.text = character.name
         characterActorName.text = character.actor
-        characterAncestry.text = (character.ancestry).capitalize()
-        characterPatronus.text = (character.patronus).capitalize()
-        characterWand.text =
-            (character.wand.wood + " ," + character.wand.core + ", " + character.wand.length + "cm").capitalize()
-        characterSpecies.text = (character.species).capitalize()
-        characterGender.text = (character.gender).capitalize()
-        characterEyeColor.text = (character.eyeColour).capitalize()
-        characterHairColor.text = (character.hairColour).capitalize()
-        characterHouse.text = (character.house + getString(R.string.pointing_emoji)).capitalize()
+
+        if (character.ancestry != "") {
+            characterAncestry.visibility = VISIBLE
+            characterAncestryTxt.visibility = VISIBLE
+            characterAncestry.text = (character.ancestry).capitalize(Locale.ROOT)
+        }
+        if (character.patronus != "") {
+            characterPatronus.visibility = VISIBLE
+            characterPatronusTxt.visibility = VISIBLE
+            characterPatronus.text = (character.patronus).capitalize(Locale.ROOT)
+        }
+        if (character.eyeColour != "") {
+            characterEyeColor.visibility = VISIBLE
+            characterEyeColorTxt.visibility = VISIBLE
+            characterEyeColor.text = (character.eyeColour).capitalize(Locale.ROOT)
+        }
+        if (character.house != "") {
+            characterHouse.visibility = VISIBLE
+            characterHouseTxt.visibility = VISIBLE
+            characterHouse.text =
+                (character.house + getString(R.string.pointing_emoji)).capitalize(Locale.ROOT)
+        }
+        if (character.species != "") {
+            characterSpecies.visibility = VISIBLE
+            characterSpeciesTxt.visibility = VISIBLE
+            characterSpecies.text = (character.species).capitalize(Locale.ROOT)
+        }
+        if (character.gender != "") {
+            characterGender.visibility = VISIBLE
+            characterGenderTxt.visibility = VISIBLE
+            characterGender.text = (character.gender).capitalize(Locale.ROOT)
+        }
+        if (character.hairColour != "") {
+            characterHairColor.visibility = VISIBLE
+            characterHairColorTxt.visibility = VISIBLE
+            characterHairColor.text = (character.hairColour).capitalize(Locale.ROOT)
+        }
+        if (character.wand.wood + character.wand.core + character.wand.length != "") {
+            characterWand.visibility = VISIBLE
+            characterWandTxt.visibility = VISIBLE
+            when {
+                character.wand.wood != "" && character.wand.core == "" && character.wand.length == "" -> {
+                    characterWand.text = character.wand.wood.capitalize(Locale.ROOT)
+                }
+                character.wand.wood != "" && character.wand.core != "" && character.wand.length == "" -> {
+                    characterWand.text =
+                        (character.wand.wood + ", " + character.wand.core + " core").capitalize(Locale.ROOT)
+                }
+                character.wand.wood != "" && character.wand.core == "" && character.wand.length != "" -> {
+                    characterWand.text =
+                        (character.wand.wood + ", " + character.wand.length + "inches").capitalize(Locale.ROOT)
+                }
+                character.wand.wood == "" && character.wand.core != "" && character.wand.length != "" -> {
+                    characterWand.text =
+                        (character.wand.core + " core, " + character.wand.length + "inches").capitalize(Locale.ROOT)
+                }
+                else -> {
+                    characterWand.text =
+                        (character.wand.wood + ", " + character.wand.core + " core, " + character.wand.length + "inches").capitalize(Locale.ROOT)
+                }
+            }
+        }
+
+
     }
 
     private fun setHouseLogo(character: Character) {
-        if (character.house == "Gryffindor") {
-            characterHouseLogo.setImageResource(R.drawable.logo_gryffindor)
-            characterHouseLogo.startAnimation(houseLogoAnimation)
-        } else if (character.house == "Slytherin") {
-            characterHouseLogo.setImageResource(R.drawable.logo_slytherin)
-            characterHouseLogo.startAnimation(houseLogoAnimation)
-        } else if (character.house == "Ravenclaw") {
-            characterHouseLogo.setImageResource(R.drawable.logo_ravenclaw)
-            characterHouseLogo.startAnimation(houseLogoAnimation)
-        } else if (character.house == "Hufflepuff") {
-            characterHouseLogo.setImageResource(R.drawable.logo_hufflepuff)
-            characterHouseLogo.startAnimation(houseLogoAnimation)
-        } else {
-
+        when (character.house) {
+            "Gryffindor" -> {
+                characterHouseLogo.setImageResource(R.drawable.logo_gryffindor)
+                characterHouseLogo.startAnimation(houseLogoAnimation)
+            }
+            "Slytherin" -> {
+                characterHouseLogo.setImageResource(R.drawable.logo_slytherin)
+                characterHouseLogo.startAnimation(houseLogoAnimation)
+            }
+            "Ravenclaw" -> {
+                characterHouseLogo.setImageResource(R.drawable.logo_ravenclaw)
+                characterHouseLogo.startAnimation(houseLogoAnimation)
+            }
+            "Hufflepuff" -> {
+                characterHouseLogo.setImageResource(R.drawable.logo_hufflepuff)
+                characterHouseLogo.startAnimation(houseLogoAnimation)
+            }
         }
     }
 

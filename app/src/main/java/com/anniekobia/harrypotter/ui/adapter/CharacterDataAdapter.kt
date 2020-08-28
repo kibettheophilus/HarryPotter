@@ -37,7 +37,9 @@ class CharacterDataAdapter(
         holder.characterActorName.text = character.actor
 
         holder.characterImage.apply {
-            transitionName = character.image
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                transitionName = character.image
+            }
             //Loading image using Picasso
             Picasso.get().load(character.image).into(holder.characterImage)
         }

@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_corners"
-            android:paddingHorizontal="@dimen/screen_padding"
+            android:paddingHorizontal="@dimen/margin_10dp"
             android:paddingVertical="@dimen/margin_5dp"
             android:layout_marginTop="@dimen/margin_10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,6 +77,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -87,6 +88,7 @@
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:text="@string/ancestry_half_blood"
                 android:textColor="@android:color/black"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/ancestry_txt"
                 app:layout_constraintStart_toEndOf="@id/ancestry_txt" />
 
@@ -99,6 +101,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ancestry_txt" />
 
@@ -109,6 +112,7 @@
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:text="@string/patronus_stag"
                 android:textColor="@android:color/black"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/patronus_txt"
                 app:layout_constraintStart_toEndOf="@id/patronus_txt" />
 
@@ -121,6 +125,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/patronus_txt" />
 
@@ -131,6 +136,7 @@
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:text="@string/wand_holly_phoenix_feather_11cm"
                 android:textColor="@android:color/black"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/wand_txt"
                 app:layout_constraintStart_toEndOf="@id/wand_txt" />
 
@@ -143,6 +149,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/wand_txt" />
 
@@ -153,6 +160,7 @@
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:text="@string/species_human"
                 android:textColor="@android:color/black"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/species_txt"
                 app:layout_constraintStart_toEndOf="@id/species_txt" />
 
@@ -165,6 +173,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/species_txt" />
 
@@ -175,6 +184,7 @@
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:text="@string/gender_male"
                 android:textColor="@android:color/black"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/gender_txt"
                 app:layout_constraintStart_toEndOf="@id/gender_txt" />
 
@@ -187,6 +197,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/gender_txt" />
 
@@ -196,6 +207,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:text="@string/eye_color_green"
+                android:visibility="gone"
                 android:textColor="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/eye_color_txt"
                 app:layout_constraintStart_toEndOf="@id/eye_color_txt" />
@@ -209,6 +221,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/eye_color_txt" />
 
@@ -219,6 +232,7 @@
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:text="@string/hair_color_black"
                 android:textColor="@android:color/black"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/hair_color_txt"
                 app:layout_constraintStart_toEndOf="@id/hair_color_txt" />
 
@@ -230,6 +244,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/hair_color" />
 
@@ -240,6 +255,7 @@
                 android:layout_marginStart="@dimen/margin_5dp"
                 android:text="@string/house_gryffindor"
                 android:textColor="@android:color/black"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/house_txt"
                 app:layout_constraintStart_toEndOf="@id/house_txt" />
         </androidx.constraintlayout.widget.ConstraintLayout>
