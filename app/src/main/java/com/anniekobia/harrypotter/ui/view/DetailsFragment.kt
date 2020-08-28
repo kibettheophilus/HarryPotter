@@ -111,58 +111,58 @@ class DetailsFragment : Fragment() {
         characterName.text = character.name
         characterActorName.text = character.actor
 
-        if (character.ancestry != "") {
+        if (character.ancestry.isNotEmpty()) {
             characterAncestry.visibility = VISIBLE
             characterAncestryTxt.visibility = VISIBLE
             characterAncestry.text = (character.ancestry).capitalize(Locale.ROOT)
         }
-        if (character.patronus != "") {
+        if (character.patronus.isNotEmpty()) {
             characterPatronus.visibility = VISIBLE
             characterPatronusTxt.visibility = VISIBLE
             characterPatronus.text = (character.patronus).capitalize(Locale.ROOT)
         }
-        if (character.eyeColour != "") {
+        if (character.eyeColour.isNotEmpty()) {
             characterEyeColor.visibility = VISIBLE
             characterEyeColorTxt.visibility = VISIBLE
             characterEyeColor.text = (character.eyeColour).capitalize(Locale.ROOT)
         }
-        if (character.house != "") {
+        if (character.house.isNotEmpty()) {
             characterHouse.visibility = VISIBLE
             characterHouseTxt.visibility = VISIBLE
             characterHouse.text =
                 (character.house + getString(R.string.pointing_emoji)).capitalize(Locale.ROOT)
         }
-        if (character.species != "") {
+        if (character.species.isNotEmpty()) {
             characterSpecies.visibility = VISIBLE
             characterSpeciesTxt.visibility = VISIBLE
             characterSpecies.text = (character.species).capitalize(Locale.ROOT)
         }
-        if (character.gender != "") {
+        if (character.gender.isNotEmpty()) {
             characterGender.visibility = VISIBLE
             characterGenderTxt.visibility = VISIBLE
             characterGender.text = (character.gender).capitalize(Locale.ROOT)
         }
-        if (character.hairColour != "") {
+        if (character.hairColour.isNotEmpty()) {
             characterHairColor.visibility = VISIBLE
             characterHairColorTxt.visibility = VISIBLE
             characterHairColor.text = (character.hairColour).capitalize(Locale.ROOT)
         }
-        if (character.wand.wood + character.wand.core + character.wand.length != "") {
+        if ((character.wand.wood + character.wand.core + character.wand.length).isNotEmpty()) {
             characterWand.visibility = VISIBLE
             characterWandTxt.visibility = VISIBLE
             when {
-                character.wand.wood != "" && character.wand.core == "" && character.wand.length == "" -> {
+                character.wand.wood.isNotEmpty() && character.wand.core.isEmpty() && character.wand.length.isEmpty() -> {
                     characterWand.text = character.wand.wood.capitalize(Locale.ROOT)
                 }
-                character.wand.wood != "" && character.wand.core != "" && character.wand.length == "" -> {
+                character.wand.wood.isNotEmpty() && character.wand.core.isNotEmpty() && character.wand.length.isEmpty() -> {
                     characterWand.text =
                         (character.wand.wood + ", " + character.wand.core + " core").capitalize(Locale.ROOT)
                 }
-                character.wand.wood != "" && character.wand.core == "" && character.wand.length != "" -> {
+                character.wand.wood.isNotEmpty() && character.wand.core.isEmpty() && character.wand.length.isNotEmpty() -> {
                     characterWand.text =
                         (character.wand.wood + ", " + character.wand.length + "inches").capitalize(Locale.ROOT)
                 }
-                character.wand.wood == "" && character.wand.core != "" && character.wand.length != "" -> {
+                character.wand.wood.isEmpty() && character.wand.core.isNotEmpty() && character.wand.length.isNotEmpty() -> {
                     characterWand.text =
                         (character.wand.core + " core, " + character.wand.length + "inches").capitalize(Locale.ROOT)
                 }
