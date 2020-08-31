@@ -1267,6 +1267,7 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen elevation_5dp
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -2245,6 +2246,7 @@ string ancestry_half_blood
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string category_students
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2328,6 +2330,7 @@ string species_human
 string staff_fragment_tab_title
 string status_bar_notification_info_overflow
 string students_fragment_tab_title
+string view_all_arrow
 string wand
 string wand_core
 string wand_holly_phoenix_feather_11cm

@@ -39,6 +39,8 @@
     <string name="house_hufflepuff">Hufflepuff</string>
     <string name="wand_core">\" core\"</string>
     <string name="wand_inches">inches</string>
+    <string name="category_students">Students</string>
+    <string name="view_all_arrow">View all</string>
 
 
 </resources>
