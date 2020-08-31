@@ -48,12 +48,12 @@
         "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\src\\main\\res\\drawable\\tab_selector.xml"
     },
     {
-        "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\src\\main\\res\\layout\\fragment_home.xml"
-    },
-    {
         "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_other_characters.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\src\\main\\res\\layout\\fragment_other_characters.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_gryffindor.png.flat",

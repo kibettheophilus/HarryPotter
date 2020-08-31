@@ -6,18 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ProgressBar
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.anniekobia.harrypotter.ui.adapter.CharacterDataAdapter
 
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.data.api.model.Character
+import com.anniekobia.harrypotter.databinding.FragmentStaffBinding
 import com.anniekobia.harrypotter.ui.viewmodel.CharacterViewModel
 
 /**
@@ -25,10 +24,10 @@ import com.anniekobia.harrypotter.ui.viewmodel.CharacterViewModel
  */
 class StaffFragment : Fragment() {
 
-    lateinit var recyclerView: RecyclerView
-    lateinit var progressBar: ProgressBar
-    lateinit var recyclerViewAdapter: CharacterDataAdapter
+    private lateinit var recyclerViewAdapter: CharacterDataAdapter
     private val characterViewModel: CharacterViewModel by viewModels()
+
+    private lateinit var binding: FragmentStaffBinding
 
 
     override fun onCreateView(
@@ -36,19 +35,17 @@ class StaffFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        val view = inflater.inflate(R.layout.fragment_staff, container, false)
+        binding = FragmentStaffBinding.inflate(inflater, container, false)
 
-        recyclerView = view.findViewById(R.id.recyclerView)
-        progressBar = view.findViewById(R.id.progressBar)
-        progressBar.visibility = View.GONE
-        setRecyclerView(view)
+        binding.progressBar.visibility = View.GONE
+        setRecyclerView(binding.root)
 
-        return view
+        return binding.root
     }
 
     private fun setRecyclerView(view: View) {
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        progressBar.visibility = View.VISIBLE
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        binding.progressBar.visibility = View.VISIBLE
         characterViewModel.getStaffCharacters().observe(viewLifecycleOwner,
                 Observer<ArrayList<Character>> { characters ->
                     if (characters != null) {
@@ -60,8 +57,8 @@ class StaffFragment : Fragment() {
                                 )
                                 view.findNavController().navigate(R.id.global_detailsFragment, bundle,null,extras)
                             }
-                        recyclerView.adapter = recyclerViewAdapter
-                        progressBar.visibility = View.GONE
+                        binding.recyclerView.adapter = recyclerViewAdapter
+                        binding.progressBar.visibility = View.GONE
                     }
                 })
     }

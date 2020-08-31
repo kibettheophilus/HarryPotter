@@ -29,11 +29,16 @@
     <string name="hair_color_black">Black</string>
     <string name="harry_potter_app_logo">Harry Potter Logo</string>
     <string name="house">House: </string>
-    <string name="house_gryffindor">Gryffindor</string>
     <string name="housemates">Housemates</string>
 
     <!--Emoji-->
     <string name="pointing_emoji">&#x1F447;&#x1F3FF;</string>
+    <string name="house_gryffindor">Gryffindor</string>
+    <string name="house_slytherin">Slytherin</string>
+    <string name="house_ravenclaw">Ravenclaw</string>
+    <string name="house_hufflepuff">Hufflepuff</string>
+    <string name="wand_core">\" core\"</string>
+    <string name="wand_inches">inches</string>
 
 
 </resources>

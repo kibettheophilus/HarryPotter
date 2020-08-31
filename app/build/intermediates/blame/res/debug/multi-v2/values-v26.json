@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\12d6b86d0d0314ff1d7dc985836e76ed\\appcompat-1.2.0\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\de829c964bb7e0a81d7a8de6ed3cab7f\\appcompat-1.2.0\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

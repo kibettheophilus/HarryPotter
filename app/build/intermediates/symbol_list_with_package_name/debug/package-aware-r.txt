@@ -2267,6 +2267,9 @@ string harry_potter_app_logo
 string hide_bottom_view_on_scroll_behavior
 string house
 string house_gryffindor
+string house_hufflepuff
+string house_ravenclaw
+string house_slytherin
 string housemates
 string icon_content_description
 string item_view_role_description
@@ -2326,7 +2329,9 @@ string staff_fragment_tab_title
 string status_bar_notification_info_overflow
 string students_fragment_tab_title
 string wand
+string wand_core
 string wand_holly_phoenix_feather_11cm
+string wand_inches
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

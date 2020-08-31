@@ -4,7 +4,17 @@
             "outputFile": "C:\\Users\\User\\Desktop\\Harry Potter\\HarryPotter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\1aa3255516e320df434eba7798d8f98f\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\de829c964bb7e0a81d7a8de6ed3cab7f\\appcompat-1.2.0\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\592b7ebd3a0db4c059aaaadab106b652\\media-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -18,16 +28,6 @@
                         "startOffsets": "347,413,474,540",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "408,469,535,602"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\12d6b86d0d0314ff1d7dc985836e76ed\\appcompat-1.2.0\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
                     }
                 }
             ]
