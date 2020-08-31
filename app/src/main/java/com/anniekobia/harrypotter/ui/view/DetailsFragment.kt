@@ -34,6 +34,7 @@ class DetailsFragment : Fragment() {
         //Animation
         houseLogoAnimation = AnimationUtils.loadAnimation(context, R.anim.house_logo_animation)
 
+
         //Shared element transition for character image
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             sharedElementEnterTransition =
