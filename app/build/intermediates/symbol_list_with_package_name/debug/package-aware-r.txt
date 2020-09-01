@@ -35,8 +35,6 @@ anim fragment_fast_out_extra_slow_in
 anim fragment_open_enter
 anim fragment_open_exit
 anim house_logo_animation
-anim item_down_to_up_animation
-anim layout_animation_down_to_up
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator

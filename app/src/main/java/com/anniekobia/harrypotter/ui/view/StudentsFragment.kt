@@ -6,8 +6,6 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
-import android.view.animation.LayoutAnimationController
 import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -29,10 +27,10 @@ import com.anniekobia.harrypotter.ui.viewmodel.CharacterViewModel
 class StudentsFragment : Fragment() {
 
     private lateinit var recyclerViewAdapter: CharacterDataAdapter
-    private lateinit var recyclerviewAnimation: LayoutAnimationController
     private val characterViewModel: CharacterViewModel by viewModels()
 
     private lateinit var binding: FragmentStudentBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,8 +39,6 @@ class StudentsFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentStudentBinding.inflate(inflater, container, false)
 
-        //Animation
-        recyclerviewAnimation = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_down_to_up)
 
         binding.progressBar.visibility = GONE
         setRecyclerView(binding.root)
@@ -65,7 +61,6 @@ class StudentsFragment : Fragment() {
                             view.findNavController().navigate(R.id.global_detailsFragment, bundle,null,extras)
                         }
                     binding.recyclerView.adapter = recyclerViewAdapter
-//                    binding.recyclerView.layoutAnimation = recyclerviewAnimation
                     binding.progressBar.visibility = GONE
                 }
             })

@@ -1,45 +1,20 @@
 package com.anniekobia.harrypotter.data.repository
 
-import android.util.Log
+import android.content.Context
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.anniekobia.harrypotter.data.api.model.Character
-import com.anniekobia.harrypotter.data.retrofit.RetrofitClient
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import retrofit2.*
+import com.anniekobia.harrypotter.data.room.CharacterDatabase
 
 
-class CharacterStaffRepository {
+class CharacterStaffRepository(context: Context) {
 
-    private var characterStaffLiveData = MutableLiveData<ArrayList<Character>>()
-
-    fun getStaffCharacters() {
-        CoroutineScope(Dispatchers.IO).launch {
-            val response = RetrofitClient.apiService.getStaffCharacters()
-            withContext(Dispatchers.Main) {
-                try {
-                    if (response.isSuccessful) {
-                        val characterList = (response.body())!!
-                        characterStaffLiveData.postValue(characterList)
-                    } else {
-                        Log.e("Error: ", "${response.code()}")
-                        characterStaffLiveData.postValue(null)
-                    }
-                } catch (e: HttpException) {
-                    Log.e("HttpException: ", "${e.message}")
-                    characterStaffLiveData.postValue(null)
-                } catch (e: Throwable) {
-                    Log.e("Failed", "Overall Failure on Marvel API call")
-                    characterStaffLiveData.postValue(null)
-                }
-            }
-        }
-    }
+    private val database = CharacterDatabase.getCharacterDatabase(context = context)
+    private val characterDAO = database?.characterDao()
+    private lateinit var characterStaffLiveData: LiveData<ArrayList<Character>>
 
     fun getStaffCharactersLiveData(): LiveData<ArrayList<Character>> {
+        characterStaffLiveData =
+            characterDAO!!.getStaffCharacters() as LiveData<ArrayList<Character>>
         return characterStaffLiveData
     }
 }
