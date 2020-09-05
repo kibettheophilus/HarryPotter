@@ -1,6 +1,6 @@
-package com.anniekobia.harrypotter.data.api
+package com.anniekobia.harrypotter.data.remote
 
-import com.anniekobia.harrypotter.data.api.model.CharacterList
+import com.anniekobia.harrypotter.data.remote.model.CharacterList
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -11,14 +11,16 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.anniekobia.harrypotter.R
-import com.anniekobia.harrypotter.data.api.model.Character
+import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentStudentBinding
 import com.anniekobia.harrypotter.ui.adapter.CharacterDataAdapter
 import com.anniekobia.harrypotter.ui.viewmodel.CharacterViewModel
+import com.anniekobia.harrypotter.utils.NetworkResult
 
 
 /**
@@ -44,6 +46,27 @@ class StudentsFragment : Fragment() {
         setRecyclerView(binding.root)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        characterViewModel.characters.observe(viewLifecycleOwner){
+            // hide
+            when(it){
+                is NetworkResult.Success -> {}
+                is NetworkResult.Error ->{}
+                is NetworkResult.Loading -> {}
+            }
+
+        }
+        characterViewModel.characterError.observe(viewLifecycleOwner){
+            // hide
+        }
+        characterViewModel.charactersResponse.observe(viewLifecycleOwner){
+            // hide
+        }
+
     }
 
     private fun setRecyclerView(view: View) {

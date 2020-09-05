@@ -6,49 +6,52 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.anniekobia.harrypotter.data.api.model.Character
+import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.CharacterItemRowBinding
 import com.squareup.picasso.Picasso
 
 
 class CharacterDataAdapter(
-        private var characterList: ArrayList<Character>,
-        private val listener: (Character, ImageView) -> Unit
+    private var characterList: ArrayList<Character>,
+    private val listener: (Character, ImageView) -> Unit // Review : Seek explanations for this
 ) : RecyclerView.Adapter<CharacterDataAdapter.MyViewHolder>() {
 
     private lateinit var binding: CharacterItemRowBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        binding = CharacterItemRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        binding =
+            CharacterItemRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return MyViewHolder(binding)
+        return MyViewHolder(binding, listener)
     }
 
-    override fun getItemCount(): Int {
-        return characterList.size
-    }
+    // Review : Use expressions instead
+    override fun getItemCount(): Int = characterList.size
 
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        // Review : Can be simplified in the view holder
         val character = characterList[position]
-
-        holder.characterName.text = character.name
-        holder.characterActorName.text = character.actor
-
-        holder.characterImage.apply {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                transitionName = character.image
-            }
-            //Loading image using Picasso
-            Picasso.get().load(character.image).into(holder.characterImage)
-        }
-
-        holder.itemView.setOnClickListener { listener(character,holder.characterImage) }
+        holder.bind(character)
     }
 
-    class MyViewHolder(itemBinding: CharacterItemRowBinding) : RecyclerView.ViewHolder(itemBinding.root) {
-        val characterImage: ImageView = itemBinding.characterImage
-        val characterName: TextView = itemBinding.characterName
-        val characterActorName: TextView = itemBinding.characterActorName
+    class MyViewHolder(
+        itemBinding: CharacterItemRowBinding,
+        private val listener: (Character, ImageView) -> Unit
+    ) :
+        RecyclerView.ViewHolder(itemBinding.root) {
+        private val characterImage: ImageView = itemBinding.characterImage
+        private val characterName: TextView = itemBinding.characterName
+        private val characterActorName: TextView = itemBinding.characterActorName
+
+
+        fun bind(character: Character) {
+            with(character) {
+                characterName.text = name
+                characterActorName.text = actor
+                Picasso.get().load(image).into(characterImage)
+                itemView.setOnClickListener { listener(character, characterImage) }
+            }
+        }
     }
 }

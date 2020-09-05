@@ -1,10 +1,10 @@
-package com.anniekobia.harrypotter.data.room
+package com.anniekobia.harrypotter.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.anniekobia.harrypotter.data.api.model.Character
+import com.anniekobia.harrypotter.data.remote.model.Character
 
 
 @Database(entities = [Character::class], version = 1)

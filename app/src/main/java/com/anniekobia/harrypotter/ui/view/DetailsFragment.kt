@@ -11,7 +11,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import com.anniekobia.harrypotter.R
-import com.anniekobia.harrypotter.data.api.model.Character
+import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentDetailsBinding
 import com.squareup.picasso.Picasso
 import java.util.*

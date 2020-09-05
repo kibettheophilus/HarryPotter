@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.anniekobia.harrypotter.ui.adapter.CharacterDataAdapter
 
 import com.anniekobia.harrypotter.R
-import com.anniekobia.harrypotter.data.api.model.Character
+import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentStaffBinding
 import com.anniekobia.harrypotter.ui.viewmodel.CharacterViewModel
 

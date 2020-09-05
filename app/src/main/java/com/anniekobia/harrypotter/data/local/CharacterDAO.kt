@@ -1,15 +1,20 @@
-package com.anniekobia.harrypotter.data.room
+package com.anniekobia.harrypotter.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import com.anniekobia.harrypotter.data.api.model.Character
+import com.anniekobia.harrypotter.data.remote.model.Character
 
 @Dao
 interface CharacterDAO {
-    //Insert one character to database
+    // Review : The comments can be turned to docs comments
+
+    /**
+     * Insert one character to database
+     * **/
+
     @Insert(onConflict = REPLACE)
     fun saveCharacter(character: Character)
 

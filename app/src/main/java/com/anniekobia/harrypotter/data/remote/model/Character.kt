@@ -1,4 +1,4 @@
-package com.anniekobia.harrypotter.data.api.model
+package com.anniekobia.harrypotter.data.remote.model
 
 
 import androidx.room.ColumnInfo

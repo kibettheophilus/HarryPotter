@@ -3,11 +3,16 @@ package com.anniekobia.harrypotter.ui.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.anniekobia.harrypotter.data.api.model.Character
-import com.anniekobia.harrypotter.data.repository.AllCharactersRepository
-import com.anniekobia.harrypotter.data.repository.OtherCharactersRepository
-import com.anniekobia.harrypotter.data.repository.CharacterStaffRepository
-import com.anniekobia.harrypotter.data.repository.CharacterStudentRepository
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.anniekobia.harrypotter.data.remote.model.Character
+import com.anniekobia.harrypotter.data.remote.model.CharacterList
+import com.anniekobia.harrypotter.repository.AllCharactersRepository
+import com.anniekobia.harrypotter.repository.OtherCharactersRepository
+import com.anniekobia.harrypotter.repository.CharacterStaffRepository
+import com.anniekobia.harrypotter.repository.CharacterStudentRepository
+import com.anniekobia.harrypotter.utils.NetworkResult
+import kotlinx.coroutines.launch
 
 
 class CharacterViewModel(application: Application): AndroidViewModel(application) {
@@ -17,6 +22,9 @@ class CharacterViewModel(application: Application): AndroidViewModel(application
     private val characterStudentRepository = CharacterStudentRepository(application)
     private val characterStaffRepository = CharacterStaffRepository(application)
     lateinit var characterLiveData: LiveData<ArrayList<Character>>
+    val characters = MutableLiveData<NetworkResult<CharacterList>>()
+    val charactersResponse = MutableLiveData<CharacterList>()
+    val characterError = MutableLiveData<String>()
 
     fun getOtherCharacters(): LiveData<ArrayList<Character>> {
         characterLiveData = otherCharactersRepository.getOtherCharactersLiveData()
@@ -35,5 +43,20 @@ class CharacterViewModel(application: Application): AndroidViewModel(application
 
     fun getAndSaveAllCharacters(){
         allCharactersRepository.getAllCharacters()
+    }
+
+    fun fetchCharacters(){
+        viewModelScope.launch {
+            characters.postValue(allCharactersRepository.fetchCharacters())
+        }
+    }
+
+    fun getCharacter(){
+        viewModelScope.launch {
+            when(val value = allCharactersRepository.fetchCharacters()){
+                is NetworkResult.Success -> charactersResponse.postValue(value.data)
+                is NetworkResult.Error -> characterError.postValue(value.exception.message)
+            }
+        }
     }
 }

@@ -1,9 +1,9 @@
-package com.anniekobia.harrypotter.data.repository
+package com.anniekobia.harrypotter.repository
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import com.anniekobia.harrypotter.data.api.model.Character
-import com.anniekobia.harrypotter.data.room.CharacterDatabase
+import com.anniekobia.harrypotter.data.remote.model.Character
+import com.anniekobia.harrypotter.data.local.CharacterDatabase
 
 
 class CharacterStaffRepository(context: Context) {
