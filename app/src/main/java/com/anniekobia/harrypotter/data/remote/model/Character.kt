@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
+
 @Entity
 data class Character(
 
@@ -75,4 +76,4 @@ data class Character(
     @ColumnInfo
     @SerializedName("yearOfBirth")
     val yearOfBirth: String
-): Serializable
+) : Serializable
