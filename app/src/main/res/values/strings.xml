@@ -41,6 +41,9 @@
     <string name="wand_inches">inches</string>
     <string name="category_students">Students</string>
     <string name="view_all_arrow">View all</string>
+    <string name="harry_potter_glasses">Harry potter glasses</string>
+    <string name="no_internet_message">Please turn on your internet connection and refresh</string>
+    <string name="network_error_message">Something went wrong. Please refresh</string>
 
 
 </resources>

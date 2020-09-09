@@ -9,11 +9,12 @@ import com.anniekobia.harrypotter.data.remote.model.Character
 @Dao
 interface CharacterDAO {
 
+
     /**
      * Insert list of all character to database
      */
     @Insert
-    fun saveListOfAllCharacters(characterList: List<Character>)
+    suspend fun saveListOfAllCharacters(characterList: List<Character>): List<Long>
 
     /**
      * Fetch list of all characters who are students from database

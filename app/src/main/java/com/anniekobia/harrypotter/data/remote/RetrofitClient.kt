@@ -8,10 +8,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    // Review : This class can be include in the api package and this package could use
-    // abit of refactoring
-    // Review : make class variables be private
-
     private const val BASE_URL = "http://hp-api.herokuapp.com/api/characters/"
 
     private val client = OkHttpClient.Builder()

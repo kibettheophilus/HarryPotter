@@ -39,28 +39,28 @@ class OtherCharactersFragment : Fragment() {
         binding = FragmentOtherCharactersBinding.inflate(inflater, container, false)
 
         binding.progressBar.visibility = GONE
-        setRecyclerView(binding.root)
+//        setRecyclerView(binding.root)
 
         return binding.root
     }
 
-    private fun setRecyclerView(view: View) {
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
-        binding.progressBar.visibility = VISIBLE
-        characterViewModel.getOtherCharacters().observe(viewLifecycleOwner,
-            Observer<ArrayList<Character>> { characters ->
-                if (characters != null) {
-                    recyclerViewAdapter =
-                        CharacterDataAdapter(characters) { character: Character, imageView: ImageView ->
-                            val bundle = bundleOf("Character" to character,"URI" to character.image)
-                            val extras = FragmentNavigatorExtras(
-                                imageView to character.image
-                            )
-                            view.findNavController().navigate(R.id.global_detailsFragment, bundle,null,extras)
-                        }
-                    binding.recyclerView.adapter = recyclerViewAdapter
-                    binding.progressBar.visibility = GONE
-                }
-            })
-    }
+//    private fun setRecyclerView(view: View) {
+//        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+//        binding.progressBar.visibility = VISIBLE
+//        characterViewModel.getOtherCharacters().observe(viewLifecycleOwner,
+//            Observer<ArrayList<Character>> { characters ->
+//                if (characters != null) {
+//                    recyclerViewAdapter =
+//                        CharacterDataAdapter(characters) { character: Character, imageView: ImageView ->
+//                            val bundle = bundleOf("Character" to character,"URI" to character.image)
+//                            val extras = FragmentNavigatorExtras(
+//                                imageView to character.image
+//                            )
+//                            view.findNavController().navigate(R.id.global_detailsFragment, bundle,null,extras)
+//                        }
+//                    binding.recyclerView.adapter = recyclerViewAdapter
+//                    binding.progressBar.visibility = GONE
+//                }
+//            })
+//    }
 }

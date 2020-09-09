@@ -15,7 +15,7 @@ import com.anniekobia.harrypotter.utils.NetworkResult
 import kotlinx.coroutines.launch
 
 
-class CharacterViewModel(application: Application): AndroidViewModel(application) {
+class CharacterViewModel(application: Application) : AndroidViewModel(application) {
 
     private val allCharactersRepository = AllCharactersRepository(application)
     private val otherCharactersRepository = OtherCharactersRepository(application)
@@ -31,32 +31,36 @@ class CharacterViewModel(application: Application): AndroidViewModel(application
         return characterLiveData
     }
 
-    fun getStudentCharacters(): LiveData<ArrayList<Character>> {
-        characterLiveData = characterStudentRepository.getStudentCharacterLiveData()
-        return characterLiveData
-    }
+//    fun getStudentCharacters(): LiveData<ArrayList<Character>> {
+//        characterLiveData = characterStudentRepository.getStudentCharacterLiveData()
+//        return characterLiveData
+//    }
 
-    fun getStaffCharacters(): LiveData<ArrayList<Character>> {
-        characterLiveData = characterStaffRepository.getStaffCharactersLiveData()
-        return characterLiveData
-    }
+//    fun getStaffCharacters(): LiveData<ArrayList<Character>> {
+//        characterLiveData = characterStaffRepository.getStaffCharactersLiveData()
+//        return characterLiveData
+//    }
 
+//    fun getAndSaveAllCharacters(){
+//        allCharactersRepository.getAllCharacters()
+//    }
+
+
+    /**
+     * ViewModel method that invokes repository method to fetch and save all characters
+     */
     fun getAndSaveAllCharacters(){
-        allCharactersRepository.getAllCharacters()
-    }
-
-    fun fetchCharacters(){
         viewModelScope.launch {
-            characters.postValue(allCharactersRepository.fetchCharacters())
+            characters.postValue(allCharactersRepository.getAllCharacters())
         }
     }
 
-    fun getCharacter(){
-        viewModelScope.launch {
-            when(val value = allCharactersRepository.fetchCharacters()){
-                is NetworkResult.Success -> charactersResponse.postValue(value.data)
-                is NetworkResult.Error -> characterError.postValue(value.exception.message)
-            }
-        }
-    }
+//    fun getAndSaveAllCharacters() {
+//        viewModelScope.launch {
+//            when (val value = allCharactersRepository.getAllCharacters()) {
+//                is NetworkResult.Success -> charactersResponse.postValue(value.data)
+//                is NetworkResult.Error -> characterError.postValue(value.exception.message)
+//            }
+//        }
+//    }
 }

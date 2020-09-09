@@ -9,6 +9,7 @@
         android:targetSdkVersion="29" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="androidx.multidex.MultiDexApplication"
@@ -32,6 +33,12 @@
             android:name="com.squareup.picasso.PicassoProvider"
             android:authorities="com.anniekobia.harrypotter.com.squareup.picasso"
             android:exported="false" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
+
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
             android:authorities="com.anniekobia.harrypotter.lifecycle-process"

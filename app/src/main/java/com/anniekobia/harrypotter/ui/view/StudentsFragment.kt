@@ -43,7 +43,7 @@ class StudentsFragment : Fragment() {
 
 
         binding.progressBar.visibility = GONE
-        setRecyclerView(binding.root)
+//        setRecyclerView(binding.root)
 
         return binding.root
     }
@@ -51,42 +51,42 @@ class StudentsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        characterViewModel.characters.observe(viewLifecycleOwner){
-            // hide
-            when(it){
-                is NetworkResult.Success -> {}
-                is NetworkResult.Error ->{}
-                is NetworkResult.Loading -> {}
-            }
-
-        }
-        characterViewModel.characterError.observe(viewLifecycleOwner){
-            // hide
-        }
-        characterViewModel.charactersResponse.observe(viewLifecycleOwner){
-            // hide
-        }
+//        characterViewModel.characters.observe(viewLifecycleOwner){
+//            // hide
+//            when(it){
+//                is NetworkResult.Success -> {}
+//                is NetworkResult.Error ->{}
+//                is NetworkResult.Loading -> {}
+//            }
+//
+//        }
+//        characterViewModel.characterError.observe(viewLifecycleOwner){
+//            // hide
+//        }
+//        characterViewModel.charactersResponse.observe(viewLifecycleOwner){
+//            // hide
+//        }
 
     }
 
-    private fun setRecyclerView(view: View) {
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
-        binding.progressBar.visibility = VISIBLE
-        characterViewModel.getStudentCharacters().observe(viewLifecycleOwner,
-            Observer<ArrayList<Character>> { characters ->
-                if (characters != null) {
-                    recyclerViewAdapter =
-                        CharacterDataAdapter(characters) { character: Character, imageView: ImageView ->
-                            val bundle = bundleOf("Character" to character,"URI" to character.image)
-                            val extras = FragmentNavigatorExtras(
-                                imageView to character.image
-                            )
-                            view.findNavController().navigate(R.id.global_detailsFragment, bundle,null,extras)
-                        }
-                    binding.recyclerView.adapter = recyclerViewAdapter
-                    binding.progressBar.visibility = GONE
-                }
-            })
-    }
+//    private fun setRecyclerView(view: View) {
+//        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+//        binding.progressBar.visibility = VISIBLE
+//        characterViewModel.getStudentCharacters().observe(viewLifecycleOwner,
+//            Observer<ArrayList<Character>> { characters ->
+//                if (characters != null) {
+//                    recyclerViewAdapter =
+//                        CharacterDataAdapter(characters) { character: Character, imageView: ImageView ->
+//                            val bundle = bundleOf("Character" to character,"URI" to character.image)
+//                            val extras = FragmentNavigatorExtras(
+//                                imageView to character.image
+//                            )
+//                            view.findNavController().navigate(R.id.global_detailsFragment, bundle,null,extras)
+//                        }
+//                    binding.recyclerView.adapter = recyclerViewAdapter
+//                    binding.progressBar.visibility = GONE
+//                }
+//            })
+//    }
 
 }

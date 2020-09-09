@@ -1596,6 +1596,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable harrypotterlogo
+drawable ic_harrypotterglasses
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
@@ -1603,6 +1604,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_playbuttontwo
+drawable ic_refresh
 drawable logo_gryffindor
 drawable logo_hufflepuff
 drawable logo_ravenclaw
@@ -1803,6 +1805,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id errorView
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1831,6 +1834,7 @@ id group_divider
 id groups
 id hair_color
 id hair_color_txt
+id harryPotterGlasses
 id hideable
 id home
 id homeAsUp
@@ -1939,6 +1943,7 @@ id radio
 id ratio
 id rectangles
 id recyclerView
+id refresh
 id reverseSawtooth
 id right
 id right_icon
@@ -2266,6 +2271,7 @@ string gender_male
 string hair_color
 string hair_color_black
 string harry_potter_app_logo
+string harry_potter_glasses
 string hide_bottom_view_on_scroll_behavior
 string house
 string house_gryffindor
@@ -2314,6 +2320,8 @@ string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string network_error_message
+string no_internet_message
 string other_fragment_tab_title
 string password_toggle_content_description
 string path_password_eye
@@ -3148,7 +3156,7 @@ styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
 styleable ShapeableImageView shapeAppearance shapeAppearanceOverlay strokeColor strokeWidth
-styleable Slider android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius tickColor tickColorActive tickColorInactive trackColor trackColorActive trackColorInactive trackHeight
+styleable Slider android_enabled android_value android_stepSize android_valueFrom android_valueTo haloColor haloRadius labelBehavior labelStyle thumbColor thumbElevation thumbRadius tickColor tickColorActive tickColorInactive trackColor trackColorActive trackColorInactive trackHeight
 styleable Snackbar snackbarButtonStyle snackbarStyle snackbarTextViewStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha backgroundTint backgroundTintMode elevation maxActionInlineWidth
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
