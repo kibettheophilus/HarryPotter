@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.anniekobia.harrypotter"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -74,4 +74,6 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     //Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$room_version"
+    //ViewPager2
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }
