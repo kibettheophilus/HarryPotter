@@ -8,7 +8,7 @@ import com.anniekobia.harrypotter.data.remote.model.Character
 
 
 @Database(entities = [Character::class], version = 1)
-abstract class CharacterDatabase : RoomDatabase(){
+abstract class CharacterDatabase : RoomDatabase() {
     abstract fun characterDao(): CharacterDAO
 
     companion object {

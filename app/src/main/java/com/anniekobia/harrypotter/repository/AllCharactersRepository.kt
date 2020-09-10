@@ -6,6 +6,7 @@ import com.anniekobia.harrypotter.data.remote.RetrofitClient
 import com.anniekobia.harrypotter.data.local.CharacterDatabase
 import com.anniekobia.harrypotter.data.remote.model.CharacterList
 import com.anniekobia.harrypotter.utils.NetworkResult
+import com.anniekobia.harrypotter.utils.safeApiCall
 import java.io.IOException
 
 
@@ -17,7 +18,12 @@ class AllCharactersRepository(context: Context) {
     /**
      * Repository method to make network call that fetches all characters in the series
      */
-    suspend fun getAllCharacters(): NetworkResult<CharacterList> {
+    suspend fun getAllCharacters() = safeApiCall(
+        call = { getCharacters() },
+        errorMessage = "Something went wrong. Please tap the icon to refresh"
+    )
+
+    private suspend fun getCharacters(): NetworkResult<CharacterList> {
         val response = RetrofitClient.apiService.getAllCharacters()
         return when {
             response.isSuccessful -> {
@@ -35,7 +41,12 @@ class AllCharactersRepository(context: Context) {
     /**
      * Repository method to save all characters in the local sqlite db
      */
-    private suspend fun saveAllCharacters(characterArrayList: CharacterList): NetworkResult<List<Long>> {
+    private suspend fun saveAllCharacters(characterArrayList: CharacterList) = safeApiCall(
+        call = { saveCharacters(characterArrayList) },
+        errorMessage = "Something went wrong. Please tap the icon to refresh"
+    )
+
+    private suspend fun saveCharacters(characterArrayList: CharacterList): NetworkResult<List<Long>> {
         val response = characterDAO!!.saveListOfAllCharacters(characterArrayList)
         return when {
             response.isEmpty() -> {

@@ -74,7 +74,7 @@ class HomeFragment : Fragment() {
 
     /**
      * Checks if there is a network connection before invoking network call to fetch all characters
-     * Shows the error message view incase there is no connection or a network call error else sets normal view with data
+     * Shows the error message view in case there is no connection or a network call error else sets normal view with data
      */
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun loadAllCharacters() {

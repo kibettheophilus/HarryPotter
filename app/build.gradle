@@ -39,7 +39,6 @@ android {
         viewBinding true
     }
 }
-// Review : Update deps now and always use latest Gradle Version
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

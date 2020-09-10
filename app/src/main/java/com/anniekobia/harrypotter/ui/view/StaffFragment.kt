@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,7 +44,7 @@ class StaffFragment : Fragment() {
 
     /**
      * Fetches staff characters in the local sqlite db
-     * Shows the error message view incase there are no characters
+     * Shows the error message view in case there are no characters
      */
     private fun loadStaffCharacters() {
         binding.errorView.visibility = View.GONE
@@ -65,6 +63,9 @@ class StaffFragment : Fragment() {
 
     }
 
+    /**
+     * Set recyclerview adapter with list fetched from local sqlite db
+     */
     private fun setRecyclerView(view: View, characters: ArrayList<Character>) {
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerViewAdapter =

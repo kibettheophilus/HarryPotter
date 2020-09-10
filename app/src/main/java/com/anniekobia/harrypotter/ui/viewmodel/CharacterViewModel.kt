@@ -23,6 +23,7 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
     val allCharacters = MutableLiveData<NetworkResult<CharacterList>>()
     val characters = MutableLiveData<NetworkResult<List<Character>>>()
 
+
     /**
      * ViewModel method that invokes repository method to fetch and save all characters
      */
@@ -51,7 +52,7 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
     }
 
     /**
-     * ViewModel method that invokes repository method to fetch other characters that are not students nor staff
+     * ViewModel method that invokes repository method to fetch other characters that are neither students nor staff
      */
     fun getOtherCharacters() {
         viewModelScope.launch {

@@ -10,7 +10,6 @@ import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,7 +45,7 @@ class OtherCharactersFragment : Fragment() {
 
     /**
      * Fetches other characters that are not students or staff in the local sqlite db
-     * Shows the error message view incase there are no characters
+     * Shows the error message view in case there are no characters
      */
     private fun loadOtherCharacters() {
         binding.errorView.visibility = GONE
@@ -65,6 +64,9 @@ class OtherCharactersFragment : Fragment() {
 
     }
 
+    /**
+     * Set recyclerview adapter with list fetched from local sqlite db
+     */
     private fun setRecyclerView(view: View, characters: ArrayList<Character>) {
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerViewAdapter =

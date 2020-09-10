@@ -267,6 +267,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintDimensionRatio="1:1.3"
-            app:layout_constraintTop_toBottomOf="@id/details_cl"/>
+            app:layout_constraintTop_toBottomOf="@id/details_cl"
+            android:contentDescription="@string/character_house_logo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

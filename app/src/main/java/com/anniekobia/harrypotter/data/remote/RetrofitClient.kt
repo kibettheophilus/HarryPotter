@@ -8,6 +8,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
+    /**
+     * Base API URL for all endpoints
+     */
     private const val BASE_URL = "http://hp-api.herokuapp.com/api/characters/"
 
     private val client = OkHttpClient.Builder()

@@ -10,7 +10,7 @@ interface CharacterDAO {
 
 
     /**
-     * Insert list of all character to database
+     * Insert list of all characterS to the local sqlite database
      */
     @Insert
     suspend fun saveListOfAllCharacters(characterList: List<Character>): List<Long>

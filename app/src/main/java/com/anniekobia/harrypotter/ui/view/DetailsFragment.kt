@@ -31,11 +31,15 @@ class DetailsFragment : Fragment() {
     ): View? {
         binding = FragmentDetailsBinding.inflate(inflater, container, false)
 
-        //Animation
+        /**
+         * Load character house logo animation
+         */
         houseLogoAnimation = AnimationUtils.loadAnimation(context, R.anim.house_logo_animation)
 
 
-        //Shared element transition for character image
+        /**
+         * Shared element transition for character image from recyclerview item to details page
+         */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             sharedElementEnterTransition =
                 TransitionInflater.from(context).inflateTransition(android.R.transition.move)
@@ -52,7 +56,6 @@ class DetailsFragment : Fragment() {
 
     @ExperimentalStdlibApi
     private fun bindDetails(character: Character) {
-
         binding.characterImage.apply {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 transitionName = characterImageUri
@@ -108,19 +111,27 @@ class DetailsFragment : Fragment() {
                 }
                 character.wand.wood.isNotEmpty() && character.wand.core.isNotEmpty() && character.wand.length.isEmpty() -> {
                     binding.wand.text =
-                        (character.wand.wood + ", " + character.wand.core + getString(R.string.wand_core)).capitalize(Locale.ROOT)
+                        (character.wand.wood + ", " + character.wand.core + getString(R.string.wand_core)).capitalize(
+                            Locale.ROOT
+                        )
                 }
                 character.wand.wood.isNotEmpty() && character.wand.core.isEmpty() && character.wand.length.isNotEmpty() -> {
                     binding.wand.text =
-                        (character.wand.wood + ", " + character.wand.length + getString(R.string.wand_inches)).capitalize(Locale.ROOT)
+                        (character.wand.wood + ", " + character.wand.length + getString(R.string.wand_inches)).capitalize(
+                            Locale.ROOT
+                        )
                 }
                 character.wand.wood.isEmpty() && character.wand.core.isNotEmpty() && character.wand.length.isNotEmpty() -> {
                     binding.wand.text =
-                        (character.wand.core + getString(R.string.wand_core) +", "+ character.wand.length + getString(R.string.wand_inches)).capitalize(Locale.ROOT)
+                        (character.wand.core + getString(R.string.wand_core) + ", " + character.wand.length + getString(
+                            R.string.wand_inches
+                        )).capitalize(Locale.ROOT)
                 }
                 else -> {
                     binding.wand.text =
-                        (character.wand.wood + ", " + character.wand.core +getString(R.string.wand_core)+ ", " + character.wand.length + getString(R.string.wand_inches)).capitalize(Locale.ROOT)
+                        (character.wand.wood + ", " + character.wand.core + getString(R.string.wand_core) + ", " + character.wand.length + getString(
+                            R.string.wand_inches
+                        )).capitalize(Locale.ROOT)
                 }
             }
         }
@@ -128,6 +139,9 @@ class DetailsFragment : Fragment() {
 
     }
 
+    /**
+     * Set respective house logo and start logo animation
+     */
     private fun setHouseLogo(character: Character) {
         when (character.house) {
             getString(R.string.house_gryffindor) -> {
