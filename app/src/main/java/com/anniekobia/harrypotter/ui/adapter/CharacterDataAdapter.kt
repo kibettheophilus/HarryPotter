@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso
 
 class CharacterDataAdapter(
     private var characterList: ArrayList<Character>,
-    private val listener: (Character, ImageView) -> Unit // Review : Seek explanations for this
+    private val listener: (Character, ImageView) -> Unit
 ) : RecyclerView.Adapter<CharacterDataAdapter.MyViewHolder>() {
 
     private lateinit var binding: CharacterItemRowBinding
@@ -25,12 +25,10 @@ class CharacterDataAdapter(
         return MyViewHolder(binding, listener)
     }
 
-    // Review : Use expressions instead
     override fun getItemCount(): Int = characterList.size
 
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        // Review : Can be simplified in the view holder
         val character = characterList[position]
         holder.bind(character)
     }
@@ -49,8 +47,13 @@ class CharacterDataAdapter(
             with(character) {
                 characterName.text = name
                 characterActorName.text = actor
-                Picasso.get().load(image).into(characterImage)
-                itemView.setOnClickListener { listener(character, characterImage) }
+                characterImage.apply {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        transitionName = character.image
+                    }
+                    Picasso.get().load(image).into(characterImage)
+                    itemView.setOnClickListener { listener(character, characterImage) }
+                }
             }
         }
     }

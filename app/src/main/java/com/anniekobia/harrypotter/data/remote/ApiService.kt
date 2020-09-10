@@ -8,7 +8,7 @@ interface ApiService {
 
     /**
      * Fetch all characters in the series
-     * This characters will be stored in the local database and retrieved to populate the various screens
+     * This characters will be stored in the local sqlite database and retrieved to populate the various screens
      */
     @GET(".")
     suspend fun getAllCharacters(): Response<CharacterList>

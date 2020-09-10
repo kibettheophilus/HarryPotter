@@ -33,51 +33,52 @@
 21-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:12:9-54
 22        android:supportsRtl="true"
 22-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:13:9-35
-23        android:theme="@style/AppTheme.NoActionBar" >
-23-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:14:9-52
-24        <activity android:name="com.anniekobia.harrypotter.ui.view.MainActivity" >
-24-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:17:9-22:20
-24-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:17:19-81
-25            <intent-filter>
-25-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:18:13-21:29
-26                <action android:name="android.intent.action.MAIN" />
-26-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:19:17-69
-26-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:19:25-66
-27
-28                <category android:name="android.intent.category.LAUNCHER" />
-28-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:20:17-77
-28-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:20:27-74
-29            </intent-filter>
-30        </activity>
-31
-32        <provider
-32-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\100c6adae940d20a7ae702422dc982b2\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
-33            android:name="com.squareup.picasso.PicassoProvider"
-33-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\100c6adae940d20a7ae702422dc982b2\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
-34            android:authorities="com.anniekobia.harrypotter.com.squareup.picasso"
-34-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\100c6adae940d20a7ae702422dc982b2\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
-35            android:exported="false" />
-35-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\100c6adae940d20a7ae702422dc982b2\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
-36
-37        <service
-37-->[androidx.room:room-runtime:2.2.5] C:\Users\User\.gradle\caches\transforms-2\files-2.1\93f5c6ed0143b890fdba7018f8ab8a56\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
-38            android:name="androidx.room.MultiInstanceInvalidationService"
-38-->[androidx.room:room-runtime:2.2.5] C:\Users\User\.gradle\caches\transforms-2\files-2.1\93f5c6ed0143b890fdba7018f8ab8a56\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
-39            android:directBootAware="true"
-39-->[androidx.room:room-runtime:2.2.5] C:\Users\User\.gradle\caches\transforms-2\files-2.1\93f5c6ed0143b890fdba7018f8ab8a56\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
-40            android:exported="false" />
-40-->[androidx.room:room-runtime:2.2.5] C:\Users\User\.gradle\caches\transforms-2\files-2.1\93f5c6ed0143b890fdba7018f8ab8a56\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
-41
-42        <provider
-42-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-43            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-43-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-44            android:authorities="com.anniekobia.harrypotter.lifecycle-process"
-44-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-45            android:exported="false"
-45-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-46            android:multiprocess="true" />
-46-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-47    </application>
-48
-49</manifest>
+23        android:testOnly="true"
+24        android:theme="@style/AppTheme.NoActionBar" >
+24-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:14:9-52
+25        <activity android:name="com.anniekobia.harrypotter.ui.view.MainActivity" >
+25-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:17:9-22:20
+25-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:17:19-81
+26            <intent-filter>
+26-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:18:13-21:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:19:17-69
+27-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:19:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:20:17-77
+29-->C:\Users\User\Desktop\HP\HarryPotter\app\src\main\AndroidManifest.xml:20:27-74
+30            </intent-filter>
+31        </activity>
+32
+33        <provider
+33-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\100c6adae940d20a7ae702422dc982b2\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+34            android:name="com.squareup.picasso.PicassoProvider"
+34-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\100c6adae940d20a7ae702422dc982b2\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+35            android:authorities="com.anniekobia.harrypotter.com.squareup.picasso"
+35-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\100c6adae940d20a7ae702422dc982b2\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+36            android:exported="false" />
+36-->[com.squareup.picasso:picasso:2.71828] C:\Users\User\.gradle\caches\transforms-2\files-2.1\100c6adae940d20a7ae702422dc982b2\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+37
+38        <service
+38-->[androidx.room:room-runtime:2.2.5] C:\Users\User\.gradle\caches\transforms-2\files-2.1\93f5c6ed0143b890fdba7018f8ab8a56\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+39            android:name="androidx.room.MultiInstanceInvalidationService"
+39-->[androidx.room:room-runtime:2.2.5] C:\Users\User\.gradle\caches\transforms-2\files-2.1\93f5c6ed0143b890fdba7018f8ab8a56\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+40            android:directBootAware="true"
+40-->[androidx.room:room-runtime:2.2.5] C:\Users\User\.gradle\caches\transforms-2\files-2.1\93f5c6ed0143b890fdba7018f8ab8a56\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+41            android:exported="false" />
+41-->[androidx.room:room-runtime:2.2.5] C:\Users\User\.gradle\caches\transforms-2\files-2.1\93f5c6ed0143b890fdba7018f8ab8a56\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+42
+43        <provider
+43-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+44            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+44-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+45            android:authorities="com.anniekobia.harrypotter.lifecycle-process"
+45-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+46            android:exported="false"
+46-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+47            android:multiprocess="true" />
+47-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\77fa7d6ec2cec3035cff0f4afc942997\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+48    </application>
+49
+50</manifest>

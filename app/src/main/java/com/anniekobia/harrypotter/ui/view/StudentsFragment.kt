@@ -10,7 +10,6 @@ import android.widget.ImageView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
@@ -41,52 +40,43 @@ class StudentsFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentStudentBinding.inflate(inflater, container, false)
 
-
-        binding.progressBar.visibility = GONE
-//        setRecyclerView(binding.root)
+        loadStudentCharacters()
 
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-//        characterViewModel.characters.observe(viewLifecycleOwner){
-//            // hide
-//            when(it){
-//                is NetworkResult.Success -> {}
-//                is NetworkResult.Error ->{}
-//                is NetworkResult.Loading -> {}
-//            }
-//
-//        }
-//        characterViewModel.characterError.observe(viewLifecycleOwner){
-//            // hide
-//        }
-//        characterViewModel.charactersResponse.observe(viewLifecycleOwner){
-//            // hide
-//        }
+    /**
+     * Fetches student characters in the local sqlite db
+     * Shows the error message view incase there are no characters
+     */
+    private fun loadStudentCharacters() {
+        binding.errorView.visibility = GONE
+        characterViewModel.getStudentCharacters()
+        characterViewModel.characters.observe(viewLifecycleOwner) {
+            when (it) {
+                is NetworkResult.Success -> {
+                    setRecyclerView(binding.root, it.data as ArrayList<Character>)
+                }
+                is NetworkResult.Error -> {
+                    binding.message.text = it.exception.message
+                    binding.errorView.visibility = VISIBLE
+                }
+            }
+        }
 
     }
 
-//    private fun setRecyclerView(view: View) {
-//        binding.recyclerView.layoutManager = LinearLayoutManager(context)
-//        binding.progressBar.visibility = VISIBLE
-//        characterViewModel.getStudentCharacters().observe(viewLifecycleOwner,
-//            Observer<ArrayList<Character>> { characters ->
-//                if (characters != null) {
-//                    recyclerViewAdapter =
-//                        CharacterDataAdapter(characters) { character: Character, imageView: ImageView ->
-//                            val bundle = bundleOf("Character" to character,"URI" to character.image)
-//                            val extras = FragmentNavigatorExtras(
-//                                imageView to character.image
-//                            )
-//                            view.findNavController().navigate(R.id.global_detailsFragment, bundle,null,extras)
-//                        }
-//                    binding.recyclerView.adapter = recyclerViewAdapter
-//                    binding.progressBar.visibility = GONE
-//                }
-//            })
-//    }
+    private fun setRecyclerView(view: View, characters: ArrayList<Character>) {
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerViewAdapter =
+            CharacterDataAdapter(characters) { character: Character, imageView: ImageView ->
+                val bundle = bundleOf("Character" to character, "URI" to character.image)
+                val extras = FragmentNavigatorExtras(
+                    imageView to character.image
+                )
+                view.findNavController().navigate(R.id.global_detailsFragment, bundle, null, extras)
+            }
+        binding.recyclerView.adapter = recyclerViewAdapter
+    }
 
 }

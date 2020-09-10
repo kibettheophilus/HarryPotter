@@ -47,6 +47,7 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        startNetworkCallback()
         checkIfFirstRun()
         binding.refresh.setOnClickListener { loadAllCharacters() }
 
@@ -56,7 +57,7 @@ class HomeFragment : Fragment() {
 
     /**
      * Checks a SharedPreferences boolean value to get if its the first application run
-     * If yes, invokes network call to fetch all characters else sets normal view
+     * If yes, invokes network call to fetch all characters else sets normal view with data
      */
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun checkIfFirstRun() {
@@ -73,15 +74,15 @@ class HomeFragment : Fragment() {
 
     /**
      * Checks if there is a network connection before invoking network call to fetch all characters
-     * Shows the error message view incase of no connection or network call error else sets normal view
+     * Shows the error message view incase there is no connection or a network call error else sets normal view with data
      */
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun loadAllCharacters() {
         binding.errorView.visibility = GONE
-        startNetworkCallback()
+        binding.progressBar.visibility = VISIBLE
         if (Variables.isNetworkConnected) {
             characterViewModel.getAndSaveAllCharacters()
-            characterViewModel.characters.observe(viewLifecycleOwner) {
+            characterViewModel.allCharacters.observe(viewLifecycleOwner) {
                 when (it) {
                     is NetworkResult.Success -> {
                         binding.progressBar.visibility = GONE
@@ -94,7 +95,7 @@ class HomeFragment : Fragment() {
                     }
                     is NetworkResult.Error -> {
                         binding.progressBar.visibility = GONE
-                        binding.message.text = getString(R.string.network_error_message)
+                        binding.message.text = it.exception.message
                         binding.errorView.visibility = VISIBLE
                     }
                 }
@@ -107,14 +108,13 @@ class HomeFragment : Fragment() {
     }
 
     /**
-     * Checks for network connection
+     * Checks for network connection state
      */
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     fun startNetworkCallback() {
         val cm: ConnectivityManager =
             requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val builder: NetworkRequest.Builder = NetworkRequest.Builder()
-
         cm.registerNetworkCallback(
             builder.build(),
             object : ConnectivityManager.NetworkCallback() {
@@ -134,9 +134,9 @@ class HomeFragment : Fragment() {
     private fun setViewPager() {
         val adapter =
             com.anniekobia.harrypotter.ui.adapter.FragmentPagerAdapter(childFragmentManager)
-//        adapter.addFragment(StudentsFragment(), getString(R.string.students_fragment_tab_title))
-//        adapter.addFragment(StaffFragment(), getString(R.string.staff_fragment_tab_title))
-//        adapter.addFragment(OtherCharactersFragment(), getString(R.string.other_fragment_tab_title))
+        adapter.addFragment(StudentsFragment(), getString(R.string.students_fragment_tab_title))
+        adapter.addFragment(StaffFragment(), getString(R.string.staff_fragment_tab_title))
+        adapter.addFragment(OtherCharactersFragment(), getString(R.string.other_fragment_tab_title))
 
         binding.viewPager.adapter = adapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)

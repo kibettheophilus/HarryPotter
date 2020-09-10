@@ -2,7 +2,6 @@ package com.anniekobia.harrypotter.ui.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.anniekobia.harrypotter.data.remote.model.Character
@@ -21,46 +20,43 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
     private val otherCharactersRepository = OtherCharactersRepository(application)
     private val characterStudentRepository = CharacterStudentRepository(application)
     private val characterStaffRepository = CharacterStaffRepository(application)
-    lateinit var characterLiveData: LiveData<ArrayList<Character>>
-    val characters = MutableLiveData<NetworkResult<CharacterList>>()
-    val charactersResponse = MutableLiveData<CharacterList>()
-    val characterError = MutableLiveData<String>()
-
-    fun getOtherCharacters(): LiveData<ArrayList<Character>> {
-        characterLiveData = otherCharactersRepository.getOtherCharactersLiveData()
-        return characterLiveData
-    }
-
-//    fun getStudentCharacters(): LiveData<ArrayList<Character>> {
-//        characterLiveData = characterStudentRepository.getStudentCharacterLiveData()
-//        return characterLiveData
-//    }
-
-//    fun getStaffCharacters(): LiveData<ArrayList<Character>> {
-//        characterLiveData = characterStaffRepository.getStaffCharactersLiveData()
-//        return characterLiveData
-//    }
-
-//    fun getAndSaveAllCharacters(){
-//        allCharactersRepository.getAllCharacters()
-//    }
-
+    val allCharacters = MutableLiveData<NetworkResult<CharacterList>>()
+    val characters = MutableLiveData<NetworkResult<List<Character>>>()
 
     /**
      * ViewModel method that invokes repository method to fetch and save all characters
      */
-    fun getAndSaveAllCharacters(){
+    fun getAndSaveAllCharacters() {
         viewModelScope.launch {
-            characters.postValue(allCharactersRepository.getAllCharacters())
+            allCharacters.postValue(allCharactersRepository.getAllCharacters())
         }
     }
 
-//    fun getAndSaveAllCharacters() {
-//        viewModelScope.launch {
-//            when (val value = allCharactersRepository.getAllCharacters()) {
-//                is NetworkResult.Success -> charactersResponse.postValue(value.data)
-//                is NetworkResult.Error -> characterError.postValue(value.exception.message)
-//            }
-//        }
-//    }
+    /**
+     * ViewModel method that invokes repository method to fetch student characters
+     */
+    fun getStudentCharacters() {
+        viewModelScope.launch {
+            characters.postValue(characterStudentRepository.getStudentCharacters())
+        }
+    }
+
+    /**
+     * ViewModel method that invokes repository method to fetch staff characters
+     */
+    fun getStaffCharacters() {
+        viewModelScope.launch {
+            characters.postValue(characterStaffRepository.getStaffCharacters())
+        }
+    }
+
+    /**
+     * ViewModel method that invokes repository method to fetch other characters that are not students nor staff
+     */
+    fun getOtherCharacters() {
+        viewModelScope.launch {
+            characters.postValue(otherCharactersRepository.getOtherCharacters())
+        }
+    }
+
 }
