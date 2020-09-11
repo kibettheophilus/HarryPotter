@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "156858368339",
+    "firebase_url": "https://harrypotter-daf75.firebaseio.com",
+    "project_id": "harrypotter-daf75",
+    "storage_bucket": "harrypotter-daf75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156858368339:android:65c7c65c9f0529cbbce1a6",
+        "android_client_info": {
+          "package_name": "com.anniekobia.harrypotter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156858368339-5t0cojd7o96q2ir25ptmf83baq7asp7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJn9hf-CPaCY2c5FLkrG7zzaZvdp-OTpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156858368339-5t0cojd7o96q2ir25ptmf83baq7asp7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
