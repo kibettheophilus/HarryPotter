@@ -9,36 +9,96 @@
     tools:context=".ui.view.MainActivity">
 
     <ImageView
-        android:id="@+id/marvelLogo"
-        android:layout_width="@dimen/zero_dp"
-        android:layout_height="@dimen/imageview_height_40dp"
+        android:id="@+id/appLogo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/logo_height_60dp"
         android:layout_marginVertical="@dimen/imageview_vertical_margin"
-        android:background="@drawable/marvellogo"
-        app:layout_constraintDimensionRatio="2:1"
+        android:background="@drawable/harrypotterlogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/marvel_logo" />
+        android:contentDescription="@string/harry_potter_app_logo" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabTextColor="@android:color/black"
-        app:tabPadding="@dimen/tab_padding"
+        app:tabTextColor="@color/colorPrimary"
         app:tabIndicatorColor="@android:color/transparent"
-        app:tabSelectedTextColor="@android:color/white"
+        app:tabSelectedTextColor="@android:color/black"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         android:layout_marginTop="@dimen/margin_10dp"
         app:tabBackground="@drawable/tab_selector"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/marvelLogo"/>
+        app:layout_constraintTop_toBottomOf="@id/appLogo"/>
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="@dimen/zero_dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tab_layout"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/errorView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_10dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/harryPotterGlasses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/imageview_vertical_margin"
+            android:background="@drawable/ic_harrypotterglasses"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/message"
+            android:contentDescription="@string/harry_potter_glasses" />
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:textSize="@dimen/textsize_16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/harryPotterGlasses"
+            app:layout_constraintBottom_toTopOf="@id/refresh"/>
+
+        <ImageView
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/imageview_vertical_margin"
+            android:background="@drawable/ic_refresh"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/message"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="@string/harry_potter_glasses" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/ProgressBarStyle"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </ProgressBar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

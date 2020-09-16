@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#F70D0C</color>
-    <color name="colorPrimaryDark">#d31f26</color>
+    <color name="colorPrimary">#e1ad01</color>
+    <color name="colorPrimaryDark">#f9bf2b</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="material_red_500">#ef4437</color>
-    <color name="material_red_50">#fdebed</color>
-    <color name="material_red_100">#faccd2</color>
-    <color name="material_red_200">#ee999a</color>
-    <color name="material_red_300">#e57272</color>
-    <color name="material_red_400">#ef5350</color>
-    <color name="material_red_600">#e53934</color>
-    <color name="material_red_700">#d32e2e</color>
-    <color name="material_red_800">#c52828</color>
-    <color name="material_red_900">#b62025</color>
-    <color name="material_red_A100">#f48980</color>
-    <color name="material_red_A200">#f05454</color>
-    <color name="material_red_A400">#ed2648</color>
-    <color name="material_red_A700">#d31f26</color>
 </resources>

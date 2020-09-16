@@ -9,152 +9,265 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/screen_padding">
 
-        <ImageView
-            android:id="@+id/superhero_image"
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/character_image_cv"
+            android:layout_width="@dimen/zero_dp"
             android:layout_height="0dp"
-            android:contentDescription="@string/superhero_image_description"
-            app:layout_constraintDimensionRatio="1:1"
+            app:cardCornerRadius="@dimen/cardcornerradius_20dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            android:layout_marginHorizontal="@dimen/margin_15dp"
+            app:layout_constraintDimensionRatio="1:1.1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.7">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/bottom_cl"
+            <ImageView
+                android:id="@+id/character_image"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/character_image" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/character_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/screen_padding"
+            android:layout_marginTop="@dimen/margin_10dp"
+            android:text="@string/character_name_harry_potter"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textsize_24sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/superhero_image">
+            app:layout_constraintTop_toBottomOf="@id/character_image_cv" />
+
+        <TextView
+            android:id="@+id/character_actor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/charactor_actor_daniel_radcliffe"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textsize_18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_name" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/details_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corners"
+            android:paddingHorizontal="@dimen/margin_10dp"
+            android:paddingVertical="@dimen/margin_5dp"
+            android:layout_marginTop="@dimen/margin_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/character_actor_name">
 
             <TextView
-                android:id="@+id/superhero_name"
+                android:id="@+id/ancestry_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/ancestry"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/textsize_24sp"
+                android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/superhero_character_name"
+                android:id="@+id/ancestry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:text="@string/ancestry_half_blood"
                 android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_name" />
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/ancestry_txt"
+                app:layout_constraintStart_toEndOf="@id/ancestry_txt" />
 
             <TextView
-                android:id="@+id/superhero_bio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_10dp"
-                android:textSize="14sp"
-                android:textColor="@android:color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_character_name" />
-
-            <TextView
-                android:id="@+id/superhero_appearance"
+                android:id="@+id/patronus_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_5dp"
-                android:textSize="@dimen/textsize_18sp"
-                android:text="@string/appearance"
-                android:textStyle="bold"
+                android:text="@string/patronus_guardian"
                 android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_16dp"
+                android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_bio" />
+                app:layout_constraintTop_toBottomOf="@id/ancestry_txt" />
 
             <TextView
-                android:id="@+id/superhero_appearance_gender"
+                android:id="@+id/patronus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_2dp"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:text="@string/patronus_stag"
                 android:textColor="@android:color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/patronus_txt"
+                app:layout_constraintStart_toEndOf="@id/patronus_txt" />
+
+            <TextView
+                android:id="@+id/wand_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:text="@string/wand"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_16dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/patronus_txt" />
+
+            <TextView
+                android:id="@+id/wand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:text="@string/wand_holly_phoenix_feather_11cm"
+                android:textColor="@android:color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/wand_txt"
+                app:layout_constraintStart_toEndOf="@id/wand_txt" />
+
+            <TextView
+                android:id="@+id/species_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5dp"
+                android:text="@string/species"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_16dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wand_txt" />
+
+            <TextView
+                android:id="@+id/species"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:text="@string/species_human"
+                android:textColor="@android:color/black"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/species_txt"
+                app:layout_constraintStart_toEndOf="@id/species_txt" />
+
+            <TextView
+                android:id="@+id/gender_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5dp"
                 android:text="@string/gender"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_appearance" />
+                app:layout_constraintTop_toBottomOf="@id/species_txt" />
 
             <TextView
-                android:id="@+id/superhero_appearance_gender_txt"
+                android:id="@+id/gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_2dp"
-                android:layout_marginStart="@dimen/margin_2dp"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:text="@string/gender_male"
                 android:textColor="@android:color/black"
-                app:layout_constraintStart_toEndOf="@id/superhero_appearance_gender"
-                app:layout_constraintTop_toBottomOf="@id/superhero_appearance" />
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/gender_txt"
+                app:layout_constraintStart_toEndOf="@id/gender_txt" />
 
             <TextView
-                android:id="@+id/superhero_appearance_race"
+                android:id="@+id/eye_color_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_5dp"
+                android:text="@string/eye_color"
                 android:textColor="@android:color/black"
-                android:text="@string/race"
+                android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_appearance_gender" />
+                app:layout_constraintTop_toBottomOf="@id/gender_txt" />
 
             <TextView
-                android:id="@+id/superhero_appearance_race_txt"
+                android:id="@+id/eye_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:text="@string/eye_color_green"
+                android:visibility="gone"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/eye_color_txt"
+                app:layout_constraintStart_toEndOf="@id/eye_color_txt" />
+
+            <TextView
+                android:id="@+id/hair_color_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_5dp"
-                android:layout_marginStart="@dimen/margin_2dp"
+                android:text="@string/hair_color"
                 android:textColor="@android:color/black"
-                app:layout_constraintStart_toEndOf="@id/superhero_appearance_race"
-                app:layout_constraintTop_toBottomOf="@id/superhero_appearance_gender" />
-
-            <TextView
-                android:id="@+id/superhero_aliases"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_5dp"
-                android:text="@string/aliases"
-                android:textSize="@dimen/textsize_18sp"
+                android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
-                android:textColor="@android:color/black"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_appearance_race_txt" />
+                app:layout_constraintTop_toBottomOf="@id/eye_color_txt" />
 
             <TextView
-                android:id="@+id/superhero_aliases_list"
+                android:id="@+id/hair_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_2dp"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:text="@string/hair_color_black"
                 android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_aliases" />
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/hair_color_txt"
+                app:layout_constraintStart_toEndOf="@id/hair_color_txt" />
 
             <TextView
-                android:id="@+id/superhero_comics"
+                android:id="@+id/house_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_5dp"
-                android:text="@string/comics"
-                android:textSize="@dimen/textsize_18sp"
+                android:text="@string/house"
                 android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_16dp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_aliases_list" />
+                app:layout_constraintTop_toBottomOf="@id/hair_color" />
 
             <TextView
-                android:id="@+id/superhero_comics_list"
+                android:id="@+id/house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_5dp"
+                android:text="@string/house_gryffindor"
                 android:textColor="@android:color/black"
-                android:layout_marginTop="@dimen/margin_2dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/superhero_comics" />
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/house_txt"
+                app:layout_constraintStart_toEndOf="@id/house_txt" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/house_logo"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/margin_5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="1:1.3"
+            app:layout_constraintTop_toBottomOf="@id/details_cl"
+            android:contentDescription="@string/character_house_logo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
