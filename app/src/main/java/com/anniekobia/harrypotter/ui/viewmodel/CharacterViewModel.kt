@@ -2,38 +2,62 @@ package com.anniekobia.harrypotter.ui.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import com.anniekobia.harrypotter.data.api.model.Character
-import com.anniekobia.harrypotter.data.repository.AllCharactersRepository
-import com.anniekobia.harrypotter.data.repository.OtherCharactersRepository
-import com.anniekobia.harrypotter.data.repository.CharacterStaffRepository
-import com.anniekobia.harrypotter.data.repository.CharacterStudentRepository
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.anniekobia.harrypotter.data.remote.model.Character
+import com.anniekobia.harrypotter.data.remote.model.CharacterList
+import com.anniekobia.harrypotter.repository.AllCharactersRepository
+import com.anniekobia.harrypotter.repository.OtherCharactersRepository
+import com.anniekobia.harrypotter.repository.CharacterStaffRepository
+import com.anniekobia.harrypotter.repository.CharacterStudentRepository
+import com.anniekobia.harrypotter.utils.NetworkResult
+import kotlinx.coroutines.launch
 
 
-class CharacterViewModel(application: Application): AndroidViewModel(application) {
+class CharacterViewModel(application: Application) : AndroidViewModel(application) {
 
     private val allCharactersRepository = AllCharactersRepository(application)
     private val otherCharactersRepository = OtherCharactersRepository(application)
     private val characterStudentRepository = CharacterStudentRepository(application)
     private val characterStaffRepository = CharacterStaffRepository(application)
-    lateinit var characterLiveData: LiveData<ArrayList<Character>>
+    val allCharacters = MutableLiveData<NetworkResult<CharacterList>>()
+    val characters = MutableLiveData<NetworkResult<List<Character>>>()
 
-    fun getOtherCharacters(): LiveData<ArrayList<Character>> {
-        characterLiveData = otherCharactersRepository.getOtherCharactersLiveData()
-        return characterLiveData
+
+    /**
+     * ViewModel method that invokes repository method to fetch and save all characters
+     */
+    fun getAndSaveAllCharacters() {
+        viewModelScope.launch {
+            allCharacters.postValue(allCharactersRepository.getAllCharacters())
+        }
     }
 
-    fun getStudentCharacters(): LiveData<ArrayList<Character>> {
-        characterLiveData = characterStudentRepository.getStudentCharacterLiveData()
-        return characterLiveData
+    /**
+     * ViewModel method that invokes repository method to fetch student characters
+     */
+    fun getStudentCharacters() {
+        viewModelScope.launch {
+            characters.postValue(characterStudentRepository.getStudentCharacters())
+        }
     }
 
-    fun getStaffCharacters(): LiveData<ArrayList<Character>> {
-        characterLiveData = characterStaffRepository.getStaffCharactersLiveData()
-        return characterLiveData
+    /**
+     * ViewModel method that invokes repository method to fetch staff characters
+     */
+    fun getStaffCharacters() {
+        viewModelScope.launch {
+            characters.postValue(characterStaffRepository.getStaffCharacters())
+        }
     }
 
-    fun getAndSaveAllCharacters(){
-        allCharactersRepository.getAllCharacters()
+    /**
+     * ViewModel method that invokes repository method to fetch other characters that are neither students nor staff
+     */
+    fun getOtherCharacters() {
+        viewModelScope.launch {
+            characters.postValue(otherCharactersRepository.getOtherCharacters())
+        }
     }
+
 }
