@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.CharacterItemRowBinding
-import com.squareup.picasso.Picasso
+import com.anniekobia.harrypotter.utils.loadImage
 
 
 class CharacterDataAdapter(
@@ -51,7 +51,8 @@ class CharacterDataAdapter(
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         transitionName = character.image
                     }
-                    Picasso.get().load(image).into(characterImage)
+//                    Picasso.get().load(image).into(characterImage)
+                    loadImage(image, characterImage)
                     itemView.setOnClickListener { listener(character, characterImage) }
                 }
             }

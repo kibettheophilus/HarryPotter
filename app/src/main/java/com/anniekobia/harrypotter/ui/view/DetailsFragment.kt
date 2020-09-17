@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentDetailsBinding
-import com.squareup.picasso.Picasso
+import com.anniekobia.harrypotter.utils.loadImage
 import java.util.*
 
 
@@ -60,8 +60,8 @@ class DetailsFragment : Fragment() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 transitionName = characterImageUri
             }
-            //Loading image using Picasso
-            Picasso.get().load(character.image).into(binding.characterImage)
+//            Picasso.get().load(character.image).into(binding.characterImage)
+            loadImage(character.image, binding.characterImage)
         }
         binding.characterName.text = character.name
         binding.characterActorName.text = character.actor
