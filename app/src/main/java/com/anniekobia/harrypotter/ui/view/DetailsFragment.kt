@@ -60,7 +60,6 @@ class DetailsFragment : Fragment() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 transitionName = characterImageUri
             }
-//            Picasso.get().load(character.image).into(binding.characterImage)
             loadImage(character.image, binding.characterImage)
         }
         binding.characterName.text = character.name

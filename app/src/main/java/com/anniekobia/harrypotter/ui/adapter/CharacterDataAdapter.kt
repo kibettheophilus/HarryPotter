@@ -51,7 +51,6 @@ class CharacterDataAdapter(
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         transitionName = character.image
                     }
-//                    Picasso.get().load(image).into(characterImage)
                     loadImage(image, characterImage)
                     itemView.setOnClickListener { listener(character, characterImage) }
                 }
