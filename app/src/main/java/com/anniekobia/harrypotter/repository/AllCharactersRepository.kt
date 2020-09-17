@@ -41,12 +41,7 @@ class AllCharactersRepository(context: Context) {
     /**
      * Repository method to save all characters in the local sqlite db
      */
-    private suspend fun saveAllCharacters(characterArrayList: CharacterList) = safeApiCall(
-        call = { saveCharacters(characterArrayList) },
-        errorMessage = "Something went wrong. Please tap the icon to refresh"
-    )
-
-    private suspend fun saveCharacters(characterArrayList: CharacterList): NetworkResult<List<Long>> {
+    private suspend fun saveAllCharacters(characterArrayList: CharacterList): NetworkResult<List<Long>> {
         val response = characterDAO!!.saveListOfAllCharacters(characterArrayList)
         return when {
             response.isEmpty() -> {
