@@ -1,8 +1,10 @@
 package com.anniekobia.harrypotter.data.remote.model
 
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class Wand(
     @SerializedName("core")
     val core: String,
