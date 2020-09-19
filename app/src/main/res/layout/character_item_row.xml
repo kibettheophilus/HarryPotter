@@ -14,7 +14,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/inner_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -61,7 +60,6 @@
 
 
             <ImageView
-                android:id="@+id/play_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_playbuttontwo"

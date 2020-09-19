@@ -26,11 +26,11 @@ interface CharacterDAO {
      * Fetch list of all characters who are staff from database
      */
     @Query("SELECT * FROM character WHERE hogwartsStaff = 1")
-    suspend fun getStaffCharacters(): List<Character>
+    fun getStaffCharacters(): LiveData<List<Character>>
 
     /**
      * Fetch list of all characters who are neither staff nor students from database
      */
     @Query("SELECT * FROM character WHERE hogwartsStudent = 0 and hogwartsStaff = 0")
-    suspend fun getOtherCharacters(): List<Character>
+    fun getOtherCharacters(): LiveData<List<Character>>
 }

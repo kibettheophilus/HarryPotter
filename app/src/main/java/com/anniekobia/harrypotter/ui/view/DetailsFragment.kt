@@ -50,7 +50,7 @@ class DetailsFragment : Fragment() {
         val character = detailsFragmentArgs.character
         characterImageUri = character?.image.toString()
 
-        character?.let {character ->
+        character?.let { character ->
             bindDetails(character)
             setHouseLogo(character)
         }
