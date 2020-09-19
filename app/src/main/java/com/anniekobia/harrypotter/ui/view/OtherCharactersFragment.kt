@@ -70,13 +70,14 @@ class OtherCharactersFragment : Fragment() {
     private fun setRecyclerView(view: View, characters: ArrayList<Character>) {
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerViewAdapter =
-            CharacterDataAdapter(characters) { character: Character, imageView: ImageView ->
+            CharacterDataAdapter() { character: Character, imageView: ImageView ->
                 val bundle = bundleOf("Character" to character, "URI" to character.image)
                 val extras = FragmentNavigatorExtras(
                     imageView to character.image
                 )
                 view.findNavController().navigate(R.id.global_detailsFragment, bundle, null, extras)
             }
+        recyclerViewAdapter.submitList(characters)
         binding.recyclerView.adapter = recyclerViewAdapter
     }
 }

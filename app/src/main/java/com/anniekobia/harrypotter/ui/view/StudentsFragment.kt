@@ -39,9 +39,16 @@ class StudentsFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentStudentBinding.inflate(inflater, container, false)
 
-        loadStudentCharacters()
-
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setRecyclerView(binding.root)
+
+        characterViewModel.newCharacters.observe(viewLifecycleOwner) {
+            recyclerViewAdapter.submitList(it)
+        }
     }
 
     /**
@@ -51,32 +58,21 @@ class StudentsFragment : Fragment() {
     private fun loadStudentCharacters() {
         binding.errorView.visibility = GONE
         characterViewModel.getStudentCharacters()
-        characterViewModel.characters.observe(viewLifecycleOwner) {
-            when (it) {
-                is NetworkResult.Success -> {
-                    setRecyclerView(binding.root, it.data as ArrayList<Character>)
-                }
-                is NetworkResult.Error -> {
-                    binding.message.text = it.exception.message
-                    binding.errorView.visibility = VISIBLE
-                }
-            }
-        }
 
     }
 
     /**
      * Set recyclerview adapter with list fetched from local sqlite db
      */
-    private fun setRecyclerView(view: View, characters: ArrayList<Character>) {
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+    private fun setRecyclerView(view: View) {
         recyclerViewAdapter =
-            CharacterDataAdapter(characters) { character: Character, imageView: ImageView ->
-                val bundle = bundleOf("Character" to character, "URI" to character.image)
+            CharacterDataAdapter { character: Character, imageView: ImageView ->
                 val extras = FragmentNavigatorExtras(
                     imageView to character.image
                 )
-                view.findNavController().navigate(R.id.global_detailsFragment, bundle, null, extras)
+
+                val studentDetailsAction = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(character)
+                view.findNavController().navigate(studentDetailsAction,extras)
             }
         binding.recyclerView.adapter = recyclerViewAdapter
     }

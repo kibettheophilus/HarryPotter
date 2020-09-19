@@ -2,6 +2,7 @@ package com.anniekobia.harrypotter.ui.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.anniekobia.harrypotter.data.remote.model.Character
@@ -21,7 +22,10 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
     private val characterStudentRepository = CharacterStudentRepository(application)
     private val characterStaffRepository = CharacterStaffRepository(application)
     val allCharacters = MutableLiveData<NetworkResult<CharacterList>>()
-    val characters = MutableLiveData<NetworkResult<List<Character>>>()
+    val characters  = MutableLiveData<NetworkResult<List<Character>>>()
+    val newCharacters : LiveData<List<Character>> by lazy {
+        characterStudentRepository.getStudentCharacters()
+    }
 
 
     /**
@@ -38,7 +42,7 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
      */
     fun getStudentCharacters() {
         viewModelScope.launch {
-            characters.postValue(characterStudentRepository.getStudentCharacters())
+           // characters.postValue()
         }
     }
 

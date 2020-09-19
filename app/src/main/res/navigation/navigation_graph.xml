@@ -16,6 +16,9 @@
         <action
             android:id="@+id/homeFragment_to_otherCharactersFragment"
             app:destination="@id/otherCharactersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/studentFragment"
@@ -29,6 +32,11 @@
         android:id="@+id/detailsFragment"
         android:name="com.anniekobia.harrypotter.ui.view.DetailsFragment"
         tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="character"
+            app:argType="com.anniekobia.harrypotter.data.remote.model.Character"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <action
         android:id="@+id/global_detailsFragment"
