@@ -10,11 +10,11 @@ import java.lang.Exception
 /**
  * Load Image from cache, if no image try fetching the image online, backup placeholder
  */
-fun loadImage(imageUrl: String, imageView: ImageView) {
+fun ImageView.loadUrl(imageUrl: String) {
     Picasso.get()
         .load(imageUrl)
         .networkPolicy(NetworkPolicy.OFFLINE)
-        .into(imageView, object : Callback {
+        .into(this, object : Callback {
             override fun onSuccess() {}
 
             override fun onError(e: Exception?) {
@@ -22,7 +22,7 @@ fun loadImage(imageUrl: String, imageView: ImageView) {
                     .load(imageUrl)
                     .placeholder(R.drawable.placeholder_image)
                     .error(R.drawable.placeholder_image)
-                    .into(imageView)
+                    .into(this@loadUrl)
             }
         })
 }

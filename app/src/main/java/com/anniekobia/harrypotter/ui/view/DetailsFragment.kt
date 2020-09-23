@@ -14,7 +14,7 @@ import androidx.navigation.fragment.navArgs
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentDetailsBinding
-import com.anniekobia.harrypotter.utils.loadImage
+import com.anniekobia.harrypotter.utils.loadUrl
 import java.util.*
 
 
@@ -64,7 +64,7 @@ class DetailsFragment : Fragment() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 transitionName = characterImageUri
             }
-            loadImage(character.image, binding.characterImage)
+            binding.characterImage.loadUrl(character.image)
         }
         binding.characterName.text = character.name
         binding.characterActorName.text = character.actor

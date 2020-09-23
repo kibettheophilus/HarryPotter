@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.CharacterItemRowBinding
-import com.anniekobia.harrypotter.utils.loadImage
+import com.anniekobia.harrypotter.utils.loadUrl
 
 
 class CharacterDataAdapter(
@@ -48,7 +48,7 @@ class CharacterDataAdapter(
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         transitionName = character.image
                     }
-                    loadImage(image, characterImage)
+                    characterImage.loadUrl(image)
                     itemView.setOnClickListener { listener(character, characterImage) }
                 }
             }
