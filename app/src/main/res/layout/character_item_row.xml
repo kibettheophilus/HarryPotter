@@ -14,7 +14,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/inner_rl"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -32,7 +31,7 @@
 
             <TextView
                 android:id="@+id/character_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/textview_margin_vertical"
                 android:layout_marginTop="@dimen/margin_10dp"
@@ -40,24 +39,27 @@
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_18sp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/character_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/character_actor_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/textview_margin_vertical"
                 android:layout_marginTop="@dimen/margin_5dp"
                 android:text="@string/charactor_actor_daniel_radcliffe"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/textsize_16dp"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/character_image"
                 app:layout_constraintTop_toBottomOf="@id/character_name" />
 
 
             <ImageView
-                android:id="@+id/play_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_playbuttontwo"

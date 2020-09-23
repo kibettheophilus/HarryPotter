@@ -2,6 +2,7 @@ package com.anniekobia.harrypotter.ui.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.anniekobia.harrypotter.data.remote.model.Character
@@ -21,7 +22,26 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
     private val characterStudentRepository = CharacterStudentRepository(application)
     private val characterStaffRepository = CharacterStaffRepository(application)
     val allCharacters = MutableLiveData<NetworkResult<CharacterList>>()
-    val characters = MutableLiveData<NetworkResult<List<Character>>>()
+
+    /**
+     * Fetch list of student characters
+     */
+    val studentCharacters : LiveData<List<Character>> by lazy {
+        characterStudentRepository.getStudentCharacters()
+    }
+    /**
+     * Fetch list of staff characters
+     */
+    val staffCharacters : LiveData<List<Character>> by lazy {
+        characterStaffRepository.getStaffCharacters()
+    }
+
+    /**
+     * Fetch list of characters who are neither students nor staff
+     */
+    val otherCharacters : LiveData<List<Character>> by lazy {
+        otherCharactersRepository.getOtherCharacters()
+    }
 
 
     /**
@@ -30,33 +50,6 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
     fun getAndSaveAllCharacters() {
         viewModelScope.launch {
             allCharacters.postValue(allCharactersRepository.getAllCharacters())
-        }
-    }
-
-    /**
-     * ViewModel method that invokes repository method to fetch student characters
-     */
-    fun getStudentCharacters() {
-        viewModelScope.launch {
-            characters.postValue(characterStudentRepository.getStudentCharacters())
-        }
-    }
-
-    /**
-     * ViewModel method that invokes repository method to fetch staff characters
-     */
-    fun getStaffCharacters() {
-        viewModelScope.launch {
-            characters.postValue(characterStaffRepository.getStaffCharacters())
-        }
-    }
-
-    /**
-     * ViewModel method that invokes repository method to fetch other characters that are neither students nor staff
-     */
-    fun getOtherCharacters() {
-        viewModelScope.launch {
-            characters.postValue(otherCharactersRepository.getOtherCharacters())
         }
     }
 

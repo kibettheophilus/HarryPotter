@@ -1,5 +1,6 @@
 package com.anniekobia.harrypotter.data.local
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -19,17 +20,17 @@ interface CharacterDAO {
      * Fetch list of all characters who are students from database
      */
     @Query("SELECT * FROM character WHERE hogwartsStudent = 1")
-    suspend fun getStudentCharacters(): List<Character>
+    fun getStudentCharacters(): LiveData<List<Character>>
 
     /**
      * Fetch list of all characters who are staff from database
      */
     @Query("SELECT * FROM character WHERE hogwartsStaff = 1")
-    suspend fun getStaffCharacters(): List<Character>
+    fun getStaffCharacters(): LiveData<List<Character>>
 
     /**
      * Fetch list of all characters who are neither staff nor students from database
      */
     @Query("SELECT * FROM character WHERE hogwartsStudent = 0 and hogwartsStaff = 0")
-    suspend fun getOtherCharacters(): List<Character>
+    fun getOtherCharacters(): LiveData<List<Character>>
 }

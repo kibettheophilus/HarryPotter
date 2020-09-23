@@ -5,16 +5,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.CharacterItemRowBinding
-import com.squareup.picasso.Picasso
+import com.anniekobia.harrypotter.utils.loadUrl
 
 
 class CharacterDataAdapter(
-    private var characterList: ArrayList<Character>,
     private val listener: (Character, ImageView) -> Unit
-) : RecyclerView.Adapter<CharacterDataAdapter.MyViewHolder>() {
+) : ListAdapter<Character,CharacterDataAdapter.MyViewHolder>(CharacterDiffer) {
 
     private lateinit var binding: CharacterItemRowBinding
 
@@ -25,12 +26,8 @@ class CharacterDataAdapter(
         return MyViewHolder(binding, listener)
     }
 
-    override fun getItemCount(): Int = characterList.size
-
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val character = characterList[position]
-        holder.bind(character)
+        getItem(position)?.let { holder.bind(it) }
     }
 
     class MyViewHolder(
@@ -51,10 +48,23 @@ class CharacterDataAdapter(
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         transitionName = character.image
                     }
-                    Picasso.get().load(image).into(characterImage)
+                    characterImage.loadUrl(image)
                     itemView.setOnClickListener { listener(character, characterImage) }
                 }
             }
         }
+    }
+
+    companion object CharacterDiffer : DiffUtil.ItemCallback<Character>() {
+        override fun areItemsTheSame(
+            oldItem: Character,
+            newItem: Character
+        ): Boolean =
+            oldItem.name == newItem.name
+
+        override fun areContentsTheSame(
+            oldItem: Character,
+            newItem: Character
+        ): Boolean = oldItem == newItem
     }
 }

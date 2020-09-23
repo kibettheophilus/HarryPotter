@@ -6,6 +6,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
 //Crashlytics Gradle plugin
 apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
     compileSdkVersion 29
@@ -23,8 +24,13 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            shrinkResources false
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -84,4 +90,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx:17.5.0'
     //Firebase Crashlytics SDK.
     implementation 'com.google.firebase:firebase-crashlytics-ktx:17.2.1'
+    // Timber library for logging
+    implementation 'com.jakewharton.timber:timber:4.7.1'
 }

@@ -10,10 +10,11 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentDetailsBinding
-import com.squareup.picasso.Picasso
+import com.anniekobia.harrypotter.utils.loadUrl
 import java.util.*
 
 
@@ -23,6 +24,7 @@ class DetailsFragment : Fragment() {
     private lateinit var characterImageUri: String
 
     private lateinit var binding: FragmentDetailsBinding
+    private val detailsFragmentArgs : DetailsFragmentArgs by navArgs()
 
     @ExperimentalStdlibApi
     override fun onCreateView(
@@ -45,11 +47,13 @@ class DetailsFragment : Fragment() {
                 TransitionInflater.from(context).inflateTransition(android.R.transition.move)
         }
 
-        val character = arguments?.getSerializable("Character") as Character
-        characterImageUri = arguments?.getString("URI") as String
+        val character = detailsFragmentArgs.character
+        characterImageUri = character?.image.toString()
 
-        bindDetails(character)
-        setHouseLogo(character)
+        character?.let { character ->
+            bindDetails(character)
+            setHouseLogo(character)
+        }
         return binding.root
     }
 
@@ -60,8 +64,7 @@ class DetailsFragment : Fragment() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 transitionName = characterImageUri
             }
-            //Loading image using Picasso
-            Picasso.get().load(character.image).into(binding.characterImage)
+            binding.characterImage.loadUrl(character.image)
         }
         binding.characterName.text = character.name
         binding.characterActorName.text = character.actor

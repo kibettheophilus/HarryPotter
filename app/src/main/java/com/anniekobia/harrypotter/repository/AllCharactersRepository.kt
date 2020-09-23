@@ -1,19 +1,19 @@
 package com.anniekobia.harrypotter.repository
 
 import android.content.Context
-import android.util.Log
 import com.anniekobia.harrypotter.data.remote.RetrofitClient
 import com.anniekobia.harrypotter.data.local.CharacterDatabase
 import com.anniekobia.harrypotter.data.remote.model.CharacterList
 import com.anniekobia.harrypotter.utils.NetworkResult
 import com.anniekobia.harrypotter.utils.safeApiCall
+import timber.log.Timber
 import java.io.IOException
-
 
 class AllCharactersRepository(context: Context) {
 
     private val database = CharacterDatabase.getCharacterDatabase(context = context)
     private val characterDAO = database?.characterDao()
+
 
     /**
      * Repository method to make network call that fetches all characters in the series
@@ -27,12 +27,12 @@ class AllCharactersRepository(context: Context) {
         val response = RetrofitClient.apiService.getAllCharacters()
         return when {
             response.isSuccessful -> {
-                Log.e("Remote", "Characters fetched")
+                Timber.e("Characters fetched")
                 saveAllCharacters((response.body()!!))
                 NetworkResult.Success(response.body()!!)
             }
             else -> {
-                Log.e("Remote", "Characters not fetched")
+                Timber.e( "Characters not fetched")
                 NetworkResult.Error(IOException("Something went wrong. Please tap the icon to refresh"))
             }
         }
@@ -40,22 +40,17 @@ class AllCharactersRepository(context: Context) {
 
     /**
      * Repository method to save all characters in the local sqlite db
+     * and retry saving in case the room insert operation fails/returns null
      */
-    private suspend fun saveAllCharacters(characterArrayList: CharacterList) = safeApiCall(
-        call = { saveCharacters(characterArrayList) },
-        errorMessage = "Something went wrong. Please tap the icon to refresh"
-    )
-
-    private suspend fun saveCharacters(characterArrayList: CharacterList): NetworkResult<List<Long>> {
+    private suspend fun saveAllCharacters(characterArrayList: CharacterList) {
         val response = characterDAO!!.saveListOfAllCharacters(characterArrayList)
         return when {
-            response.isEmpty() -> {
-                Log.e("Local:All", "Characters not saved")
-                NetworkResult.Error(IOException("Something went wrong. Please tap the icon to refresh"))
+            response.isNullOrEmpty() -> {
+                Timber.e( "Characters not saved")
+                saveAllCharacters(characterArrayList)
             }
             else -> {
-                Log.e("Local:All", "Characters saved")
-                NetworkResult.Success(response)
+                Timber.e("Characters saved")
             }
         }
     }
