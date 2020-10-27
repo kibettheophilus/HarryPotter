@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/newHomeFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.anniekobia.harrypotter.ui.view.HomeFragment">
@@ -41,4 +41,8 @@
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
+    <fragment
+        android:id="@+id/newHomeFragment"
+        android:name="com.anniekobia.harrypotter.ui.view.NewHomeFragment"
+        android:label="NewHomeFragment" />
 </navigation>
