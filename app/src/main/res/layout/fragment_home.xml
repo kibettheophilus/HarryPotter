@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/logo_height_60dp"
         android:layout_marginVertical="@dimen/imageview_vertical_margin"
-        android:background="@drawable/harrypotterlogo"
+        android:background="@drawable/hplogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/harry_potter_app_logo" />

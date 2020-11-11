@@ -43,6 +43,5 @@
     </fragment>
     <fragment
         android:id="@+id/newHomeFragment"
-        android:name="com.anniekobia.harrypotter.ui.view.NewHomeFragment"
-        android:label="NewHomeFragment" />
+        android:name="com.anniekobia.harrypotter.ui.view.NewHomeFragment" />
 </navigation>

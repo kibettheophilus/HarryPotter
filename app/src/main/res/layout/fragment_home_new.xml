@@ -5,18 +5,29 @@
     android:id="@+id/main_activity_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/screen_padding"
     tools:context=".ui.view.MainActivity">
 
     <ImageView
         android:id="@+id/appLogo"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/logo_height_60dp"
-        android:layout_marginVertical="@dimen/imageview_vertical_margin"
-        android:background="@drawable/harrypotterlogo"
+        android:layout_height="0dp"
+        android:background="@drawable/harrypotterplogo"
+        app:layout_constraintDimensionRatio="3:1"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/harry_potter_app_logo" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/colorModeSwitch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:track="@drawable/track"
+        android:thumb="@drawable/thumb"/>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
