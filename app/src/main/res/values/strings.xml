@@ -32,6 +32,7 @@
 
     <!--Emoji-->
     <string name="pointing_emoji">&#x1F447;&#x1F3FF;</string>
+
     <string name="house_gryffindor">Gryffindor</string>
     <string name="house_slytherin">Slytherin</string>
     <string name="house_ravenclaw">Ravenclaw</string>
@@ -41,6 +42,7 @@
     <string name="harry_potter_glasses">Harry potter glasses</string>
     <string name="no_internet_message">Please turn on your internet connection and tap the refresh icon</string>
     <string name="character_house_logo">Character house Logo</string>
+    <string name="students">Students</string>
 
 
 </resources>

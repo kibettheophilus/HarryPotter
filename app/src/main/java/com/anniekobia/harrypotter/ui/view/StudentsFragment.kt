@@ -12,7 +12,7 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentStudentBinding
 import com.anniekobia.harrypotter.ui.adapter.CharacterDataAdapter
-import com.anniekobia.harrypotter.ui.viewmodel.CharacterViewModel
+import com.anniekobia.harrypotter.viewmodel.CharacterViewModel
 
 
 /**

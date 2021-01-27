@@ -18,7 +18,7 @@ import androidx.fragment.app.viewModels
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.databinding.FragmentHomeBinding
 import com.anniekobia.harrypotter.ui.adapter.ViewPagerFragmentStateAdapter
-import com.anniekobia.harrypotter.ui.viewmodel.CharacterViewModel
+import com.anniekobia.harrypotter.viewmodel.CharacterViewModel
 import com.anniekobia.harrypotter.utils.NetworkResult
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlin.properties.Delegates

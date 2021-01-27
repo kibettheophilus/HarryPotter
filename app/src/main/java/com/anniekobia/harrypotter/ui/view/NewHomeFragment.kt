@@ -12,12 +12,16 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.anniekobia.harrypotter.R
+import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentHomeNewBinding
-import com.anniekobia.harrypotter.ui.viewmodel.CharacterViewModel
+import com.anniekobia.harrypotter.ui.adapter.StudentDataAdapter
+import com.anniekobia.harrypotter.viewmodel.CharacterViewModel
 import com.anniekobia.harrypotter.utils.NetworkResult
 import kotlin.properties.Delegates
 
@@ -31,6 +35,7 @@ class NewHomeFragment : Fragment() {
     private val characterViewModel: CharacterViewModel by viewModels()
     private var booleanFirstRun = false
     private lateinit var pref: SharedPreferences
+    private lateinit var recyclerViewAdapter: StudentDataAdapter
 
     /**
      * Global variable isNetworkConnected to check for network connectivity
@@ -44,7 +49,7 @@ class NewHomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeNewBinding.inflate(inflater, container, false)
 
         startNetworkCallback()
@@ -54,6 +59,26 @@ class NewHomeFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * Checks for network connection state
+     */
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    fun startNetworkCallback() {
+        val cm: ConnectivityManager =
+            requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val builder: NetworkRequest.Builder = NetworkRequest.Builder()
+        cm.registerNetworkCallback(
+            builder.build(),
+            object : ConnectivityManager.NetworkCallback() {
+                override fun onAvailable(network: Network) {
+                    Variables.isNetworkConnected = true
+                }
+
+                override fun onLost(network: Network) {
+                    Variables.isNetworkConnected = false
+                }
+            })
+    }
 
     /**
      * Checks a SharedPreferences boolean value to get if its the first application run
@@ -67,7 +92,12 @@ class NewHomeFragment : Fragment() {
             binding.progressBar.visibility = VISIBLE
             loadAllCharacters()
         } else {
-//            setViewPager()
+            //Setup recyclerview after all data is fetched and saved in room
+            setStudentRecyclerView(binding.root)
+            characterViewModel.studentCharacters.observe(viewLifecycleOwner) {
+                recyclerViewAdapter.submitList(it)
+            }
+
         }
 
     }
@@ -91,7 +121,11 @@ class NewHomeFragment : Fragment() {
                         editor.putBoolean("FIRST_RUN", true)
                         editor.apply()
 
-//                        setViewPager()
+                        //Setup recyclerview after all data is fetched and saved in room
+                        setStudentRecyclerView(binding.root)
+                        characterViewModel.studentCharacters.observe(viewLifecycleOwner) {
+                            recyclerViewAdapter.submitList(it)
+                        }
                     }
                     is NetworkResult.Error -> {
                         binding.progressBar.visibility = GONE
@@ -107,25 +141,22 @@ class NewHomeFragment : Fragment() {
         }
     }
 
-    /**
-     * Checks for network connection state
-     */
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    fun startNetworkCallback() {
-        val cm: ConnectivityManager =
-            requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val builder: NetworkRequest.Builder = NetworkRequest.Builder()
-        cm.registerNetworkCallback(
-            builder.build(),
-            object : ConnectivityManager.NetworkCallback() {
-                override fun onAvailable(network: Network) {
-                    Variables.isNetworkConnected = true
-                }
 
-                override fun onLost(network: Network) {
-                    Variables.isNetworkConnected = false
-                }
-            })
+    /**
+     * Setup recyclerview
+     */
+    private fun setStudentRecyclerView(view: View) {
+        recyclerViewAdapter =
+            StudentDataAdapter { character: Character, imageView: ImageView ->
+                val extras = FragmentNavigatorExtras(
+                    imageView to character.image
+                )
+
+                val studentDetailsAction = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(character)
+//                view.findNavController().navigate(studentDetailsAction,extras)
+            }
+        binding.studentRecyclerView.adapter = recyclerViewAdapter
     }
+
 }
 

@@ -1,4 +1,4 @@
-package com.anniekobia.harrypotter.ui.viewmodel
+package com.anniekobia.harrypotter.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
