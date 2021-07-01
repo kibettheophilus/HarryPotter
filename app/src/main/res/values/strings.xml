@@ -31,7 +31,7 @@
     <string name="house">House: </string>
 
     <!--Emoji-->
-    <string name="pointing_emoji">&#x1F447;&#x1F3FF;</string>
+    <string name="pointing_emoji">&#x1F449;</string>
 
     <string name="house_gryffindor">Gryffindor</string>
     <string name="house_slytherin">Slytherin</string>
@@ -43,6 +43,25 @@
     <string name="no_internet_message">Please turn on your internet connection and tap the refresh icon</string>
     <string name="character_house_logo">Character house Logo</string>
     <string name="students">Students</string>
+    <string name="pin">Pin</string>
+    <string name="pause">Pause</string>
+
+    <string name="house_gryffindor_details">Founded by <font color="#EFB410">Godric Gryffindor</font>, its emblematic animal is the <font color="#EFB410">lion</font>.
+        This house values <font color="#EFB410">bravery</font>, <font color="#EFB410">daring</font>, <font color="#EFB410">nerve</font>, and <font color="#EFB410">chivalry</font>. It corresponds to the element of <font color="#EFB410">Fire</font> and its colours are <font color="#EFB410">scarlet</font> and <font color="#EFB410">gold</font>. <font color="#EFB410">"Nearly Headless Nick"</font> is the House Ghost.
+        Gryffindor House <font color="#EFB410">access is granted by a portrait of The Fat Lady who permits entrance if given the correct password</font>, which is changed numerous times throughout the school year.</string>
+
+    <string name="house_ravenclaw_details">Founded by <font color="#EFB410">Rowena Ravenclaw</font>, its emblematic animal is the <font color="#EFB410">eagle</font>.
+        This house values <font color="#EFB410">intelligence</font>, <font color="#EFB410">knowledge</font>, <font color="#EFB410">curiosity</font>, <font color="#EFB410">creativity</font> and <font color="#EFB410">wit</font>. It corresponds to the element of <font color="#EFB410">Air</font> and its colours are <font color="#EFB410">blue</font> and <font color="#EFB410">bronze</font>. <font color="#EFB410">"The Grey Lady"</font> who was the daughter of the founder is the House Ghost.
+        Ravenclaw House is<font color="#EFB410"> accessed by answering a riddle.</font>This riddle, however, can be answered by non-Ravenclaws.</string>
+
+    <string name="house_slytherin_details">Founded by <font color="#EFB410">Salazar Slytherin</font>, its emblematic animal is the <font color="#EFB410">serpent</font>.
+        This house values <font color="#EFB410">ambition</font>, <font color="#EFB410">leadership</font>, <font color="#EFB410">self-preservation</font>, <font color="#EFB410">cunning</font> and <font color="#EFB410">resourcefulness</font>. It corresponds to the element of <font color="#EFB410">Water</font> and its colours are <font color="#EFB410">emerald green</font> and <font color="#EFB410">silver</font>. <font color="#EFB410">"The Bloody Baron"</font> is the House Ghost.
+        Slytherin House <font color="#EFB410">access requires a password directed to a stonewall.</font></string>
+
+    <string name="house_hufflepuff_details">Founded by <font color="#EFB410">Helga Hufflepuff</font>, its emblematic animal is the <font color="#EFB410">badger</font>.
+        This house values <font color="#EFB410">hard work</font>, <font color="#EFB410">dedication</font>, <font color="#EFB410">patience</font>, <font color="#EFB410">loyalty</font>, and <font color="#EFB410">fair play</font>. It corresponds to the element of <font color="#EFB410">Earth</font> and its colours are <font color="#EFB410">yellow</font> and <font color="#EFB410">black</font>. <font color="#EFB410">"The Fat Friar"</font> is the House Ghost.
+        Hufflepuff House can be <font color="#EFB410">accessed by tapping the barrel two from the bottom, middle of the second row in the rhythm of "Helga Hufflepuff".</font></string>
+
 
 
 </resources>

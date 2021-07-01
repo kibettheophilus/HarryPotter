@@ -9,9 +9,11 @@ import android.widget.ImageView
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.recyclerview.widget.GridLayoutManager
 import com.anniekobia.harrypotter.ui.adapter.CharacterDataAdapter
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentStaffBinding
+import com.anniekobia.harrypotter.utils.SpacesItemDecoration
 import com.anniekobia.harrypotter.viewmodel.CharacterViewModel
 
 /**
@@ -27,7 +29,7 @@ class StaffFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentStaffBinding.inflate(inflater, container, false)
 
@@ -57,6 +59,10 @@ class StaffFragment : Fragment() {
                 val staffDetailsAction = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(character)
                 view.findNavController().navigate(staffDetailsAction,extras)
             }
+
+        val gridLayoutManager = GridLayoutManager(requireContext(), 2)
+        binding.recyclerView.layoutManager = gridLayoutManager
+        binding.recyclerView.addItemDecoration(SpacesItemDecoration(20))
         binding.recyclerView.adapter = recyclerViewAdapter
     }
 

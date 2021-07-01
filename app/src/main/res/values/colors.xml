@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#e1ad01</color>
-    <color name="colorPrimaryDark">#f9bf2b</color>
+
+    <color name="colorPrimary">#EFB410</color>
+    <color name="colorPrimaryDark">#EFB410</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="screenBackground">#FAFAFA</color>
+    <color name="hufflepuffYellow">#E0B40C</color>
+    <color name="slytherinGreen">#20811E</color>
+    <color name="gryffindorScarlet">#CA1711</color>
+    <color name="ravenclawBlue">#0277BD</color>
 
 </resources>

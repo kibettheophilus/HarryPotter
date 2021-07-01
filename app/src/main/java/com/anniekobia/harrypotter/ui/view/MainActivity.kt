@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         /**
          * Disable Logging and debugging in release
          */
@@ -30,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         /**
-         * Set navigation component
+         * Set navigation component with toolbar
          */
         val navController = findNavController(this, R.id.nav_host_fragment)
         val appBarConfiguration = AppBarConfiguration(navController.graph)

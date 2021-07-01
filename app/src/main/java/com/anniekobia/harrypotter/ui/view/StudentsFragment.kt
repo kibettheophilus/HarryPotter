@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.recyclerview.widget.GridLayoutManager
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.databinding.FragmentStudentBinding
 import com.anniekobia.harrypotter.ui.adapter.CharacterDataAdapter
+import com.anniekobia.harrypotter.utils.SpacesItemDecoration
 import com.anniekobia.harrypotter.viewmodel.CharacterViewModel
 
 
@@ -28,7 +30,7 @@ class StudentsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentStudentBinding.inflate(inflater, container, false)
 
@@ -54,9 +56,15 @@ class StudentsFragment : Fragment() {
                     imageView to character.image
                 )
 
-                val studentDetailsAction = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(character)
-                view.findNavController().navigate(studentDetailsAction,extras)
+                val studentDetailsAction = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
+                    character
+                )
+                view.findNavController().navigate(studentDetailsAction, extras)
             }
+
+        val gridLayoutManager = GridLayoutManager(requireContext(), 2)
+        binding.recyclerView.layoutManager = gridLayoutManager
+        binding.recyclerView.addItemDecoration(SpacesItemDecoration(20))
         binding.recyclerView.adapter = recyclerViewAdapter
     }
 
