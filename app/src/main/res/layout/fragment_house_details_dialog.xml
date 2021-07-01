@@ -1,81 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:backgroundTint="@android:color/transparent"
+    android:layout_height="match_parent"
     tools:context=".ui.view.HouseDetailsDialogFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/houseDetailsCL"
+        android:id="@+id/parentCL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_corner_detail_view"
-        android:backgroundTint="@color/screenBackground"
-        android:translationY="-20dp"
-        android:paddingHorizontal="@dimen/screen_padding"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pin">
+        android:padding="@dimen/margin_10dp"
+        android:backgroundTint="@android:color/transparent">
 
-        <TextView
-            android:id="@+id/house_name"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/houseDetailsCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner_detail_view"
+            android:backgroundTint="@color/screenBackground"
+            android:translationY="-20dp"
+            android:paddingHorizontal="@dimen/margin_15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pin"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/house_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/house_logo"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="@dimen/margin_5dp"
+                android:contentDescription="@string/character_house_logo"
+                app:layout_constraintDimensionRatio="1:1.2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/house_name" />
+
+            <TextView
+                android:id="@+id/house_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/roboto_light"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_15sp"
+                android:text="@string/house_gryffindor_details"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/house_logo" />
+
+            <ImageView
+                android:id="@+id/pauseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/margin_10dp"
+                android:contentDescription="@string/pause"
+                android:src="@drawable/ic_pause"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/house_details" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/pin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/textsize_24sp"
+            android:contentDescription="@string/pin"
+            android:src="@drawable/ic_pin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/house_logo"
-            android:layout_width="100dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="@dimen/margin_5dp"
-            android:contentDescription="@string/character_house_logo"
-            app:layout_constraintDimensionRatio="1:1.3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/house_name" />
-
-        <TextView
-            android:id="@+id/house_details"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/roboto_light"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/textsize_15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/house_logo" />
-
-        <ImageView
-            android:id="@+id/pauseButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="20dp"
-            android:contentDescription="@string/pause"
-            android:src="@drawable/ic_pause"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/house_details" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/pin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/pin"
-        android:src="@drawable/ic_pin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>

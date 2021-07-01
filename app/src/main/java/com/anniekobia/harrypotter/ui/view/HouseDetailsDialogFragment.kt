@@ -14,6 +14,7 @@ import androidx.navigation.fragment.navArgs
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.databinding.FragmentHouseDetailsDialogBinding
 
+
 class HouseDetailsDialogFragment : DialogFragment() {
 
     private lateinit var binding: FragmentHouseDetailsDialogBinding
