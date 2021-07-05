@@ -11,7 +11,7 @@ object RetrofitClient {
     /**
      * Base API URL for all endpoints
      */
-    private const val BASE_URL = "http://hp-api.herokuapp.com/api/characters/"
+    private const val BASE_URL = "https://hp-api.herokuapp.com/api/characters/"
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {
