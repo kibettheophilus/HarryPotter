@@ -1,7 +1,11 @@
-### 🚧🔨 Work in Progress 🔨🚧 ###
-
-# Harry Potter
-Mobile application to view a list of characters in the Harry Potter series and get detailed information on a character.
+# Harry Potter Characters
+Mobile application to view a list of characters in the Harry Potter movie/book series and get detailed information on each character and their assigned house.
+<p align="left">
+<a href="https://play.google.com/store/apps/details?id=com.anniekobia.harrypotter">
+    <img alt="Get it on Google Play"
+        height="80"
+        src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
+</a>  
 
 ## Features
 * #### View a list of harry potter characters as:
@@ -14,18 +18,11 @@ Mobile application to view a list of characters in the Harry Potter series and g
   * Charactor actor name
   * House
   * Ancestry
-  * Patronus
+  * Patronus/Guardian
   * Wand 
   * Appearance 
-    * Species
-    * Gender
-    * Eye-color
-    * Hair-color
+  * Species
+  * Gender
+  * Eye-color
+  * Hair-color
 
-<!-- ## Architecture -->
-
-## Design Inspiration
-Uplabs.com design: [https://www.uplabs.com/posts/marvel-heroes-library](https://www.uplabs.com/posts/marvel-heroes-library)
-<p>
-  <img width="70%" height="500" src="https://user-images.githubusercontent.com/22634271/88526501-ac74be00-d004-11ea-9f50-cc58a82a7c12.PNG" alt="Design" title="Design"/>
-</p>
