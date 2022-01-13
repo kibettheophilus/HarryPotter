@@ -9,13 +9,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.anniekobia.harrypotter.data.remote.model.Character
+import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
 import com.anniekobia.harrypotter.databinding.CharacterItemRowBinding
 import com.anniekobia.harrypotter.utils.loadUrl
 
 
 class CharacterDataAdapter(
-    private val listener: (Character, ImageView) -> Unit
-) : ListAdapter<Character,CharacterDataAdapter.MyViewHolder>(CharacterDiffer) {
+    private val listener: (CharacterTwoListItem, ImageView) -> Unit
+) : ListAdapter<CharacterTwoListItem,CharacterDataAdapter.MyViewHolder>(CharacterDiffer) {
 
     private lateinit var binding: CharacterItemRowBinding
 
@@ -32,7 +33,7 @@ class CharacterDataAdapter(
 
     class MyViewHolder(
         itemBinding: CharacterItemRowBinding,
-        private val listener: (Character, ImageView) -> Unit
+        private val listener: (CharacterTwoListItem, ImageView) -> Unit
     ) :
         RecyclerView.ViewHolder(itemBinding.root) {
         private val characterImage: ImageView = itemBinding.characterImage
@@ -40,7 +41,7 @@ class CharacterDataAdapter(
         private val characterActorName: TextView = itemBinding.characterActorName
 
 
-        fun bind(character: Character) {
+        fun bind(character: CharacterTwoListItem) {
             with(character) {
                 characterName.text = name
                 characterActorName.text = actor
@@ -55,16 +56,16 @@ class CharacterDataAdapter(
         }
     }
 
-    companion object CharacterDiffer : DiffUtil.ItemCallback<Character>() {
+    companion object CharacterDiffer : DiffUtil.ItemCallback<CharacterTwoListItem>() {
         override fun areItemsTheSame(
-            oldItem: Character,
-            newItem: Character
+            oldItem: CharacterTwoListItem,
+            newItem: CharacterTwoListItem
         ): Boolean =
             oldItem.name == newItem.name
 
         override fun areContentsTheSame(
-            oldItem: Character,
-            newItem: Character
+            oldItem: CharacterTwoListItem,
+            newItem: CharacterTwoListItem
         ): Boolean = oldItem == newItem
     }
 }

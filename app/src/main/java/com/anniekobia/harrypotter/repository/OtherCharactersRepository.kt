@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.data.local.CharacterDatabase
+import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
 
 class OtherCharactersRepository(context: Context) {
 
@@ -14,6 +15,6 @@ class OtherCharactersRepository(context: Context) {
     /**
      * Repository method to get all characters who are neither students nor staff from the local sqlite db
      */
-    fun getOtherCharacters(): LiveData<List<Character>> = characterDAO!!.getOtherCharacters()
+    fun getOtherCharacters(): LiveData<List<CharacterTwoListItem>> = characterDAO!!.getOtherCharacters()
 
 }

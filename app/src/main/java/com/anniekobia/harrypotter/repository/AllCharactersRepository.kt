@@ -3,7 +3,7 @@ package com.anniekobia.harrypotter.repository
 import android.content.Context
 import com.anniekobia.harrypotter.data.remote.RetrofitClient
 import com.anniekobia.harrypotter.data.local.CharacterDatabase
-import com.anniekobia.harrypotter.data.remote.model.CharacterList
+import com.anniekobia.harrypotter.data.remote.model.CharacterTwoList
 import com.anniekobia.harrypotter.utils.NetworkResult
 import com.anniekobia.harrypotter.utils.safeApiCall
 import timber.log.Timber
@@ -23,7 +23,7 @@ class AllCharactersRepository(context: Context) {
         errorMessage = "Something went wrong. Please tap the icon to refresh"
     )
 
-    private suspend fun getCharacters(): NetworkResult<CharacterList> {
+    private suspend fun getCharacters(): NetworkResult<CharacterTwoList> {
         val response = RetrofitClient.apiService.getAllCharacters()
         return when {
             response.isSuccessful -> {
@@ -42,7 +42,7 @@ class AllCharactersRepository(context: Context) {
      * Repository method to save all characters in the local sqlite db
      * and retry saving in case the room insert operation fails/returns null
      */
-    private suspend fun saveAllCharacters(characterArrayList: CharacterList) {
+    private suspend fun saveAllCharacters(characterArrayList: CharacterTwoList) {
         val response = characterDAO!!.saveListOfAllCharacters(characterArrayList)
         return when {
             response.isNullOrEmpty() -> {

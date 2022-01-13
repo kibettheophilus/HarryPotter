@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.data.remote.model.Character
+import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
 import com.anniekobia.harrypotter.databinding.FragmentCharacterDetailsBinding
 import com.anniekobia.harrypotter.utils.loadUrl
 import java.util.*
@@ -49,7 +50,7 @@ class CharacterDetailsFragment : Fragment() {
 
 
     @ExperimentalStdlibApi
-    private fun bindDetails(character: Character) {
+    private fun bindDetails(character: CharacterTwoListItem) {
         binding.characterImage.apply {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 transitionName = characterImageUri

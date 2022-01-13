@@ -7,6 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.data.remote.model.CharacterList
+import com.anniekobia.harrypotter.data.remote.model.CharacterTwoList
+import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
 import com.anniekobia.harrypotter.repository.AllCharactersRepository
 import com.anniekobia.harrypotter.repository.OtherCharactersRepository
 import com.anniekobia.harrypotter.repository.CharacterStaffRepository
@@ -21,25 +23,25 @@ class CharacterViewModel(application: Application) : AndroidViewModel(applicatio
     private val otherCharactersRepository = OtherCharactersRepository(application)
     private val characterStudentRepository = CharacterStudentRepository(application)
     private val characterStaffRepository = CharacterStaffRepository(application)
-    val allCharacters = MutableLiveData<NetworkResult<CharacterList>>()
+    val allCharacters = MutableLiveData<NetworkResult<CharacterTwoList>>()
 
     /**
      * Fetch list of student characters
      */
-    val studentCharacters : LiveData<List<Character>> by lazy {
+    val studentCharacters : LiveData<List<CharacterTwoListItem>> by lazy {
         characterStudentRepository.getStudentCharacters()
     }
     /**
      * Fetch list of staff characters
      */
-    val staffCharacters : LiveData<List<Character>> by lazy {
+    val staffCharacters : LiveData<List<CharacterTwoListItem>> by lazy {
         characterStaffRepository.getStaffCharacters()
     }
 
     /**
      * Fetch list of characters who are neither students nor staff
      */
-    val otherCharacters : LiveData<List<Character>> by lazy {
+    val otherCharacters : LiveData<List<CharacterTwoListItem>> by lazy {
         otherCharactersRepository.getOtherCharacters()
     }
 

@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.LiveData
 import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.data.local.CharacterDatabase
+import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
 
 class CharacterStudentRepository(context: Context) {
 
@@ -14,6 +15,6 @@ class CharacterStudentRepository(context: Context) {
     /**
      * Repository method to get all characters who are students from the local sqlite db
      */
-    fun getStudentCharacters(): LiveData<List<Character>> = characterDAO!!.getStudentCharacters()
+    fun getStudentCharacters(): LiveData<List<CharacterTwoListItem>> = characterDAO!!.getStudentCharacters()
 
 }

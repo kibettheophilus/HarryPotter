@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.GridLayoutManager
 import com.anniekobia.harrypotter.data.remote.model.Character
+import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
 import com.anniekobia.harrypotter.databinding.FragmentStudentBinding
 import com.anniekobia.harrypotter.ui.adapter.CharacterDataAdapter
 import com.anniekobia.harrypotter.utils.SpacesItemDecoration
@@ -51,7 +52,7 @@ class StudentsFragment : Fragment() {
      */
     private fun setRecyclerView(view: View) {
         recyclerViewAdapter =
-            CharacterDataAdapter { character: Character, imageView: ImageView ->
+            CharacterDataAdapter { character: CharacterTwoListItem, imageView: ImageView ->
                 val extras = FragmentNavigatorExtras(
                     imageView to character.image
                 )
