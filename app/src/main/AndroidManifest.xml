@@ -13,8 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
 
-        <activity android:name="com.anniekobia.harrypotter.ui.view.MainActivity"
-            android:theme="@style/SplashTheme">
+        <activity
+            android:name="com.anniekobia.harrypotter.ui.view.MainActivity"
+            android:theme="@style/SplashTheme"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
