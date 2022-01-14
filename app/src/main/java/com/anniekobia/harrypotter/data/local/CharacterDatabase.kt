@@ -4,11 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.anniekobia.harrypotter.data.remote.model.CharacterDetailedData
 import com.anniekobia.harrypotter.data.remote.model.Character
-import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
 
 
-@Database(entities = [Character::class,CharacterTwoListItem::class], version = 1)
+@Database(entities = [Character::class], version = 1)
 abstract class CharacterDatabase : RoomDatabase() {
     abstract fun characterDao(): CharacterDAO
 

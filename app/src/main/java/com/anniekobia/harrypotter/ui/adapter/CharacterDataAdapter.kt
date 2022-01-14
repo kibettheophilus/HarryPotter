@@ -1,6 +1,6 @@
 package com.anniekobia.harrypotter.ui.adapter
 
-import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -9,14 +9,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.anniekobia.harrypotter.data.remote.model.Character
-import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
 import com.anniekobia.harrypotter.databinding.CharacterItemRowBinding
-import com.anniekobia.harrypotter.utils.loadUrl
+import com.anniekobia.harrypotter.utils.loadImageUrl
 
 
 class CharacterDataAdapter(
-    private val listener: (CharacterTwoListItem, ImageView) -> Unit
-) : ListAdapter<CharacterTwoListItem,CharacterDataAdapter.MyViewHolder>(CharacterDiffer) {
+    private val listener: (Character, ImageView) -> Unit
+) : ListAdapter<Character,CharacterDataAdapter.MyViewHolder>(CharacterDiffer) {
 
     private lateinit var binding: CharacterItemRowBinding
 
@@ -33,7 +32,7 @@ class CharacterDataAdapter(
 
     class MyViewHolder(
         itemBinding: CharacterItemRowBinding,
-        private val listener: (CharacterTwoListItem, ImageView) -> Unit
+        private val listener: (Character, ImageView) -> Unit
     ) :
         RecyclerView.ViewHolder(itemBinding.root) {
         private val characterImage: ImageView = itemBinding.characterImage
@@ -41,31 +40,30 @@ class CharacterDataAdapter(
         private val characterActorName: TextView = itemBinding.characterActorName
 
 
-        fun bind(character: CharacterTwoListItem) {
+        fun bind(character: Character) {
+            Log.e("CharData: ", character.toString())
             with(character) {
                 characterName.text = name
                 characterActorName.text = actor
                 characterImage.apply {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        transitionName = character.image
-                    }
-                    characterImage.loadUrl(image)
+                    transitionName = character.image
+                    characterImage.loadImageUrl(image, context)
                     itemView.setOnClickListener { listener(character, characterImage) }
                 }
             }
         }
     }
 
-    companion object CharacterDiffer : DiffUtil.ItemCallback<CharacterTwoListItem>() {
+    companion object CharacterDiffer : DiffUtil.ItemCallback<Character>() {
         override fun areItemsTheSame(
-            oldItem: CharacterTwoListItem,
-            newItem: CharacterTwoListItem
+            oldItem: Character,
+            newItem: Character
         ): Boolean =
             oldItem.name == newItem.name
 
         override fun areContentsTheSame(
-            oldItem: CharacterTwoListItem,
-            newItem: CharacterTwoListItem
+            oldItem: Character,
+            newItem: Character
         ): Boolean = oldItem == newItem
     }
 }

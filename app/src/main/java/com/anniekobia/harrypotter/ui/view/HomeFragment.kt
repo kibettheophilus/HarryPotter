@@ -35,8 +35,10 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        (activity as MainActivity).startNetworkCallback()
         checkIfFirstRun()
         binding.refresh.setOnClickListener { loadAllCharacters() }
+        binding.harryPotterGlasses.setOnClickListener { loadAllCharacters() }
 
         return binding.root
     }

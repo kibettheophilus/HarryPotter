@@ -1,5 +1,6 @@
 package com.anniekobia.harrypotter.utils
 
+import android.util.Log
 import java.io.IOException
 
 suspend fun <T : Any> safeApiCall(
@@ -9,5 +10,6 @@ suspend fun <T : Any> safeApiCall(
     try {
         call.invoke()
     } catch (e: Exception) {
+        e.message?.let { Log.e("FetchIssue: ", it) }
         NetworkResult.Error(IOException(errorMessage, e))
     }

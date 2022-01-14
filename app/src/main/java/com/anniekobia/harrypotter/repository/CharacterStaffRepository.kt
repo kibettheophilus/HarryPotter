@@ -2,9 +2,8 @@ package com.anniekobia.harrypotter.repository
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import com.anniekobia.harrypotter.data.remote.model.Character
 import com.anniekobia.harrypotter.data.local.CharacterDatabase
-import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
+import com.anniekobia.harrypotter.data.remote.model.Character
 
 class CharacterStaffRepository(context: Context) {
 
@@ -15,6 +14,6 @@ class CharacterStaffRepository(context: Context) {
     /**
      * Repository method to get all characters who are staff from the local sqlite db
      */
-    fun getStaffCharacters(): LiveData<List<CharacterTwoListItem>> = characterDAO!!.getStaffCharacters()
+    fun getStaffCharacters(): LiveData<List<Character>> = characterDAO!!.getStaffCharacters()
 
 }

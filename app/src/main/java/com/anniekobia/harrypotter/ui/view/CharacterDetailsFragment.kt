@@ -1,6 +1,5 @@
 package com.anniekobia.harrypotter.ui.view
 
-import android.os.Build
 import android.os.Bundle
 import android.transition.TransitionInflater
 import android.view.LayoutInflater
@@ -12,9 +11,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.anniekobia.harrypotter.R
 import com.anniekobia.harrypotter.data.remote.model.Character
-import com.anniekobia.harrypotter.data.remote.model.CharacterTwoListItem
 import com.anniekobia.harrypotter.databinding.FragmentCharacterDetailsBinding
-import com.anniekobia.harrypotter.utils.loadUrl
+import com.anniekobia.harrypotter.utils.loadImageUrl
 import java.util.*
 
 
@@ -24,7 +22,6 @@ class CharacterDetailsFragment : Fragment() {
     private val detailsFragmentArgs : CharacterDetailsFragmentArgs by navArgs()
     private lateinit var characterImageUri: String
 
-    @ExperimentalStdlibApi
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,10 +31,7 @@ class CharacterDetailsFragment : Fragment() {
         /**
          * Shared element transition for character image from recyclerview item to details page
          */
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            sharedElementEnterTransition =
-                TransitionInflater.from(context).inflateTransition(android.R.transition.move)
-        }
+        sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
 
         val character = detailsFragmentArgs.character
         characterImageUri = character?.image.toString()
@@ -49,13 +43,11 @@ class CharacterDetailsFragment : Fragment() {
     }
 
 
-    @ExperimentalStdlibApi
-    private fun bindDetails(character: CharacterTwoListItem) {
+    private fun bindDetails(character: Character) {
         binding.characterImage.apply {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                transitionName = characterImageUri
-            }
-            binding.characterImage.loadUrl(character.image)
+            transitionName = characterImageUri
+            //            binding.characterImage.loadUrl(character.image)
+            binding.characterImage.loadImageUrl(character.image, context)
         }
         binding.characterName.text = character.name
         binding.characterActorName.text = character.actor

@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     /**
      * Checks for network connection state
      */
-    private fun startNetworkCallback() {
+    fun startNetworkCallback() {
         val cm: ConnectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val builder: NetworkRequest.Builder = NetworkRequest.Builder()
         cm.registerNetworkCallback(
