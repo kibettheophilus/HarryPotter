@@ -11,7 +11,7 @@ import java.io.Serializable
 @Entity
 @Keep
 data class Character(
-    @ColumnInfo
+    @ColumnInfo(defaultValue = false.toString())
     @SerializedName("wizard")
     val wizard: Boolean,
 

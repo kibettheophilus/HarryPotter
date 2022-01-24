@@ -1,7 +1,9 @@
 package com.anniekobia.harrypotter.data.remote.model
 
+import androidx.annotation.Keep
 import java.io.Serializable
 
+@Keep
 data class CharacterDetailedData(
     val actor: String,
 

@@ -48,6 +48,7 @@ class AllCharactersRepository(context: Context) {
         for(c in characterArrayList){
             if (c.name.isNotBlank()&&c.image.isNotBlank()){
                 val character = Character(c.wizard,c.actor,c.alive,c.ancestry,c.dateOfBirth,c.eyeColour,c.gender, c.hairColour,c.hogwartsStaff,c.hogwartsStudent,c.house,c.image,c.name,c.patronus,c.species,c.wand,c.yearOfBirth)
+                //val character = Character(c.actor,c.alive,c.ancestry,c.dateOfBirth,c.eyeColour,c.gender,c.hairColour,c.hogwartsStaff,c.hogwartsStudent,c.house,c.image,c.name,c.patronus,c.species,c.wand,c.yearOfBirth)
                 allCharacters.add(character)
             }
         }
